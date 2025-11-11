@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title data-key="pageTitle">UAI PDV - Automação Comercial</title>
+		<!-- Tailwind CSS CDN -->
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			/* Estilo para a fonte Inter */
+			body {
+				font-family: 'Inter', sans-serif;
+			}
+			/* Cor azul claro personalizada do Tailwind */
+			.bg-brand-blue {
+				background-color: #3b82f6;
+			}
+			.text-brand-blue {
+				color: #3b82f6;
+			}
+			.hover\:bg-brand-blue-dark:hover {
+				background-color: #2563eb;
+			}
+		</style>
+	</head>
+	<!-- 
+  O ID do body é crucial. O app.js usa isso para saber qual
+  seção do 'content.json' carregar.
+  Para 'index.html', usamos 'home'.
+-->
+	<body id="home" class="bg-white text-gray-900 antialiased">
+		<div class="flex flex-col min-h-screen">
+			<!-- Cabeçalho -->
+			<header class="border-b border-gray-200 sticky top-0 bg-white z-50">
+				<nav
+					class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
+				>
+					<!-- Logo -->
+					<a href="index.html" class="flex items-center">
+						<img src="img/logo.png" alt="UAI PDV" class="h-10" />
+					</a>
+
+					<!-- Navegação (Desktop) -->
+					<div class="hidden md:flex space-x-6">
+						<a
+							href="index.html"
+							class="font-medium text-brand-blue"
+							data-key="navHome"
+						></a>
+						<a
+							href="solucoes.html"
+							class="font-medium text-gray-600 hover:text-gray-900"
+							data-key="navSolutions"
+						></a>
+						<a
+							href="precos.html"
+							class="font-medium text-gray-600 hover:text-gray-900"
+							data-key="navPricing"
+						></a>
+						<a
+							href="contato.html"
+							class="font-medium text-gray-600 hover:text-gray-900"
+							data-key="navContact"
+						></a>
+					</div>
+
+					<!-- Botão CTA -->
+					<a
+						href="contato.html"
+						class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-brand-blue hover:bg-brand-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue"
+						data-key="navCta"
+					>
+					</a>
+
+					<!-- Menu Mobile (placeholder) -->
+					<div class="md:hidden">
+						<button class="text-gray-900">
+							<svg
+								class="w-6 h-6"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M4 6h16M4 12h16m-7 6h7"
+								></path>
+							</svg>
+						</button>
+					</div>
+				</nav>
+			</header>
+
+			<!-- Conteúdo Principal -->
+			<main id="page-content" class="flex-grow">
+				<!-- Seção Hero (Baseada no Slide 1 do Carrossel) -->
+				<section class="py-20 sm:py-32">
+					<div
+						class="container mx-auto px-4 sm:px-6 lg:px-8 text-center"
+					>
+						<h1
+							class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900 max-w-3xl mx-auto"
+							data-key="heroTitle"
+						>
+							Carregando...
+						</h1>
+						<p
+							class="mt-6 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto"
+							data-key="heroSubtitle"
+						>
+							Carregando...
+						</p>
+						<div class="mt-10 flex justify-center gap-x-4">
+							<a
+								href="contato.html"
+								class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-blue hover:bg-brand-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue"
+								data-key="heroCtaPrimary"
+							>
+							</a>
+							<a
+								href="solucoes.html"
+								class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
+								data-key="heroCtaSecondary"
+							>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<!-- Seção de Recursos Hero (Baseada nos outros slides do Carrossel) -->
+				<section class="py-16 container mx-auto px-4 sm:px-6 lg:px-8">
+					<div
+						class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+					>
+						<div>
+							<h3
+								class="text-xl font-semibold text-gray-900"
+								data-key="heroFeature1"
+							></h3>
+							<p
+								class="mt-2 text-gray-600"
+								data-key="heroFeature1Desc"
+							></p>
+						</div>
+						<div>
+							<h3
+								class="text-xl font-semibold text-gray-900"
+								data-key="heroFeature2"
+							></h3>
+							<p
+								class="mt-2 text-gray-600"
+								data-key="heroFeature2Desc"
+							></p>
+						</div>
+						<div>
+							<h3
+								class="text-xl font-semibold text-gray-900"
+								data-key="heroFeature3"
+							></h3>
+							<p
+								class="mt-2 text-gray-600"
+								data-key="heroFeature3Desc"
+							></p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Seção "Videos" -->
+				<section class="py-16 sm:py-24 bg-gray-50">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="text-center">
+							<h2
+								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
+								data-key="videosTitle"
+							></h2>
+						</div>
+						<div
+							class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+						>
+							<!-- Vídeo 1 -->
+							<div
+								class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm"
+							>
+								<div
+									class="aspect-video bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-500"
+								>
+									(Vídeo Placeholder)
+								</div>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="video1Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="video1Desc"
+								></p>
+							</div>
+							<!-- Vídeo 2 -->
+							<div
+								class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm"
+							>
+								<div
+									class="aspect-video bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-500"
+								>
+									(Vídeo Placeholder)
+								</div>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="video2Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="video2Desc"
+								></p>
+							</div>
+							<!-- Vídeo 3 -->
+							<div
+								class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm"
+							>
+								<div
+									class="aspect-video bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-500"
+								>
+									(Vídeo Placeholder)
+								</div>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="video3Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="video3Desc"
+								></p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Seção "Equipamentos" -->
+				<section class="py-16 sm:py-24">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="text-center">
+							<h2
+								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
+								data-key="equipTitle"
+							></h2>
+						</div>
+						<div
+							class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+						>
+							<!-- Equipamento 1 -->
+							<div class="text-center">
+								<div
+									class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-500"
+								>
+									(Imagem)
+								</div>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="equip1Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="equip1Desc"
+								></p>
+							</div>
+							<!-- Equipamento 2 -->
+							<div class="text-center">
+								<div
+									class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-500"
+								>
+									(Imagem)
+								</div>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="equip2Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="equip2Desc"
+								></p>
+							</div>
+							<!-- Equipamento 3 -->
+							<div class="text-center">
+								<div
+									class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-500"
+								>
+									(Imagem)
+								</div>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="equip3Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="equip3Desc"
+								></p>
+							</div>
+							<!-- Equipamento 4 -->
+							<div class="text-center">
+								<div
+									class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-500"
+								>
+									(Imagem)
+								</div>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="equip4Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="equip4Desc"
+								></p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Seção "Segmentos" -->
+				<section class="py-16 sm:py-24 bg-gray-50">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="text-center">
+							<h2
+								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
+								data-key="segmentsTitle"
+							></h2>
+						</div>
+						<div
+							class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"
+						>
+							<!-- Segmento 1 -->
+							<div class="text-center">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="segment1Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="segment1Desc"
+								></p>
+							</div>
+							<!-- Segmento 2 -->
+							<div class="text-center">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="segment2Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="segment2Desc"
+								></p>
+							</div>
+							<!-- Segmento 3 -->
+							<div class="text-center">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="segment3Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="segment3Desc"
+								></p>
+							</div>
+							<!-- Segmento 4 -->
+							<div class="text-center">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="segment4Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="segment4Desc"
+								></p>
+							</div>
+							<!-- Segmento 5 -->
+							<div class="text-center">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="segment5Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="segment5Desc"
+								></p>
+							</div>
+							<!-- Segmento 6 -->
+							<div class="text-center">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="segment6Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="segment6Desc"
+								></p>
+							</div>
+							<!-- Segmento 7 -->
+							<div class="text-center">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="segment7Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="segment7Desc"
+								></p>
+							</div>
+							<!-- Segmento 8 -->
+							<div class="text-center">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="segment8Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="segment8Desc"
+								></p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Seção "Por que UAI PDV?" (Baseada nos 3 Motivos) -->
+				<section class="py-16 sm:py-24">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="text-center">
+							<h2
+								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
+								data-key="whyTitle"
+							></h2>
+							<p
+								class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
+								data-key="whySubtitle"
+							></p>
+						</div>
+						<div
+							class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+						>
+							<!-- Motivo 1: Produção / Offline -->
+							<div
+								class="bg-gray-50 p-6 border border-gray-200 rounded-lg"
+							>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="whyFeature1Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="whyFeature1Desc"
+								></p>
+							</div>
+							<!-- Motivo 2: Gestão Livre / Nuvem -->
+							<div
+								class="bg-gray-50 p-6 border border-gray-200 rounded-lg"
+							>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="whyFeature2Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="whyFeature2Desc"
+								></p>
+							</div>
+							<!-- Motivo 3: Mais Funções -->
+							<div
+								class="bg-gray-50 p-6 border border-gray-200 rounded-lg"
+							>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="whyFeature3Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="whyFeature3Desc"
+								></p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Seção Formulário de Contato -->
+				<section class="py-16 sm:py-24 bg-gray-50">
+					<div
+						class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl"
+					>
+						<div class="text-center">
+							<h2
+								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
+								data-key="formTitle"
+							></h2>
+							<p
+								class="mt-4 text-lg text-gray-600"
+								data-key="formSubtitle"
+							></p>
+						</div>
+						<form action="#" method="POST" class="mt-12 space-y-6">
+							<div>
+								<label
+									for="name"
+									class="block text-sm font-medium text-gray-700"
+									data-key="formNameLabel"
+								></label>
+								<div class="mt-1">
+									<input
+										type="text"
+										name="name"
+										id="name"
+										autocomplete="name"
+										class="py-3 px-4 block w-full shadow-sm border-gray-300 rounded-md focus:ring-brand-blue focus:border-brand-blue"
+									/>
+								</div>
+							</div>
+							<div>
+								<label
+									for="email"
+									class="block text-sm font-medium text-gray-700"
+									data-key="formEmailLabel"
+								></label>
+								<div class="mt-1">
+									<input
+										id="email"
+										name="email"
+										type="email"
+										autocomplete="email"
+										class="py-3 px-4 block w-full shadow-sm border-gray-300 rounded-md focus:ring-brand-blue focus:border-brand-blue"
+									/>
+								</div>
+							</div>
+							<div>
+								<label
+									for="message"
+									class="block text-sm font-medium text-gray-700"
+									data-key="formMessageLabel"
+								></label>
+								<div class="mt-1">
+									<textarea
+										id="message"
+										name="message"
+										rows="4"
+										class="py-3 px-4 block w-full shadow-sm border-gray-300 rounded-md focus:ring-brand-blue focus:border-brand-blue"
+									></textarea>
+								</div>
+							</div>
+							<div>
+								<button
+									type="submit"
+									class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-brand-blue hover:bg-brand-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue"
+									data-key="formSubmitButton"
+								></button>
+							</div>
+						</form>
+					</div>
+				</section>
+
+				<!-- Seção Módulos (Financeiro, Estoque, Fiscal) -->
+				<section class="py-16 sm:py-24">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="text-center">
+							<h2
+								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
+								data-key="modulesTitle"
+							></h2>
+						</div>
+						<div
+							class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+						>
+							<!-- Módulo 1: Financeiro -->
+							<div class="text-center">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="module1Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="module1Desc"
+								></p>
+							</div>
+							<!-- Módulo 2: Estoque -->
+							<div class="text-center">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="module2Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="module2Desc"
+								></p>
+							</div>
+							<!-- Módulo 3: Fiscal -->
+							<div class="text-center">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="module3Title"
+								></h3>
+								<p
+									class="mt-2 text-base text-gray-600"
+									data-key="module3Desc"
+								></p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Seção "Gestão em Nuvem" -->
+				<section class="py-16 sm:py-24 bg-gray-900 text-white">
+					<div
+						class="container mx-auto px-4 sm:px-6 lg:px-8 text-center"
+					>
+						<h2
+							class="text-3xl sm:text-4xl font-bold tracking-tight"
+							data-key="cloudTitle"
+						></h2>
+						<p
+							class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto"
+							data-key="cloudText"
+						></p>
+						<a
+							href="solucoes.html"
+							class="mt-8 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-gray-900 bg-white hover:bg-gray-100"
+							data-key="heroCtaSecondary"
+						>
+						</a>
+					</div>
+				</section>
+
+				<!-- Seção Prova Social (Counters) -->
+				<section class="bg-brand-blue text-white">
+					<div
+						class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center"
+					>
+						<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+							<div>
+								<span
+									class="block text-5xl font-bold"
+									data-key="socialStat1Number"
+								></span>
+								<span
+									class="mt-2 block text-lg"
+									data-key="socialStat1Label"
+								></span>
+							</div>
+							<div>
+								<span
+									class="block text-5xl font-bold"
+									data-key="socialStat2Number"
+								></span>
+								<span
+									class="mt-2 block text-lg"
+									data-key="socialStat2Label"
+								></span>
+							</div>
+							<div>
+								<span
+									class="block text-5xl font-bold"
+									data-key="socialStat3Number"
+								></span>
+								<span
+									class="mt-2 block text-lg"
+									data-key="socialStat3Label"
+								></span>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<!-- Rodapé -->
+			<footer class="border-t border-gray-200">
+				<div
+					class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row justify-between items-center"
+				>
+					<p class="text-sm text-gray-500" data-key="footerText"></p>
+					<div class="flex space-x-4 mt-4 sm:mt-0">
+						<!-- Links de redes sociais (placeholders) -->
+						<a href="#" class="text-gray-400 hover:text-gray-500">
+							<span class="sr-only">Facebook</span>
+							<svg
+								class="w-6 h-6"
+								fill="currentColor"
+								viewBox="0 0 24 24"
+								aria-hidden="true"
+							>
+								<!-- Ícone do Facebook -->
+								<path
+									fill-rule="evenodd"
+									d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+						</a>
+						<a href="#" class="text-gray-400 hover:text-gray-500">
+							<span class="sr-only">Instagram</span>
+							<svg
+								class="w-6 h-6"
+								fill="currentColor"
+								viewBox="0 0 24 24"
+								aria-hidden="true"
+							>
+								<!-- Ícone do Instagram -->
+								<path
+									fill-rule="evenodd"
+									d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Script principal -->
+		<script src="js/app.js"></script>
+	</body>
+</html>
