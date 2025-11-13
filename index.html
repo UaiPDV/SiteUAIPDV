@@ -25,56 +25,197 @@
 			.hover\:bg-brand-blue-dark:hover {
 				background-color: #2563eb;
 			}
+
+			/* Estilos para o Dropdown */
+			.dropdown-menu {
+				display: none; /* Oculto por padrão */
+			}
+			.group:hover .dropdown-menu,
+			.group:focus-within .dropdown-menu {
+				display: block; /* Exibe no hover/focus */
+			}
+
+			/* Garante que as imagens do carrossel não causem "pulo" */
+			#hero-carousel img {
+				min-width: 100%;
+				min-height: 100%;
+				object-fit: cover;
+			}
+
+			/* --- INÍCIO: REQUISIÇÃO 2 - Ocultar Barra de Rolagem --- */
+			/* Esconde a barra de rolagem (Webkit - Chrome, Safari) */
+			::-webkit-scrollbar {
+				width: 0px;
+				height: 0px;
+				background: transparent; /* Opcional */
+			}
+			/* Esconde a barra de rolagem (Firefox) */
+			html {
+				scrollbar-width: none; /* Firefox */
+				-ms-overflow-style: none; /* Internet Explorer 10+ */
+			}
+			/* --- FIM: REQUISIÇÃO 2 --- */
 		</style>
 	</head>
 	<!-- 
-  O ID do body é crucial. O app.js usa isso para saber qual
-  seção do 'content.json' carregar.
-  Para 'index.html', usamos 'home'.
--->
+    O ID do body é crucial. O app.js usa isso para saber qual
+    seção do 'content.json' carregar e quais interações ativar.
+  -->
 	<body id="home" class="bg-white text-gray-900 antialiased">
 		<div class="flex flex-col min-h-screen">
-			<!-- Cabeçalho -->
-			<header class="border-b border-gray-200 sticky top-0 bg-white z-50">
+			<!-- 
+        Cabeçalho 
+        - Alterado para 'fixed'
+        - ID 'main-nav' adicionado para controle via JS
+        - Classes de transição e 'bg-transparent' inicial
+      -->
+			<header
+				id="main-nav"
+				class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out"
+			>
 				<nav
 					class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
 				>
 					<!-- Logo -->
 					<a href="index.html" class="flex items-center">
-						<img src="img/logo.png" alt="UAI PDV" class="h-10" />
+						<!-- Bolinha Branca para destacar a logo transparente -->
+						<div
+							class="bg-white w-12 h-12 rounded-full p-1 shadow-sm flex items-center justify-center border border-gray-200"
+						>
+							<!-- --- INÍCIO: REQUISIÇÃO 1 - Correção Logo Deformada --- -->
+							<img
+								src="img/logo.png"
+								alt="UAI PDV"
+								class="h-full w-full object-contain"
+							/>
+							<!-- --- FIM: REQUISIÇÃO 1 --- -->
+						</div>
 					</a>
 
-					<!-- Navegação (Desktop) -->
-					<div class="hidden md:flex space-x-6">
+					<!-- Navegação (Desktop) - ATUALIZADA -->
+					<div class="hidden md:flex space-x-6 items-center">
 						<a
 							href="index.html"
 							class="font-medium text-brand-blue"
-							data-key="navHome"
-						></a>
+							data-key="navAutomation"
+							>Automação</a
+						>
+						<a
+							href="mobilidade.html"
+							class="font-medium hover:text-brand-blue"
+							data-key="navMobility"
+							>Mobilidade</a
+						>
 						<a
 							href="solucoes.html"
-							class="font-medium text-gray-600 hover:text-gray-900"
+							class="font-medium hover:text-brand-blue"
 							data-key="navSolutions"
 						></a>
 						<a
-							href="precos.html"
-							class="font-medium text-gray-600 hover:text-gray-900"
-							data-key="navPricing"
-						></a>
-						<a
-							href="contato.html"
-							class="font-medium text-gray-600 hover:text-gray-900"
-							data-key="navContact"
-						></a>
+							href="videos.html"
+							class="font-medium hover:text-brand-blue"
+							data-key="navVideos"
+							>Vídeos</a
+						>
+
+						<!-- Dropdown Acesso -->
+						<div class="relative group">
+							<button
+								class="font-medium hover:text-brand-blue flex items-center"
+							>
+								Acesso
+								<svg
+									class="w-4 h-4 ml-1"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M19 9l-7 7-7-7"
+									></path>
+								</svg>
+							</button>
+							<!-- FIX 2: Removido mt-2, adicionado top-full e pt-2 -->
+							<div
+								class="dropdown-menu absolute left-0 top-full pt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10"
+							>
+								<a
+									href="#"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>Acesso Fiscal</a
+								>
+								<a
+									href="#"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>Webmail</a
+								>
+								<a
+									href="#"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>Acesso Gerencial</a
+								>
+								<a
+									href="contato.html"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>Contato</a
+								>
+							</div>
+						</div>
+
+						<!-- Dropdown Segmentos -->
+						<div class="relative group">
+							<button
+								class="font-medium hover:text-brand-blue flex items-center"
+							>
+								Segmentos
+								<svg
+									class="w-4 h-4 ml-1"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M19 9l-7 7-7-7"
+									></path>
+								</svg>
+							</button>
+							<!-- FIX 2: Removido mt-2, adicionado top-full e pt-2 -->
+							<div
+								class="dropdown-menu absolute left-0 top-full pt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10"
+							>
+								<a
+									href="#"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>Bar e Restaurante</a
+								>
+								<a
+									href="#"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>Distribuidora</a
+								>
+								<a
+									href="#"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>Hortifruti</a
+								>
+								<a
+									href="#"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>Eventos e Festa</a
+								>
+							</div>
+						</div>
 					</div>
 
-					<!-- Botão CTA -->
-					<a
-						href="contato.html"
-						class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-brand-blue hover:bg-brand-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue"
-						data-key="navCta"
-					>
-					</a>
+					<!-- Botão CTA (Removido) -->
 
 					<!-- Menu Mobile (placeholder) -->
 					<div class="md:hidden">
@@ -100,20 +241,38 @@
 
 			<!-- Conteúdo Principal -->
 			<main id="page-content" class="flex-grow">
-				<!-- Seção Hero (Baseada no Slide 1 do Carrossel) -->
-				<section class="py-20 sm:py-32">
+				<!-- 
+          Seção Hero 
+        -->
+				<section
+					class="relative h-screen w-full flex items-center justify-center text-center overflow-hidden"
+				>
+					<!-- Contêiner do Carrossel de Fundo -->
 					<div
-						class="container mx-auto px-4 sm:px-6 lg:px-8 text-center"
+						id="hero-carousel"
+						class="absolute top-0 left-0 w-full h-full z-0"
 					>
+						<!-- Imagens serão injetadas pelo app.js -->
+						<!-- Overlay escuro para melhor legibilidade do texto -->
+						<div
+							class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"
+						></div>
+					</div>
+
+					<!-- Conteúdo de Texto (sobre o carrossel) -->
+					<div
+						class="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-white"
+					>
+						<!-- FIX 3: Fontes maiores, uppercase, transition e IDs -->
 						<h1
-							class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900 max-w-3xl mx-auto"
-							data-key="heroTitle"
+							id="hero-title"
+							class="uppercase text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight max-w-3xl mx-auto transition-opacity duration-500 ease-in-out"
 						>
 							Carregando...
 						</h1>
 						<p
-							class="mt-6 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto"
-							data-key="heroSubtitle"
+							id="hero-subtitle"
+							class="mt-6 text-xl sm:text-2xl max-w-2xl mx-auto transition-opacity duration-500 ease-in-out"
 						>
 							Carregando...
 						</p>
@@ -126,53 +285,25 @@
 							</a>
 							<a
 								href="solucoes.html"
-								class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
+								class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md shadow-sm text-gray-900 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
 								data-key="heroCtaSecondary"
 							>
 							</a>
 						</div>
 					</div>
-				</section>
 
-				<!-- Seção de Recursos Hero (Baseada nos outros slides do Carrossel) -->
-				<section class="py-16 container mx-auto px-4 sm:px-6 lg:px-8">
+					<!-- FIX 5: Indicadores de Slide -->
 					<div
-						class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+						id="hero-indicators"
+						class="absolute bottom-10 left-1/2 -translate-x-1/2 flex space-x-3 z-20"
 					>
-						<div>
-							<h3
-								class="text-xl font-semibold text-gray-900"
-								data-key="heroFeature1"
-							></h3>
-							<p
-								class="mt-2 text-gray-600"
-								data-key="heroFeature1Desc"
-							></p>
-						</div>
-						<div>
-							<h3
-								class="text-xl font-semibold text-gray-900"
-								data-key="heroFeature2"
-							></h3>
-							<p
-								class="mt-2 text-gray-600"
-								data-key="heroFeature2Desc"
-							></p>
-						</div>
-						<div>
-							<h3
-								class="text-xl font-semibold text-gray-900"
-								data-key="heroFeature3"
-							></h3>
-							<p
-								class="mt-2 text-gray-600"
-								data-key="heroFeature3Desc"
-							></p>
-						</div>
+						<!-- Indicadores serão injetados pelo app.js -->
 					</div>
 				</section>
 
-				<!-- Seção "Videos" -->
+				<!-- FIX 6: Seção de Recursos Hero REMOVIDA -->
+
+				<!-- --- INÍCIO: REQUISIÇÃO 3 - Seção Carrossel de Vídeos --- -->
 				<section class="py-16 sm:py-24 bg-gray-50">
 					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 						<div class="text-center">
@@ -181,67 +312,287 @@
 								data-key="videosTitle"
 							></h2>
 						</div>
+
+						<!-- Contêiner do Carrossel (overflow-x-hidden para esconder o scroll) -->
 						<div
-							class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+							id="video-carousel-container"
+							class="relative overflow-x-hidden mt-16"
 						>
-							<!-- Vídeo 1 -->
+							<!-- Track do Carrossel (flex e transição) -->
 							<div
-								class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm"
+								id="video-carousel-track"
+								class="flex transition-transform duration-500 ease-in-out"
 							>
+								<!-- Slide 1: A UAI PDV -->
 								<div
-									class="aspect-video bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-500"
+									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
 								>
-									(Vídeo Placeholder)
+									<div
+										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
+									>
+										<div
+											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
+										>
+											<iframe
+												class="w-full h-full"
+												src="https://www.youtube.com/embed/xRYJH9yTyEQ"
+												title="YouTube video player"
+												frameborder="0"
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowfullscreen
+											></iframe>
+										</div>
+										<h3
+											class="text-xl font-semibold text-gray-900"
+										>
+											A UAI PDV
+										</h3>
+										<p class="mt-2 text-base text-gray-600">
+											Resumo das principais funções e
+											equipamentos homologados.
+										</p>
+									</div>
 								</div>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="video1Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="video1Desc"
-								></p>
+
+								<!-- Slide 2: Solução com balança (Placeholder) -->
+								<div
+									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
+								>
+									<div
+										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
+									>
+										<div
+											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
+										>
+											<iframe
+												class="w-full h-full"
+												src="https://www.youtube.com/embed/g0BNjMbm59Q"
+												title="YouTube video player"
+												frameborder="0"
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowfullscreen
+											></iframe>
+										</div>
+										<h3
+											class="text-xl font-semibold text-gray-900"
+										>
+											Solução com balança
+										</h3>
+										<p class="mt-2 text-base text-gray-600">
+											Balança integrada com PDV Elgin M10,
+											comunicação realizada com 1 toque na
+											tela.
+										</p>
+									</div>
+								</div>
+
+								<!-- Slide 3: Evento - P2 Android (Placeholder) -->
+								<div
+									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
+								>
+									<div
+										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
+									>
+										<div
+											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
+										>
+											<iframe
+												class="w-full h-full"
+												src="https://www.youtube.com/embed/xRYJH9yTyEQ"
+												title="YouTube video player"
+												frameborder="0"
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowfullscreen
+											></iframe>
+										</div>
+										<h3
+											class="text-xl font-semibold text-gray-900"
+										>
+											Evento - P2 Android
+										</h3>
+										<p class="mt-2 text-base text-gray-600">
+											POS Stone homologado para emissão de
+											fichas e aceita cartões débito,
+											crédito e PIX.
+										</p>
+									</div>
+								</div>
+
+								<!-- Slide 4: Validador de fichas (Placeholder) -->
+								<div
+									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
+								>
+									<div
+										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
+									>
+										<div
+											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
+										>
+											<iframe
+												class="w-full h-full"
+												src="https://www.youtube.com/embed/xRYJH9yTyEQ"
+												title="YouTube video player"
+												frameborder="0"
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowfullscreen
+											></iframe>
+										</div>
+										<h3
+											class="text-xl font-semibold text-gray-900"
+										>
+											Validador de fichas
+										</h3>
+										<p class="mt-2 text-base text-gray-600">
+											Celular android com app de verificar
+											a veracidade da ficha. Leitura
+											realizada pela câmera do celular.
+										</p>
+									</div>
+								</div>
+
+								<!-- Slide 5: PDV Completo -->
+								<div
+									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
+								>
+									<div
+										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
+									>
+										<div
+											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
+										>
+											<iframe
+												class="w-full h-full"
+												src="https://www.youtube.com/embed/-KHVql3nuhQ"
+												title="YouTube video player"
+												frameborder="0"
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowfullscreen
+											></iframe>
+										</div>
+										<h3
+											class="text-xl font-semibold text-gray-900"
+										>
+											PDV Completo
+										</h3>
+										<p class="mt-2 text-base text-gray-600">
+											PDV Elgin integrado com balança e
+											leitor de código de barras.
+										</p>
+									</div>
+								</div>
+
+								<!-- Slide 6: Tablet com Suporte -->
+								<div
+									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
+								>
+									<div
+										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
+									>
+										<div
+											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
+										>
+											<iframe
+												class="w-full h-full"
+												src="https://www.youtube.com/embed/g0BNjMbm59Q"
+												title="YouTube video player"
+												frameborder="0"
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowfullscreen
+											></iframe>
+										</div>
+										<h3
+											class="text-xl font-semibold text-gray-900"
+										>
+											Tablet com Suporte
+										</h3>
+										<p class="mt-2 text-base text-gray-600">
+											Tablet 7" com suporte e impressora
+											bluetooth de 48mm
+										</p>
+									</div>
+								</div>
+
+								<!-- Slide 7: Celular e Impressora -->
+								<div
+									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
+								>
+									<div
+										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
+									>
+										<div
+											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
+										>
+											<iframe
+												class="w-full h-full"
+												src="https://www.youtube.com/embed/2NPUANiBTkA"
+												title="YouTube video player"
+												frameborder="0"
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowfullscreen
+											></iframe>
+										</div>
+										<h3
+											class="text-xl font-semibold text-gray-900"
+										>
+											Celular e Impressora
+										</h3>
+										<p class="mt-2 text-base text-gray-600">
+											Celular e impressora bluetooth,
+											realizando impressão de vendas
+											simples e rápida.
+										</p>
+									</div>
+								</div>
 							</div>
-							<!-- Vídeo 2 -->
-							<div
-								class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm"
+						</div>
+
+						<!-- Controles do Carrossel -->
+						<div class="flex justify-center mt-8 space-x-4">
+							<button
+								id="video-prev"
+								class="bg-white p-2 rounded-full shadow-md text-brand-blue hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
 							>
-								<div
-									class="aspect-video bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-500"
+								<svg
+									class="w-6 h-6"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg"
 								>
-									(Vídeo Placeholder)
-								</div>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="video2Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="video2Desc"
-								></p>
-							</div>
-							<!-- Vídeo 3 -->
-							<div
-								class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm"
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M15 19l-7-7 7-7"
+									></path>
+								</svg>
+							</button>
+							<button
+								id="video-next"
+								class="bg-white p-2 rounded-full shadow-md text-brand-blue hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
 							>
-								<div
-									class="aspect-video bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-500"
+								<svg
+									class="w-6 h-6"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg"
 								>
-									(Vídeo Placeholder)
-								</div>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="video3Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="video3Desc"
-								></p>
-							</div>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M9 5l7 7-7 7"
+									></path>
+								</svg>
+							</button>
 						</div>
 					</div>
 				</section>
+				<!-- --- FIM: REQUISIÇÃO 3 --- -->
 
+				<!-- O restante do conteúdo da 'main' (Equipamentos, Segmentos, etc.) permanece igual -->
+				<!-- ... (seções omitidas por brevidade) ... -->
 				<!-- Seção "Equipamentos" -->
 				<section class="py-16 sm:py-24">
 					<div class="container mx-auto px-4 sm:px-6 lg:px-8">

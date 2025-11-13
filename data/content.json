@@ -10,17 +10,30 @@
 	},
 	"home": {
 		"pageTitle": "UAI PDV - O Ponto de Venda Completo para seu Negócio",
-		"heroTitle": "PDV Completo",
-		"heroSubtitle": "A solução ideal com funções de fundo de caixa, sangria e vendas, pronta para modernizar seu negócio.",
+		"heroSlides": [
+			{
+				"title": "PDV Completo",
+				"subtitle": "Funções de Fundo de Caixa, Sangria e Vendas",
+				"image": "https://blog.connectplug.com.br/wp-content/uploads/2022/10/pdv-_.png"
+			},
+			{
+				"title": "Cartões de Débito, Crédito e NFC-e",
+				"subtitle": "Sistema integrado ao seu Ponto de Venda",
+				"image": "https://solidcon.com.br/wp-content/uploads/2025/05/SISTEMA-PDVblog-scaled.webp"
+			},
+			{
+				"title": "Funções Inteligentes",
+				"subtitle": "Para gerenciar seu negócio é necessário integração com automação",
+				"image": "https://tassistemas.com.br/wp-content/uploads/2019/11/pos-650x310.jpg"
+			},
+			{
+				"title": "Gestão Completa em Nuvem",
+				"subtitle": "Gestão Financeira X Controle de Estoque X Conciliação de Cartões",
+				"image": "https://marketup.com/wp-content/uploads/2022/04/Finalizac%CC%A7a%CC%83o-de-Vendas.png"
+			}
+		],
 		"heroCtaPrimary": "Comece Agora",
 		"heroCtaSecondary": "Ver Soluções",
-		"heroFeature1": "Gestão Completa em Nuvem",
-		"heroFeature1Desc": "Financeiro, Estoque e Conciliação de Cartões em um só lugar.",
-		"heroFeature2": "Meios de Pagamento",
-		"heroFeature2Desc": "Aceite Débito, Crédito e PIX com emissão de NFC-e integrada.",
-		"heroFeature3": "Funções Inteligentes",
-		"heroFeature3Desc": "Tudo o que você precisa para gerenciar seu negócio com automação.",
-
 		"videosTitle": "Veja em Ação",
 		"video1Title": "A UAI PDV",
 		"video1Desc": "Resumo das principais funções e equipamentos homologados.",
@@ -28,7 +41,6 @@
 		"video2Desc": "Balança integrada com PDV M10, comunicação com 1 toque na tela.",
 		"video3Title": "Evento - P2 Android",
 		"video3Desc": "POS homologado para emissão de fichas e pagamentos (crédito, débito e PIX).",
-
 		"equipTitle": "Equipamentos Homologados",
 		"equip1Title": "PDV Elgin M10",
 		"equip1Desc": "Impressora embutida, Tela 10”, Android, Wi-Fi e Funções Full.",
@@ -38,7 +50,6 @@
 		"equip3Desc": "Solução para caixa volante, vendas e emissão de fichas com cartão.",
 		"equip4Title": "Uai Print TS 7",
 		"equip4Desc": "Impressora embutida, Tela 8”, Android 7.1, Wi-Fi e Funções Full.",
-
 		"segmentsTitle": "Perfeito para o seu Segmento",
 		"segment1Title": "Food Truck",
 		"segment1Desc": "Gerar Senha de atendimento e cupom no formato gerencial ou fiscal.",
@@ -56,7 +67,6 @@
 		"segment7Desc": "Caixa Volante, Fixo, Auto-Atendimento e Validador de fichas.",
 		"segment8Title": "Gestão de Serviços",
 		"segment8Desc": "Emissão de notas fiscais de serviços e controle de agenda.",
-
 		"whyTitle": "Por que adquirir o sistema UAI PDV?",
 		"whySubtitle": "Focamos no que realmente importa: estabilidade, controle e funcionalidade.",
 		"whyFeature1Title": "Produção (Modo Offline)",
@@ -65,14 +75,12 @@
 		"whyFeature2Desc": "A gestão dos colaboradores permite medir a produção, rastreabilidade e segurança. Tenha mobilidade para gerir de onde estiver.",
 		"whyFeature3Title": "Mais Funções",
 		"whyFeature3Desc": "Controle de consumo de funcionários e clientes no formato mensalista, permitindo expandir as vendas e consultar o extrato.",
-
 		"formTitle": "Ligamos para você!",
 		"formSubtitle": "Deixe sua dúvida ou telefone que entraremos em contato.",
 		"formNameLabel": "Nome ou Apelido",
 		"formEmailLabel": "Telefone (com DDD)",
 		"formMessageLabel": "Sua dúvida?",
 		"formSubmitButton": "Enviar Mensagem",
-
 		"modulesTitle": "Gestão Completa",
 		"module1Title": "Financeiro",
 		"module1Desc": "Pode contar com plano de contas, contas a pagar e movimentação bancária.",
@@ -80,10 +88,8 @@
 		"module2Desc": "Controle de estoque é fundamental para garantir o lucro do seu negócio.",
 		"module3Title": "Fiscal",
 		"module3Desc": "Módulo fiscal no formato NFC-e e NF-e. Envio automático de XML e consulta ao Sintegra.",
-
 		"cloudTitle": "Gestão COMPLETA em nuvem.",
 		"cloudText": "Segurança e mobilidade na sua gestão. Seja pelo celular, tablet ou computador, tenha o controle onde você estiver.",
-
 		"socialStat1Number": "1",
 		"socialStat1Label": "Dia para Startar",
 		"socialStat2Number": "+680",
