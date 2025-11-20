@@ -1,10 +1,11 @@
 (function () {
 	const routes = {
 		home: 'home.html',
-		solutions: 'solucoes.html',
-		pricing: 'precos.html',
-		contact: 'contato.html',
 		mobilidade: 'mobilidade.html',
+		solutions: 'solucoes.html',
+		videos: 'videos.html',
+		acesso: 'acesso.html',
+		segmentos: 'segmentos/index.html',
 	};
 
 	const defaultRoute = 'home';

@@ -2,9 +2,11 @@
 	"common": {
 		"pageTitle": "UAI PDV - Automação Comercial",
 		"navHome": "Início",
+		"navMobilidade": "Mobilidade",
 		"navSolutions": "Soluções",
-		"navPricing": "Preços",
-		"navContact": "Contato",
+		"navVideos": "Vídeos",
+		"navAccess": "Acesso",
+		"navSegments": "Segmentos",
 		"navCta": "Fale Conosco",
 		"footerText": "© 2025 UAI PDV. Todos os direitos reservados."
 	},
@@ -317,31 +319,13 @@
 		"trendsCta": "Quero evoluir agora",
 		"trendsLink": "https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
 	},
-	"pricing": {
-		"pageTitle": "Preços - UAI PDV",
-		"title": "Planos que cabem no seu bolso",
-		"subtitle": "Escolha o plano ideal para o tamanho da sua empresa e pague apenas pelo que usar.",
-		"plan1Name": "Plano Essencial",
-		"plan1Price": "R$ 79",
-		"plan1Freq": "/mês",
-		"plan1Cta": "Começar com Essencial",
-		"plan2Name": "Plano Profissional",
-		"plan2Price": "R$ 149",
-		"plan2Freq": "/mês",
-		"plan2Badge": "Mais Popular",
-		"plan2Cta": "Começar com Pro",
-		"plan3Name": "Plano Empresarial",
-		"plan3Price": "Sob Consulta",
-		"plan3Freq": "Personalizado",
-		"plan3Cta": "Falar com Vendas"
+	"videos": {
+		"pageTitle": "Vídeos - UAI PDV"
 	},
-	"contact": {
-		"pageTitle": "Contato - UAI PDV",
-		"title": "Fale Conosco",
-		"subtitle": "Estamos prontos para ajudar a transformar seu negócio. Envie sua mensagem e retornaremos em breve.",
-		"formNameLabel": "Nome Completo",
-		"formEmailLabel": "Seu melhor e-mail",
-		"formMessageLabel": "Mensagem",
-		"formSubmitButton": "Enviar Mensagem"
+	"acesso": {
+		"pageTitle": "Acesso - UAI PDV"
+	},
+	"segmentos": {
+		"pageTitle": "Segmentos - UAI PDV"
 	}
 }

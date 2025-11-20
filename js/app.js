@@ -863,8 +863,9 @@ const SiteApp = (() => {
 	const PAGE_ALIASES = {
 		solucoes: 'solutions',
 		mais: 'solutions',
-		precos: 'pricing',
-		contato: 'contact',
+		videos: 'videos',
+		acesso: 'acesso',
+		segmentos: 'segmentos',
 	};
 
 	const normalizePageKey = (key = 'home') => PAGE_ALIASES[key] || key;
