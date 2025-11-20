@@ -4,18 +4,15 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title data-key="pageTitle">UAI PDV - Automação Comercial</title>
-		<!-- Tailwind CSS CDN -->
 		<script src="https://cdn.tailwindcss.com"></script>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
 		<style>
-			/* Estilo para a fonte Inter */
 			body {
 				font-family: 'Inter', sans-serif;
 			}
-			/* Cor azul claro personalizada do Tailwind */
 			.bg-brand-blue {
 				background-color: #3b82f6;
 			}
@@ -25,50 +22,70 @@
 			.hover\:bg-brand-blue-dark:hover {
 				background-color: #2563eb;
 			}
-
-			/* Estilos para o Dropdown */
-			.dropdown-menu {
-				display: none; /* Oculto por padrão */
+			.nav-dropdown .dropdown-menu {
+				display: none;
 			}
-			.group:hover .dropdown-menu,
-			.group:focus-within .dropdown-menu {
-				display: block; /* Exibe no hover/focus */
+			.nav-dropdown.dropdown-open .dropdown-menu {
+				display: block;
 			}
-
-			/* Garante que as imagens do carrossel não causem "pulo" */
 			#hero-carousel img {
 				min-width: 100%;
 				min-height: 100%;
 				object-fit: cover;
 			}
-
-			/* --- INÍCIO: REQUISIÇÃO 2 - Ocultar Barra de Rolagem --- */
-			/* Esconde a barra de rolagem (Webkit - Chrome, Safari) */
 			::-webkit-scrollbar {
 				width: 0px;
 				height: 0px;
-				background: transparent; /* Opcional */
+				background: transparent;
 			}
-			/* Esconde a barra de rolagem (Firefox) */
 			html {
-				scrollbar-width: none; /* Firefox */
-				-ms-overflow-style: none; /* Internet Explorer 10+ */
+				scrollbar-width: none;
+				-ms-overflow-style: none;
 			}
-			/* --- FIM: REQUISIÇÃO 2 --- */
+			.animate-on-scroll {
+				opacity: 0;
+				transform: translateY(30px);
+				transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+			}
+			.animate-on-scroll.is-visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+			.delay-100 {
+				transition-delay: 100ms;
+			}
+			.delay-200 {
+				transition-delay: 200ms;
+			}
+			.delay-300 {
+				transition-delay: 300ms;
+			}
+			.delay-400 {
+				transition-delay: 400ms;
+			}
+			.mobile-nav-panel {
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.2s ease-in-out;
+			}
+			.mobile-nav-panel.mobile-nav-open {
+				opacity: 1;
+				pointer-events: auto;
+			}
+			.mobile-nav-panel .mobile-nav-drawer {
+				transform: translateX(100%);
+				transition: transform 0.25s ease;
+			}
+			.mobile-nav-panel.mobile-nav-open .mobile-nav-drawer {
+				transform: translateX(0);
+			}
+			body.mobile-nav-open {
+				overflow: hidden;
+			}
 		</style>
 	</head>
-	<!-- 
-    O ID do body é crucial. O app.js usa isso para saber qual
-    seção do 'content.json' carregar e quais interações ativar.
-  -->
-	<body id="home" class="bg-white text-gray-900 antialiased">
+	<body id="app-shell" class="bg-white text-gray-900 antialiased">
 		<div class="flex flex-col min-h-screen">
-			<!-- 
-        Cabeçalho 
-        - Alterado para 'fixed'
-        - ID 'main-nav' adicionado para controle via JS
-        - Classes de transição e 'bg-transparent' inicial
-      -->
 			<header
 				id="main-nav"
 				class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out"
@@ -76,52 +93,66 @@
 				<nav
 					class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
 				>
-					<!-- Logo -->
-					<a href="index.html" class="flex items-center">
-						<!-- Bolinha Branca para destacar a logo transparente -->
+					<a href="#" class="flex items-center" data-route="home">
 						<div
 							class="bg-white w-12 h-12 rounded-full p-1 shadow-sm flex items-center justify-center border border-gray-200"
 						>
-							<!-- --- INÍCIO: REQUISIÇÃO 1 - Correção Logo Deformada --- -->
 							<img
 								src="img/logo.png"
 								alt="UAI PDV"
 								class="h-full w-full object-contain"
 							/>
-							<!-- --- FIM: REQUISIÇÃO 1 --- -->
 						</div>
 					</a>
 
-					<!-- Navegação (Desktop) - ATUALIZADA -->
 					<div class="hidden md:flex space-x-6 items-center">
 						<a
-							href="index.html"
-							class="font-medium text-brand-blue"
-							data-key="navAutomation"
-							>Automação</a
+							href="#"
+							class="font-medium text-white transition-colors"
+							data-route="home"
+							data-nav-link
+							data-key="navHome"
+							>Início</a
 						>
 						<a
-							href="mobilidade.html"
-							class="font-medium hover:text-brand-blue"
-							data-key="navMobility"
+							href="#"
+							class="font-medium text-white transition-colors"
+							data-route="solutions"
+							data-nav-link
+							data-key="navSolutions"
+							>Soluções</a
+						>
+						<a
+							href="#"
+							class="font-medium text-white transition-colors"
+							data-route="pricing"
+							data-nav-link
+							data-key="navPricing"
+							>Preços</a
+						>
+						<a
+							href="#"
+							class="font-medium text-white transition-colors"
+							data-route="mobilidade"
+							data-nav-link
 							>Mobilidade</a
 						>
 						<a
-							href="solucoes.html"
-							class="font-medium hover:text-brand-blue"
-							data-key="navSolutions"
-						></a>
-						<a
-							href="videos.html"
-							class="font-medium hover:text-brand-blue"
-							data-key="navVideos"
-							>Vídeos</a
+							href="#"
+							class="font-medium text-white transition-colors"
+							data-route="contact"
+							data-nav-link
+							data-key="navContact"
+							>Contato</a
 						>
 
-						<!-- Dropdown Acesso -->
-						<div class="relative group">
+						<div class="relative nav-dropdown">
 							<button
-								class="font-medium hover:text-brand-blue flex items-center"
+								type="button"
+								class="font-medium text-white transition-colors flex items-center"
+								data-dropdown-trigger
+								data-nav-link
+								aria-expanded="false"
 							>
 								Acesso
 								<svg
@@ -139,7 +170,6 @@
 									></path>
 								</svg>
 							</button>
-							<!-- FIX 2: Removido mt-2, adicionado top-full e pt-2 -->
 							<div
 								class="dropdown-menu absolute left-0 top-full pt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10"
 							>
@@ -159,17 +189,21 @@
 									>Acesso Gerencial</a
 								>
 								<a
-									href="contato.html"
+									href="#"
 									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									data-route="contact"
 									>Contato</a
 								>
 							</div>
 						</div>
 
-						<!-- Dropdown Segmentos -->
-						<div class="relative group">
+						<div class="relative nav-dropdown">
 							<button
-								class="font-medium hover:text-brand-blue flex items-center"
+								type="button"
+								class="font-medium text-white transition-colors flex items-center"
+								data-dropdown-trigger
+								data-nav-link
+								aria-expanded="false"
 							>
 								Segmentos
 								<svg
@@ -187,7 +221,6 @@
 									></path>
 								</svg>
 							</button>
-							<!-- FIX 2: Removido mt-2, adicionado top-full e pt-2 -->
 							<div
 								class="dropdown-menu absolute left-0 top-full pt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10"
 							>
@@ -215,11 +248,15 @@
 						</div>
 					</div>
 
-					<!-- Botão CTA (Removido) -->
-
-					<!-- Menu Mobile (placeholder) -->
 					<div class="md:hidden">
-						<button class="text-gray-900">
+						<button
+							class="text-white transition-colors"
+							data-nav-link
+							data-mobile-nav-toggle
+							aria-controls="mobile-nav-panel"
+							aria-expanded="false"
+							aria-label="Abrir menu"
+						>
 							<svg
 								class="w-6 h-6"
 								fill="none"
@@ -239,797 +276,14 @@
 				</nav>
 			</header>
 
-			<!-- Conteúdo Principal -->
-			<main id="page-content" class="flex-grow">
-				<!-- 
-          Seção Hero 
-        -->
-				<section
-					class="relative h-screen w-full flex items-center justify-center text-center overflow-hidden"
-				>
-					<!-- Contêiner do Carrossel de Fundo -->
-					<div
-						id="hero-carousel"
-						class="absolute top-0 left-0 w-full h-full z-0"
-					>
-						<!-- Imagens serão injetadas pelo app.js -->
-						<!-- Overlay escuro para melhor legibilidade do texto -->
-						<div
-							class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"
-						></div>
-					</div>
+			<main id="page-content" class="flex-grow"></main>
 
-					<!-- Conteúdo de Texto (sobre o carrossel) -->
-					<div
-						class="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-white"
-					>
-						<!-- FIX 3: Fontes maiores, uppercase, transition e IDs -->
-						<h1
-							id="hero-title"
-							class="uppercase text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight max-w-3xl mx-auto transition-opacity duration-500 ease-in-out"
-						>
-							Carregando...
-						</h1>
-						<p
-							id="hero-subtitle"
-							class="mt-6 text-xl sm:text-2xl max-w-2xl mx-auto transition-opacity duration-500 ease-in-out"
-						>
-							Carregando...
-						</p>
-						<div class="mt-10 flex justify-center gap-x-4">
-							<a
-								href="contato.html"
-								class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-blue hover:bg-brand-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue"
-								data-key="heroCtaPrimary"
-							>
-							</a>
-							<a
-								href="solucoes.html"
-								class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md shadow-sm text-gray-900 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
-								data-key="heroCtaSecondary"
-							>
-							</a>
-						</div>
-					</div>
-
-					<!-- FIX 5: Indicadores de Slide -->
-					<div
-						id="hero-indicators"
-						class="absolute bottom-10 left-1/2 -translate-x-1/2 flex space-x-3 z-20"
-					>
-						<!-- Indicadores serão injetados pelo app.js -->
-					</div>
-				</section>
-
-				<!-- FIX 6: Seção de Recursos Hero REMOVIDA -->
-
-				<!-- --- INÍCIO: REQUISIÇÃO 3 - Seção Carrossel de Vídeos --- -->
-				<section class="py-16 sm:py-24 bg-gray-50">
-					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-						<div class="text-center">
-							<h2
-								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
-								data-key="videosTitle"
-							></h2>
-						</div>
-
-						<!-- Contêiner do Carrossel (overflow-x-hidden para esconder o scroll) -->
-						<div
-							id="video-carousel-container"
-							class="relative overflow-x-hidden mt-16"
-						>
-							<!-- Track do Carrossel (flex e transição) -->
-							<div
-								id="video-carousel-track"
-								class="flex transition-transform duration-500 ease-in-out"
-							>
-								<!-- Slide 1: A UAI PDV -->
-								<div
-									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
-								>
-									<div
-										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
-									>
-										<div
-											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
-										>
-											<iframe
-												class="w-full h-full"
-												src="https://www.youtube.com/embed/xRYJH9yTyEQ"
-												title="YouTube video player"
-												frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-												allowfullscreen
-											></iframe>
-										</div>
-										<h3
-											class="text-xl font-semibold text-gray-900"
-										>
-											A UAI PDV
-										</h3>
-										<p class="mt-2 text-base text-gray-600">
-											Resumo das principais funções e
-											equipamentos homologados.
-										</p>
-									</div>
-								</div>
-
-								<!-- Slide 2: Solução com balança (Placeholder) -->
-								<div
-									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
-								>
-									<div
-										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
-									>
-										<div
-											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
-										>
-											<iframe
-												class="w-full h-full"
-												src="https://www.youtube.com/embed/g0BNjMbm59Q"
-												title="YouTube video player"
-												frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-												allowfullscreen
-											></iframe>
-										</div>
-										<h3
-											class="text-xl font-semibold text-gray-900"
-										>
-											Solução com balança
-										</h3>
-										<p class="mt-2 text-base text-gray-600">
-											Balança integrada com PDV Elgin M10,
-											comunicação realizada com 1 toque na
-											tela.
-										</p>
-									</div>
-								</div>
-
-								<!-- Slide 3: Evento - P2 Android (Placeholder) -->
-								<div
-									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
-								>
-									<div
-										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
-									>
-										<div
-											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
-										>
-											<iframe
-												class="w-full h-full"
-												src="https://www.youtube.com/embed/xRYJH9yTyEQ"
-												title="YouTube video player"
-												frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-												allowfullscreen
-											></iframe>
-										</div>
-										<h3
-											class="text-xl font-semibold text-gray-900"
-										>
-											Evento - P2 Android
-										</h3>
-										<p class="mt-2 text-base text-gray-600">
-											POS Stone homologado para emissão de
-											fichas e aceita cartões débito,
-											crédito e PIX.
-										</p>
-									</div>
-								</div>
-
-								<!-- Slide 4: Validador de fichas (Placeholder) -->
-								<div
-									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
-								>
-									<div
-										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
-									>
-										<div
-											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
-										>
-											<iframe
-												class="w-full h-full"
-												src="https://www.youtube.com/embed/xRYJH9yTyEQ"
-												title="YouTube video player"
-												frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-												allowfullscreen
-											></iframe>
-										</div>
-										<h3
-											class="text-xl font-semibold text-gray-900"
-										>
-											Validador de fichas
-										</h3>
-										<p class="mt-2 text-base text-gray-600">
-											Celular android com app de verificar
-											a veracidade da ficha. Leitura
-											realizada pela câmera do celular.
-										</p>
-									</div>
-								</div>
-
-								<!-- Slide 5: PDV Completo -->
-								<div
-									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
-								>
-									<div
-										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
-									>
-										<div
-											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
-										>
-											<iframe
-												class="w-full h-full"
-												src="https://www.youtube.com/embed/-KHVql3nuhQ"
-												title="YouTube video player"
-												frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-												allowfullscreen
-											></iframe>
-										</div>
-										<h3
-											class="text-xl font-semibold text-gray-900"
-										>
-											PDV Completo
-										</h3>
-										<p class="mt-2 text-base text-gray-600">
-											PDV Elgin integrado com balança e
-											leitor de código de barras.
-										</p>
-									</div>
-								</div>
-
-								<!-- Slide 6: Tablet com Suporte -->
-								<div
-									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
-								>
-									<div
-										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
-									>
-										<div
-											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
-										>
-											<iframe
-												class="w-full h-full"
-												src="https://www.youtube.com/embed/g0BNjMbm59Q"
-												title="YouTube video player"
-												frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-												allowfullscreen
-											></iframe>
-										</div>
-										<h3
-											class="text-xl font-semibold text-gray-900"
-										>
-											Tablet com Suporte
-										</h3>
-										<p class="mt-2 text-base text-gray-600">
-											Tablet 7" com suporte e impressora
-											bluetooth de 48mm
-										</p>
-									</div>
-								</div>
-
-								<!-- Slide 7: Celular e Impressora -->
-								<div
-									class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
-								>
-									<div
-										class="bg-white p-6 border border-gray-200 rounded-lg shadow-sm h-full flex flex-col"
-									>
-										<div
-											class="aspect-video bg-gray-200 rounded-md mb-4 overflow-hidden"
-										>
-											<iframe
-												class="w-full h-full"
-												src="https://www.youtube.com/embed/2NPUANiBTkA"
-												title="YouTube video player"
-												frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-												allowfullscreen
-											></iframe>
-										</div>
-										<h3
-											class="text-xl font-semibold text-gray-900"
-										>
-											Celular e Impressora
-										</h3>
-										<p class="mt-2 text-base text-gray-600">
-											Celular e impressora bluetooth,
-											realizando impressão de vendas
-											simples e rápida.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Controles do Carrossel -->
-						<div class="flex justify-center mt-8 space-x-4">
-							<button
-								id="video-prev"
-								class="bg-white p-2 rounded-full shadow-md text-brand-blue hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-							>
-								<svg
-									class="w-6 h-6"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M15 19l-7-7 7-7"
-									></path>
-								</svg>
-							</button>
-							<button
-								id="video-next"
-								class="bg-white p-2 rounded-full shadow-md text-brand-blue hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-							>
-								<svg
-									class="w-6 h-6"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M9 5l7 7-7 7"
-									></path>
-								</svg>
-							</button>
-						</div>
-					</div>
-				</section>
-				<!-- --- FIM: REQUISIÇÃO 3 --- -->
-
-				<!-- O restante do conteúdo da 'main' (Equipamentos, Segmentos, etc.) permanece igual -->
-				<!-- ... (seções omitidas por brevidade) ... -->
-				<!-- Seção "Equipamentos" -->
-				<section class="py-16 sm:py-24">
-					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-						<div class="text-center">
-							<h2
-								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
-								data-key="equipTitle"
-							></h2>
-						</div>
-						<div
-							class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-						>
-							<!-- Equipamento 1 -->
-							<div class="text-center">
-								<div
-									class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-500"
-								>
-									(Imagem)
-								</div>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="equip1Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="equip1Desc"
-								></p>
-							</div>
-							<!-- Equipamento 2 -->
-							<div class="text-center">
-								<div
-									class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-500"
-								>
-									(Imagem)
-								</div>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="equip2Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="equip2Desc"
-								></p>
-							</div>
-							<!-- Equipamento 3 -->
-							<div class="text-center">
-								<div
-									class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-500"
-								>
-									(Imagem)
-								</div>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="equip3Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="equip3Desc"
-								></p>
-							</div>
-							<!-- Equipamento 4 -->
-							<div class="text-center">
-								<div
-									class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-500"
-								>
-									(Imagem)
-								</div>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="equip4Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="equip4Desc"
-								></p>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Seção "Segmentos" -->
-				<section class="py-16 sm:py-24 bg-gray-50">
-					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-						<div class="text-center">
-							<h2
-								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
-								data-key="segmentsTitle"
-							></h2>
-						</div>
-						<div
-							class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"
-						>
-							<!-- Segmento 1 -->
-							<div class="text-center">
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="segment1Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="segment1Desc"
-								></p>
-							</div>
-							<!-- Segmento 2 -->
-							<div class="text-center">
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="segment2Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="segment2Desc"
-								></p>
-							</div>
-							<!-- Segmento 3 -->
-							<div class="text-center">
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="segment3Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="segment3Desc"
-								></p>
-							</div>
-							<!-- Segmento 4 -->
-							<div class="text-center">
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="segment4Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="segment4Desc"
-								></p>
-							</div>
-							<!-- Segmento 5 -->
-							<div class="text-center">
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="segment5Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="segment5Desc"
-								></p>
-							</div>
-							<!-- Segmento 6 -->
-							<div class="text-center">
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="segment6Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="segment6Desc"
-								></p>
-							</div>
-							<!-- Segmento 7 -->
-							<div class="text-center">
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="segment7Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="segment7Desc"
-								></p>
-							</div>
-							<!-- Segmento 8 -->
-							<div class="text-center">
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="segment8Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="segment8Desc"
-								></p>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Seção "Por que UAI PDV?" (Baseada nos 3 Motivos) -->
-				<section class="py-16 sm:py-24">
-					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-						<div class="text-center">
-							<h2
-								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
-								data-key="whyTitle"
-							></h2>
-							<p
-								class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
-								data-key="whySubtitle"
-							></p>
-						</div>
-						<div
-							class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
-						>
-							<!-- Motivo 1: Produção / Offline -->
-							<div
-								class="bg-gray-50 p-6 border border-gray-200 rounded-lg"
-							>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="whyFeature1Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="whyFeature1Desc"
-								></p>
-							</div>
-							<!-- Motivo 2: Gestão Livre / Nuvem -->
-							<div
-								class="bg-gray-50 p-6 border border-gray-200 rounded-lg"
-							>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="whyFeature2Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="whyFeature2Desc"
-								></p>
-							</div>
-							<!-- Motivo 3: Mais Funções -->
-							<div
-								class="bg-gray-50 p-6 border border-gray-200 rounded-lg"
-							>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="whyFeature3Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="whyFeature3Desc"
-								></p>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Seção Formulário de Contato -->
-				<section class="py-16 sm:py-24 bg-gray-50">
-					<div
-						class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl"
-					>
-						<div class="text-center">
-							<h2
-								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
-								data-key="formTitle"
-							></h2>
-							<p
-								class="mt-4 text-lg text-gray-600"
-								data-key="formSubtitle"
-							></p>
-						</div>
-						<form action="#" method="POST" class="mt-12 space-y-6">
-							<div>
-								<label
-									for="name"
-									class="block text-sm font-medium text-gray-700"
-									data-key="formNameLabel"
-								></label>
-								<div class="mt-1">
-									<input
-										type="text"
-										name="name"
-										id="name"
-										autocomplete="name"
-										class="py-3 px-4 block w-full shadow-sm border-gray-300 rounded-md focus:ring-brand-blue focus:border-brand-blue"
-									/>
-								</div>
-							</div>
-							<div>
-								<label
-									for="email"
-									class="block text-sm font-medium text-gray-700"
-									data-key="formEmailLabel"
-								></label>
-								<div class="mt-1">
-									<input
-										id="email"
-										name="email"
-										type="email"
-										autocomplete="email"
-										class="py-3 px-4 block w-full shadow-sm border-gray-300 rounded-md focus:ring-brand-blue focus:border-brand-blue"
-									/>
-								</div>
-							</div>
-							<div>
-								<label
-									for="message"
-									class="block text-sm font-medium text-gray-700"
-									data-key="formMessageLabel"
-								></label>
-								<div class="mt-1">
-									<textarea
-										id="message"
-										name="message"
-										rows="4"
-										class="py-3 px-4 block w-full shadow-sm border-gray-300 rounded-md focus:ring-brand-blue focus:border-brand-blue"
-									></textarea>
-								</div>
-							</div>
-							<div>
-								<button
-									type="submit"
-									class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-brand-blue hover:bg-brand-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue"
-									data-key="formSubmitButton"
-								></button>
-							</div>
-						</form>
-					</div>
-				</section>
-
-				<!-- Seção Módulos (Financeiro, Estoque, Fiscal) -->
-				<section class="py-16 sm:py-24">
-					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-						<div class="text-center">
-							<h2
-								class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
-								data-key="modulesTitle"
-							></h2>
-						</div>
-						<div
-							class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
-						>
-							<!-- Módulo 1: Financeiro -->
-							<div class="text-center">
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="module1Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="module1Desc"
-								></p>
-							</div>
-							<!-- Módulo 2: Estoque -->
-							<div class="text-center">
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="module2Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="module2Desc"
-								></p>
-							</div>
-							<!-- Módulo 3: Fiscal -->
-							<div class="text-center">
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="module3Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="module3Desc"
-								></p>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Seção "Gestão em Nuvem" -->
-				<section class="py-16 sm:py-24 bg-gray-900 text-white">
-					<div
-						class="container mx-auto px-4 sm:px-6 lg:px-8 text-center"
-					>
-						<h2
-							class="text-3xl sm:text-4xl font-bold tracking-tight"
-							data-key="cloudTitle"
-						></h2>
-						<p
-							class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto"
-							data-key="cloudText"
-						></p>
-						<a
-							href="solucoes.html"
-							class="mt-8 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-gray-900 bg-white hover:bg-gray-100"
-							data-key="heroCtaSecondary"
-						>
-						</a>
-					</div>
-				</section>
-
-				<!-- Seção Prova Social (Counters) -->
-				<section class="bg-brand-blue text-white">
-					<div
-						class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center"
-					>
-						<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-							<div>
-								<span
-									class="block text-5xl font-bold"
-									data-key="socialStat1Number"
-								></span>
-								<span
-									class="mt-2 block text-lg"
-									data-key="socialStat1Label"
-								></span>
-							</div>
-							<div>
-								<span
-									class="block text-5xl font-bold"
-									data-key="socialStat2Number"
-								></span>
-								<span
-									class="mt-2 block text-lg"
-									data-key="socialStat2Label"
-								></span>
-							</div>
-							<div>
-								<span
-									class="block text-5xl font-bold"
-									data-key="socialStat3Number"
-								></span>
-								<span
-									class="mt-2 block text-lg"
-									data-key="socialStat3Label"
-								></span>
-							</div>
-						</div>
-					</div>
-				</section>
-			</main>
-
-			<!-- Rodapé -->
 			<footer class="border-t border-gray-200">
 				<div
 					class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row justify-between items-center"
 				>
 					<p class="text-sm text-gray-500" data-key="footerText"></p>
 					<div class="flex space-x-4 mt-4 sm:mt-0">
-						<!-- Links de redes sociais (placeholders) -->
 						<a href="#" class="text-gray-400 hover:text-gray-500">
 							<span class="sr-only">Facebook</span>
 							<svg
@@ -1038,7 +292,6 @@
 								viewBox="0 0 24 24"
 								aria-hidden="true"
 							>
-								<!-- Ícone do Facebook -->
 								<path
 									fill-rule="evenodd"
 									d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
@@ -1054,7 +307,6 @@
 								viewBox="0 0 24 24"
 								aria-hidden="true"
 							>
-								<!-- Ícone do Instagram -->
 								<path
 									fill-rule="evenodd"
 									d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
@@ -1067,7 +319,7 @@
 			</footer>
 		</div>
 
-		<!-- Script principal -->
-		<script src="js/app.js"></script>
+		<script src="js/app.js" defer></script>
+		<script src="js/spa.js" defer></script>
 	</body>
 </html>

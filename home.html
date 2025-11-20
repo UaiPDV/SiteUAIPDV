@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title data-key="pageTitle">UAI PDV - Automação Comercial</title>
+		<link rel="stylesheet" href="css/tailwind.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			body {
+				font-family: 'Inter', sans-serif;
+			}
+			.bg-brand-blue {
+				background-color: #3b82f6;
+			}
+			.text-brand-blue {
+				color: #3b82f6;
+			}
+			.border-brand-blue {
+				border-color: #3b82f6;
+			}
+			.hover\:bg-brand-blue-dark:hover {
+				background-color: #2563eb;
+			}
+			.animate-on-scroll {
+				opacity: 0;
+				transform: translateY(30px);
+				transition: opacity 0.8s ease, transform 0.8s ease;
+			}
+			.animate-on-scroll.is-visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		</style>
+	</head>
+	<body id="home" class="bg-white text-gray-900 antialiased">
+		<div class="flex flex-col min-h-screen">
+			<header class="border-b border-gray-200">
+				<nav
+					class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
+				>
+					<a href="index.html" class="flex items-center">
+						<img src="img/logo.png" alt="UAI PDV" class="h-10" />
+					</a>
+					<div class="hidden md:flex space-x-6">
+						<a
+							href="index.html"
+							class="font-medium text-brand-blue"
+							data-key="navHome"
+						></a>
+						<a
+							href="solucoes.html"
+							class="font-medium text-gray-600 hover:text-gray-900"
+							data-key="navSolutions"
+						></a>
+						<a
+							href="precos.html"
+							class="font-medium text-gray-600 hover:text-gray-900"
+							data-key="navPricing"
+						></a>
+						<a
+							href="contato.html"
+							class="font-medium text-gray-600 hover:text-gray-900"
+							data-key="navContact"
+						></a>
+					</div>
+					<a
+						href="contato.html"
+						class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-brand-blue hover:bg-brand-blue-dark"
+						data-key="navCta"
+					>
+					</a>
+					<div class="md:hidden">
+						<button class="text-gray-900">
+							<svg
+								class="w-6 h-6"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M4 6h16M4 12h16m-7 6h7"
+								></path>
+							</svg>
+						</button>
+					</div>
+				</nav>
+			</header>
+
+			<main id="page-content" class="flex-grow">
+				<section
+					class="relative overflow-hidden pt-24 pb-16 lg:pt-40 lg:pb-24 bg-gray-900 text-white min-h-[90vh] lg:min-h-screen flex items-center"
+				>
+					<div class="absolute inset-0" id="hero-carousel"></div>
+					<div class="absolute inset-0 bg-black/60"></div>
+					<div
+						class="relative container mx-auto px-4 sm:px-6 lg:px-8"
+					>
+						<div
+							class="max-w-3xl mx-auto lg:mx-0 text-center lg:text-left"
+						>
+							<p
+								class="text-sm uppercase tracking-widest text-white/70"
+							>
+								Automação Comercial Inteligente
+							</p>
+							<h1
+								id="hero-title"
+								class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight"
+							>
+								Carregando...
+							</h1>
+							<p
+								id="hero-subtitle"
+								class="mt-6 text-lg sm:text-xl lg:text-2xl text-white/80"
+							>
+								Carregando...
+							</p>
+							<div
+								class="mt-10 flex flex-col sm:flex-row items-center sm:justify-start gap-4"
+							>
+								<a
+									href="precos.html"
+									class="inline-flex items-center justify-center rounded-full px-6 py-3 bg-brand-blue text-white font-semibold hover:bg-brand-blue-dark transition"
+									data-key="heroCtaPrimary"
+								></a>
+								<a
+									href="solucoes.html"
+									class="inline-flex items-center justify-center rounded-full px-6 py-3 border border-white/60 text-white font-semibold hover:bg-white/10 transition"
+									data-key="heroCtaSecondary"
+								></a>
+							</div>
+						</div>
+						<div
+							class="absolute bottom-4 sm:bottom-8 lg:bottom-10 left-0 right-0 flex justify-center px-4"
+						>
+							<div
+								id="hero-indicators"
+								class="flex space-x-3"
+							></div>
+						</div>
+					</div>
+				</section>
+
+				<section id="videos" class="py-16 sm:py-24 bg-white">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div
+							class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8"
+						>
+							<div>
+								<p
+									class="text-sm uppercase tracking-widest text-brand-blue mb-2"
+								>
+									Demonstrações
+								</p>
+								<h2
+									class="text-3xl sm:text-4xl font-bold text-gray-900"
+									data-key="videosTitle"
+								></h2>
+							</div>
+						</div>
+						<div class="relative mt-12">
+							<button
+								id="video-prev"
+								class="absolute left-3 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white shadow-lg text-gray-600 hover:text-brand-blue border border-gray-200"
+								aria-label="Vídeo anterior"
+							>
+								&lsaquo;
+							</button>
+							<div
+								id="video-carousel-container"
+								class="overflow-hidden"
+							>
+								<div
+									id="video-carousel-track"
+									class="flex gap-6 transition-transform duration-300"
+								>
+									<p class="text-gray-500">
+										Carregando vídeos...
+									</p>
+								</div>
+							</div>
+							<button
+								id="video-next"
+								class="absolute right-3 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white shadow-lg text-gray-600 hover:text-brand-blue border border-gray-200"
+								aria-label="Próximo vídeo"
+							>
+								&rsaquo;
+							</button>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-16 sm:py-24 bg-gray-50">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="max-w-3xl mb-12">
+							<p
+								class="text-sm uppercase tracking-widest text-brand-blue mb-2"
+							>
+								Hardware Homologado
+							</p>
+							<h2
+								class="text-3xl sm:text-4xl font-bold"
+								data-key="equipTitle"
+							></h2>
+						</div>
+						<div
+							class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+						>
+							<article
+								class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 animate-on-scroll"
+							>
+								<div
+									class="h-48 rounded-2xl overflow-hidden mb-6"
+								>
+									<img
+										data-key="equip1Img"
+										alt="Equipamento 1"
+										class="w-full h-full object-cover"
+										loading="lazy"
+									/>
+								</div>
+								<h3
+									class="text-xl font-semibold"
+									data-key="equip1Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="equip1Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 animate-on-scroll delay-100"
+							>
+								<div
+									class="h-48 rounded-2xl overflow-hidden mb-6"
+								>
+									<img
+										data-key="equip2Img"
+										alt="Equipamento 2"
+										class="w-full h-full object-cover"
+										loading="lazy"
+									/>
+								</div>
+								<h3
+									class="text-xl font-semibold"
+									data-key="equip2Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="equip2Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 animate-on-scroll delay-200"
+							>
+								<div
+									class="h-48 rounded-2xl overflow-hidden mb-6"
+								>
+									<img
+										data-key="equip3Img"
+										alt="Equipamento 3"
+										class="w-full h-full object-cover"
+										loading="lazy"
+									/>
+								</div>
+								<h3
+									class="text-xl font-semibold"
+									data-key="equip3Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="equip3Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100 animate-on-scroll delay-300"
+							>
+								<div
+									class="h-48 rounded-2xl overflow-hidden mb-6"
+								>
+									<img
+										data-key="equip4Img"
+										alt="Equipamento 4"
+										class="w-full h-full object-cover"
+										loading="lazy"
+									/>
+								</div>
+								<h3
+									class="text-xl font-semibold"
+									data-key="equip4Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="equip4Desc"
+								></p>
+							</article>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-16 sm:py-24 bg-white">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="text-center max-w-3xl mx-auto mb-12">
+							<p
+								class="text-sm uppercase tracking-widest text-brand-blue mb-2"
+							>
+								Segmentos
+							</p>
+							<h2
+								class="text-3xl sm:text-4xl font-bold"
+								data-key="segmentsTitle"
+							></h2>
+						</div>
+						<div
+							class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+						>
+							<article
+								class="bg-white border border-gray-200 rounded-2xl p-5 animate-on-scroll flex flex-col items-center text-center"
+							>
+								<img
+									data-key="segment1Img"
+									alt="Segmento 1"
+									class="w-16 h-16 rounded-full object-cover mb-4"
+								/>
+								<h3
+									class="mt-4 text-lg font-semibold"
+									data-key="segment1Title"
+								></h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="segment1Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white border border-gray-200 rounded-2xl p-5 animate-on-scroll delay-100 flex flex-col items-center text-center"
+							>
+								<img
+									data-key="segment2Img"
+									alt="Segmento 2"
+									class="w-16 h-16 rounded-full object-cover mb-4"
+								/>
+								<h3
+									class="mt-4 text-lg font-semibold"
+									data-key="segment2Title"
+								></h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="segment2Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white border border-gray-200 rounded-2xl p-5 animate-on-scroll delay-200 flex flex-col items-center text-center"
+							>
+								<img
+									data-key="segment3Img"
+									alt="Segmento 3"
+									class="w-16 h-16 rounded-full object-cover mb-4"
+								/>
+								<h3
+									class="mt-4 text-lg font-semibold"
+									data-key="segment3Title"
+								></h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="segment3Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white border border-gray-200 rounded-2xl p-5 animate-on-scroll delay-300 flex flex-col items-center text-center"
+							>
+								<img
+									data-key="segment4Img"
+									alt="Segmento 4"
+									class="w-16 h-16 rounded-full object-cover mb-4"
+								/>
+								<h3
+									class="mt-4 text-lg font-semibold"
+									data-key="segment4Title"
+								></h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="segment4Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white border border-gray-200 rounded-2xl p-5 animate-on-scroll flex flex-col items-center text-center"
+							>
+								<img
+									data-key="segment5Img"
+									alt="Segmento 5"
+									class="w-16 h-16 rounded-full object-cover mb-4"
+								/>
+								<h3
+									class="mt-4 text-lg font-semibold"
+									data-key="segment5Title"
+								></h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="segment5Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white border border-gray-200 rounded-2xl p-5 animate-on-scroll delay-100 flex flex-col items-center text-center"
+							>
+								<img
+									data-key="segment6Img"
+									alt="Segmento 6"
+									class="w-16 h-16 rounded-full object-cover mb-4"
+								/>
+								<h3
+									class="mt-4 text-lg font-semibold"
+									data-key="segment6Title"
+								></h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="segment6Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white border border-gray-200 rounded-2xl p-5 animate-on-scroll delay-200 flex flex-col items-center text-center"
+							>
+								<img
+									data-key="segment7Img"
+									alt="Segmento 7"
+									class="w-16 h-16 rounded-full object-cover mb-4"
+								/>
+								<h3
+									class="mt-4 text-lg font-semibold"
+									data-key="segment7Title"
+								></h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="segment7Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white border border-gray-200 rounded-2xl p-5 animate-on-scroll delay-300 flex flex-col items-center text-center"
+							>
+								<img
+									data-key="segment8Img"
+									alt="Segmento 8"
+									class="w-16 h-16 rounded-full object-cover mb-4"
+								/>
+								<h3
+									class="mt-4 text-lg font-semibold"
+									data-key="segment8Title"
+								></h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="segment8Desc"
+								></p>
+							</article>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-16 sm:py-24 bg-gray-900 text-white">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="max-w-3xl">
+							<p
+								class="text-sm uppercase tracking-widest text-brand-blue mb-2"
+							>
+								Benefícios
+							</p>
+							<h2
+								class="text-3xl sm:text-4xl font-bold"
+								data-key="whyTitle"
+							></h2>
+							<p
+								class="mt-4 text-white/80"
+								data-key="whySubtitle"
+							></p>
+						</div>
+						<div
+							class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"
+						>
+							<article
+								class="bg-white/5 rounded-2xl p-6 border border-white/10"
+							>
+								<h3
+									class="text-xl font-semibold"
+									data-key="whyFeature1Title"
+								></h3>
+								<p
+									class="mt-3 text-white/80"
+									data-key="whyFeature1Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white/5 rounded-2xl p-6 border border-white/10"
+							>
+								<h3
+									class="text-xl font-semibold"
+									data-key="whyFeature2Title"
+								></h3>
+								<p
+									class="mt-3 text-white/80"
+									data-key="whyFeature2Desc"
+								></p>
+							</article>
+							<article
+								class="bg-white/5 rounded-2xl p-6 border border-white/10"
+							>
+								<h3
+									class="text-xl font-semibold"
+									data-key="whyFeature3Title"
+								></h3>
+								<p
+									class="mt-3 text-white/80"
+									data-key="whyFeature3Desc"
+								></p>
+							</article>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-16 sm:py-24 bg-white">
+					<div
+						class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center"
+					>
+						<div>
+							<p
+								class="text-sm uppercase tracking-widest text-brand-blue mb-2"
+							>
+								Módulos
+							</p>
+							<h2
+								class="text-3xl font-bold"
+								data-key="modulesTitle"
+							></h2>
+							<ul class="mt-6 space-y-6">
+								<li
+									class="p-5 border border-gray-200 rounded-2xl"
+								>
+									<h3
+										class="text-xl font-semibold"
+										data-key="module1Title"
+									></h3>
+									<p
+										class="mt-2 text-gray-600"
+										data-key="module1Desc"
+									></p>
+								</li>
+								<li
+									class="p-5 border border-gray-200 rounded-2xl"
+								>
+									<h3
+										class="text-xl font-semibold"
+										data-key="module2Title"
+									></h3>
+									<p
+										class="mt-2 text-gray-600"
+										data-key="module2Desc"
+									></p>
+								</li>
+								<li
+									class="p-5 border border-gray-200 rounded-2xl"
+								>
+									<h3
+										class="text-xl font-semibold"
+										data-key="module3Title"
+									></h3>
+									<p
+										class="mt-2 text-gray-600"
+										data-key="module3Desc"
+									></p>
+								</li>
+							</ul>
+						</div>
+						<div
+							class="bg-gray-900 text-white rounded-3xl p-8 w-full max-w-xl mx-auto self-center lg:justify-self-center"
+						>
+							<p
+								class="text-sm uppercase tracking-widest text-brand-blue mb-2"
+							>
+								Nuvem
+							</p>
+							<h3
+								class="text-3xl font-bold"
+								data-key="cloudTitle"
+							></h3>
+							<p
+								class="mt-4 text-white/80"
+								data-key="cloudText"
+							></p>
+							<div
+								class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6"
+							>
+								<div>
+									<p
+										class="text-4xl font-bold counter-number"
+										data-key="socialStat1Number"
+									></p>
+									<p
+										class="mt-2 text-sm text-white/70"
+										data-key="socialStat1Label"
+									></p>
+								</div>
+								<div>
+									<p
+										class="text-4xl font-bold counter-number"
+										data-key="socialStat2Number"
+									></p>
+									<p
+										class="mt-2 text-sm text-white/70"
+										data-key="socialStat2Label"
+									></p>
+								</div>
+								<div>
+									<p
+										class="text-4xl font-bold counter-number"
+										data-key="socialStat3Number"
+									></p>
+									<p
+										class="mt-2 text-sm text-white/70"
+										data-key="socialStat3Label"
+									></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-16 sm:py-24 bg-gray-50">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="grid lg:grid-cols-2 gap-12 items-start">
+							<div>
+								<p
+									class="text-sm uppercase tracking-widest text-brand-blue mb-2"
+								>
+									Contato
+								</p>
+								<h2
+									class="text-3xl font-bold"
+									data-key="formTitle"
+								></h2>
+								<p
+									class="mt-4 text-gray-600"
+									data-key="formSubtitle"
+								></p>
+								<form class="mt-8 grid grid-cols-1 gap-6">
+									<label class="block">
+										<span
+											class="text-sm font-medium text-gray-700"
+											data-key="formNameLabel"
+										></span>
+										<input
+											type="text"
+											class="mt-2 block w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue"
+											placeholder="Digite aqui"
+										/>
+									</label>
+									<label class="block">
+										<span
+											class="text-sm font-medium text-gray-700"
+											data-key="formEmailLabel"
+										></span>
+										<input
+											type="text"
+											class="mt-2 block w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue"
+											placeholder="(31) 99999-0000"
+										/>
+									</label>
+									<label class="block">
+										<span
+											class="text-sm font-medium text-gray-700"
+											data-key="formMessageLabel"
+										></span>
+										<textarea
+											rows="4"
+											class="mt-2 block w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue"
+											placeholder="Conte para nós"
+										></textarea>
+									</label>
+									<button
+										type="button"
+										class="inline-flex items-center justify-center rounded-full px-6 py-3 bg-brand-blue text-white font-semibold hover:bg-brand-blue-dark transition"
+										data-key="formSubmitButton"
+									></button>
+								</form>
+							</div>
+							<div class="bg-white rounded-3xl shadow-lg p-8">
+								<h3 class="text-2xl font-semibold mb-4">
+									Pronto para começar?
+								</h3>
+								<p class="text-gray-600">
+									Entre em contato e descubra como acelerar o
+									seu ponto de venda com a UAI PDV.
+								</p>
+								<ul class="mt-8 space-y-4 text-gray-700">
+									<li class="flex items-center gap-3">
+										<span
+											class="w-10 h-10 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center"
+											>&#9742;</span
+										>
+										(31) 4002-8922
+									</li>
+									<li class="flex items-center gap-3">
+										<span
+											class="w-10 h-10 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center"
+											>&#9993;</span
+										>
+										suporte@uaipdv.com
+									</li>
+									<li class="flex items-center gap-3">
+										<span
+											class="w-10 h-10 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center"
+											>&#128205;</span
+										>
+										Belo Horizonte • MG
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<footer class="border-t border-gray-200">
+				<div
+					class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row justify-between items-center"
+				>
+					<p class="text-sm text-gray-500" data-key="footerText"></p>
+					<div class="flex space-x-4 mt-4 sm:mt-0">
+						<a href="#" class="text-gray-400 hover:text-gray-500">
+							<span class="sr-only">Facebook</span>
+							<svg
+								class="w-6 h-6"
+								fill="currentColor"
+								viewBox="0 0 24 24"
+								aria-hidden="true"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+						</a>
+						<a href="#" class="text-gray-400 hover:text-gray-500">
+							<span class="sr-only">Instagram</span>
+							<svg
+								class="w-6 h-6"
+								fill="currentColor"
+								viewBox="0 0 24 24"
+								aria-hidden="true"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script src="js/app.js" defer></script>
+	</body>
+</html>

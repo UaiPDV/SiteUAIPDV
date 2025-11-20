@@ -37,35 +37,84 @@
 		"videosTitle": "Veja em Ação",
 		"video1Title": "A UAI PDV",
 		"video1Desc": "Resumo das principais funções e equipamentos homologados.",
-		"video2Title": "Solução com Balança",
-		"video2Desc": "Balança integrada com PDV M10, comunicação com 1 toque na tela.",
+		"video2Title": "Solução com balança",
+		"video2Desc": "Balança integrada com PDV Elgin M10, comunicação realizada com 1 toque na tela.",
 		"video3Title": "Evento - P2 Android",
-		"video3Desc": "POS homologado para emissão de fichas e pagamentos (crédito, débito e PIX).",
+		"video3Desc": "POS Stone homologado para emissão de fichas e aceita cartões débito, crédito e PIX.",
+		"videos": [
+			{
+				"title": "A UAI PDV",
+				"description": "Resumo das principais funções e equipamentos homologados.",
+				"link": "https://www.youtube.com/watch?v=xRYJH9yTyEQ"
+			},
+			{
+				"title": "Solução com balança",
+				"description": "Balança integrada com PDV Elgin M10, comunicação realizada com 1 toque na tela.",
+				"link": "https://www.youtube.com/watch?v=ysz5S6PUM-U"
+			},
+			{
+				"title": "Evento - P2 Android",
+				"description": "POS Stone homologado para emissão de fichas e aceita cartões débito, crédito e PIX.",
+				"link": "https://www.youtube.com/watch?v=ysz5S6PUM-U"
+			},
+			{
+				"title": "Validador de fichas",
+				"description": "Celular android com app de verificar a veracidade da ficha. Leitura realizada pela câmera do celular.",
+				"link": "https://www.youtube.com/watch?v=ysz5S6PUM-U"
+			},
+			{
+				"title": "PDV Completo",
+				"description": "PDV Elgin integrado com balança e leitor de código de barras.",
+				"link": "https://www.youtube.com/watch?v=-KHVql3nuhQ"
+			},
+			{
+				"title": "Tablet com Suporte",
+				"description": "Tablet 7\" com suporte e impressora bluetooth de 48mm.",
+				"link": "https://www.youtube.com/watch?v=g0BNjMbm59Q"
+			},
+			{
+				"title": "Celular e Impressora",
+				"description": "Celular e impressora bluetooth, realizando impressão de vendas simples e rápida.",
+				"link": "https://www.youtube.com/watch?v=2NPUANiBTkA"
+			}
+		],
 		"equipTitle": "Equipamentos Homologados",
 		"equip1Title": "PDV Elgin M10",
-		"equip1Desc": "Impressora embutida, Tela 10”, Android, Wi-Fi e Funções Full.",
+		"equip1Img": "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=600&q=80",
+		"equip1Desc": "Impressora embutida - Tela: 10” - Sistema Operacional: 2 GB RAM Comunicação via cabo RJ45, Bluetooth e WI-Fi. Imprimir fichas com código de barras e automação. Conector da Gaveta, Portas USB, Porta Com, Conector da fonte. Funções: Full. Consulte opções de Equipamentos. Suporta NFC-e, SAT ou Gerencial",
 		"equip2Title": "Sunmi T2 mini",
-		"equip2Desc": "Impressora embutida, Tela 11.6” HD, Android 7.1 e Funções Full.",
+		"equip2Img": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+		"equip2Desc": "Impressora embutida - Tela: 11.6” HD 1366 x 768 -Sistema Operacional: Android 7.1 -Processador: Snapdragon Octa-Core -Memória: 8GB ROM | 1GB RAM Comunicação via cabo RJ45 ou USB. Imprimir fichas com código de barras e automação. Funções: Full. Consulte opções de Equipamentos. Suporta NFC-e, SAT ou Gerencial",
 		"equip3Title": "POS Integrado",
-		"equip3Desc": "Solução para caixa volante, vendas e emissão de fichas com cartão.",
+		"equip3Img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80",
+		"equip3Desc": "Solução integrada com recebimento de cartões, impressão de fichas e expedição. Ótima solução para caixa volante e vendas com emissão de fichas com código de barras ou sem. Segurança de Recebimento, antes de realizar a operação é obrigatório autorização do cartão. Funções: Full. Suporta NFC-e, SAT ou Gerencial",
 		"equip4Title": "Uai Print TS 7",
-		"equip4Desc": "Impressora embutida, Tela 8”, Android 7.1, Wi-Fi e Funções Full.",
+		"equip4Img": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80",
+		"equip4Desc": "Impressora embutida - Tela: 8” - Sistema Operacional: Android 7.1 | 1GB RAM Comunicação via cabo RJ45, Bluetooth e WI-Fi. Imprimir fichas com código de barras e automação. Conector da Gaveta, Portas USB, Porta Com, Conector da fonte. Funções: Full. Consulte opções de Equipamentos. Suporta NFC-e, SAT ou Gerencial",
 		"segmentsTitle": "Perfeito para o seu Segmento",
 		"segment1Title": "Food Truck",
+		"segment1Img": "https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?auto=format&fit=crop&w=200&h=200",
 		"segment1Desc": "Gerar Senha de atendimento e cupom no formato gerencial ou fiscal.",
 		"segment2Title": "Hamburgueria e Carnes",
+		"segment2Img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=200&h=200",
 		"segment2Desc": "Pedidos de Cliente com controle de pedidos mesa e balcão.",
 		"segment3Title": "Sorveterias e Lanchonetes",
+		"segment3Img": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=200&h=200",
 		"segment3Desc": "Comunicação com balança para peso e ficha para clientes.",
 		"segment4Title": "Lojas de Roupas",
+		"segment4Img": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=200&h=200",
 		"segment4Desc": "Impressão de etiquetas e Leitor de Código de Barras integrado.",
 		"segment5Title": "Restaurante e Pizzaria",
+		"segment5Img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&h=200",
 		"segment5Desc": "Pedidos na mesa, rodízio, balcão, expedição na cozinha e delivery.",
 		"segment6Title": "HortiFruti e Padaria",
+		"segment6Img": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=200&h=200",
 		"segment6Desc": "Comunicação com balança, função de mensalista e gestão de delivery.",
 		"segment7Title": "Eventos",
+		"segment7Img": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=200&h=200",
 		"segment7Desc": "Caixa Volante, Fixo, Auto-Atendimento e Validador de fichas.",
 		"segment8Title": "Gestão de Serviços",
+		"segment8Img": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=200&h=200",
 		"segment8Desc": "Emissão de notas fiscais de serviços e controle de agenda.",
 		"whyTitle": "Por que adquirir o sistema UAI PDV?",
 		"whySubtitle": "Focamos no que realmente importa: estabilidade, controle e funcionalidade.",
@@ -97,16 +146,176 @@
 		"socialStat3Number": "+250",
 		"socialStat3Label": "Sistemas Fiscais"
 	},
+	"mobilidade": {
+		"pageTitle": "Mobilidade - UAI PDV",
+		"heroKicker": "Tecnologia inteligente para suas vendas",
+		"heroTitle": "Mobilidade em vendas",
+		"heroSubtitle": "Operações móveis com emissão fiscal, integrações e segurança para continuar vendendo mesmo sem energia ou internet.",
+		"heroPrimaryCta": "Falar com um especialista",
+		"heroPrimaryLink": "https://api.whatsapp.com/send?l=pt_BR&phone=553193585185",
+		"heroSecondaryCta": "Explorar soluções",
+		"heroSecondaryLink": "solucoes.html",
+		"heroMediaImage": "img/mobilidade/pdv-maior1.gif",
+		"metricsTitle": "Mobilidade com o mesmo rigor fiscal",
+		"metrics": [
+			{
+				"badge": "Fiscal",
+				"title": "NFC-e e NF-e",
+				"description": "Notas fiscais enviadas automaticamente em XML com suporte a Sintegra e contingência."
+			},
+			{
+				"badge": "Gestão",
+				"title": "Sistema em nuvem",
+				"description": "Gestão de equipe e produção em tempo real para acompanhar vendas e rastreabilidade em qualquer lugar."
+			},
+			{
+				"badge": "Automações",
+				"title": "Equipamentos com bateria",
+				"description": "Venda e impressão mesmo sem energia ou internet para manter o atendimento ativo."
+			}
+		],
+		"devicesTitle": "Explore novas tendências em vendas",
+		"devicesSubtitle": "Do autoatendimento à pulseira NFC, escolha o formato ideal para cada operação.",
+		"devices": [
+			{
+				"title": "Pulseira NFC",
+				"description": "Recarga rápida e leitura segura para eventos e consumo controlado.",
+				"image": "img/mobilidade/PulseiraNFC.gif"
+			},
+			{
+				"title": "Caixa compacto",
+				"description": "Ponto de venda móvel com impressão integrada e conexão estável.",
+				"image": "img/mobilidade/d2mini11.gif"
+			},
+			{
+				"title": "Totem de autoatendimento",
+				"description": "Autoatendimento para reduzir filas e liberar o time para o atendimento consultivo.",
+				"image": "img/mobilidade/Toten1.gif"
+			},
+			{
+				"title": "PDV com duas telas",
+				"description": "Experiência intuitiva para operador e cliente com prova social em tempo real.",
+				"image": "img/mobilidade/T2.gif"
+			}
+		],
+		"autonomyTitle": "Autonomia e conectividade",
+		"autonomySubtitle": "Integrações que mantêm o controle mesmo longe do balcão.",
+		"autonomy": [
+			{
+				"title": "Emissão de etiquetas",
+				"description": "Layouts completos com tabela nutricional, código de barras e atualizações de preço.",
+				"image": "img/mobilidade/Etiquetas.gif"
+			},
+			{
+				"title": "Integração com balanças",
+				"description": "Comunicação via serial ou Wi-Fi para cargas e atualizações de código automaticamente.",
+				"image": "img/mobilidade/Balana.jpg"
+			}
+		],
+		"highlightKicker": "Família UAI PDV",
+		"highlightTitle": "Mini PDV para qualquer operação",
+		"highlightText": "Tela touchscreen, impressora embutida e bateria com autonomia para levar o caixa até o cliente.",
+		"highlightCta": "Baixar ficha técnica",
+		"highlightLink": "https://d2u2qhufg0q9tn.cloudfront.net/assets/arquivos/imgCard_c927b715-f022-42ae-a94f-9d51c98d9ad0_Nova%20L%C3%A2mina%20Mini%20PDV%20M10%20-%20Elgin.pdf",
+		"highlightImage": "img/mobilidade/image15.png",
+		"chatbotTitle": "ChatBot oficial WhatsApp Business",
+		"chatbotText": "Integre atendimento, cobrança e validação em um único fluxo usando a API oficial do WhatsApp Business com todo o suporte da UAI PDV.",
+		"chatbotImage": "img/mobilidade/image14.png",
+		"indoorTitle": "Mídia indoor que vende",
+		"indoorText": "Displays inteligentes informam, entretêm e reforçam ofertas no ponto de venda com atualização remota.",
+		"indoorCta": "Quero implementar",
+		"indoorLink": "https://api.whatsapp.com/send?l=pt_BR&phone=553193585185",
+		"indoorImage": "img/mobilidade/gr4.png"
+	},
 	"solutions": {
-		"pageTitle": "Soluções - UAI PDV",
-		"title": "Soluções Sob Medida",
-		"subtitle": "Temos a ferramenta certa para cada tipo de negócio, do pequeno varejo a grandes restaurantes.",
-		"feature1Title": "PDV Ágil e Confiável",
-		"feature1Desc": "Um sistema de ponto de venda rápido, que não te deixa na mão e funciona até offline.",
-		"feature2Title": "Gestão de Estoque",
-		"feature2Desc": "Controle total de entradas, saídas, validades e inventário em tempo real.",
-		"feature3Title": "Relatórios Inteligentes",
-		"feature3Desc": "Tome decisões baseadas em dados com relatórios financeiros e de vendas completos."
+		"pageTitle": "UAI PDV Mais - Plataforma Omnichannel",
+		"heroKicker": "O negócio do futuro",
+		"heroTitle": "Seu ponto de vendas + inovação tecnológica",
+		"heroSubtitle": "Balcão, mesa, delivery, WhatsApp e aplicativo próprio em uma única plataforma digital.",
+		"heroPrimaryCta": "Saber mais",
+		"heroPrimaryLink": "https://api.whatsapp.com/send?l=pt_BR&phone=553193585185",
+		"heroSecondaryCta": "Ver demonstração",
+		"heroSecondaryLink": "https://api.whatsapp.com/send?l=pt_BR&phone=553193585185",
+		"heroNote": "O futuro está se aproximando rapidamente e uma nova era de inovação e plataforma digital chegou.",
+		"heroImage": "img/solucao/maq-cartao-pc.png",
+		"heroBadges": [
+			{
+				"label": "Disponível no Windows",
+				"image": "img/solucao/img-down-windows.svg"
+			},
+			{
+				"label": "Versão Android",
+				"image": "img/solucao/img-down-android.svg"
+			},
+			{
+				"label": "App iOS",
+				"image": "img/solucao/img-down-ios.svg"
+			}
+		],
+		"deliveryKicker": "Aplicativo e delivery",
+		"deliveryTitle": "Entrega e pedidos conectados",
+		"deliverySubtitle": "Página e aplicativo para divulgar produtos e receber pedidos para delivery ou retirada no local.",
+		"deliveryText": "Pode ser usado como app ou no navegador, com cores e logotipo personalizáveis para manter o cardápio atualizado e sempre disponível.",
+		"deliveryPoints": [
+			"Aplicativo ou navegador com identidade visual personalizada do estabelecimento.",
+			"Cliente informa se paga em cartão, dinheiro ou Pix antes de finalizar.",
+			"Pedidos chegam prontos para delivery ou retirada com todos os detalhes."
+		],
+		"deliveryPrimaryImage": "img/solucao/2.jpg",
+		"deliverySecondaryImage": "img/solucao/2img-menu-digital.png",
+		"paymentTitle": "Pagamento integrado ao PDV",
+		"paymentText": "Aplicativo para maquininhas smart POS que automatiza e integra o processo de pagamento à venda no sistema UAI PDV.",
+		"paymentHighlights": [
+			{
+				"title": "Fluxo automatizado",
+				"description": "Venda e pagamento totalmente integrados, sem digitação dupla ou conferência manual."
+			},
+			{
+				"title": "Documentos fiscais completos",
+				"description": "Preenchimento automático das informações do pagamento nos documentos fiscais."
+			},
+			{
+				"title": "Homologado nas adquirentes",
+				"description": "Integração com as principais adquirentes do mercado para usar o POS preferido."
+			}
+		],
+		"paymentImage": "img/solucao/img-PagInt.png",
+		"integrationTitle": "Integrações essenciais",
+		"integrationSubtitle": "Automatize a operação com conectores oficiais do UAI PDV.",
+		"integrations": [
+			{
+				"title": "Integração iFood",
+				"description": "Pedidos feitos no iFood são recebidos no sistema com itens, observações e status em tempo real.",
+				"badge": "API"
+			},
+			{
+				"title": "Estoque conectado",
+				"description": "Controle de estoque completo para acompanhar entradas, saídas e insumos vendidos.",
+				"badge": "ERP"
+			},
+			{
+				"title": "Fiscal completo",
+				"description": "Emissão de NF-e e NFC-e com envio automático de XML e consulta ao Sintegra.",
+				"badge": "Fiscal"
+			}
+		],
+		"tableTitle": "Pedidos na mesa e autoatendimento",
+		"tableText": "Cardápio sempre atualizado para o cliente escanear o QR Code, montar o pedido e enviar direto para a cozinha.",
+		"tableImage": "img/solucao/sistemapedido-na-mesa.png",
+		"whatsappTitle": "Atendimento simples no WhatsApp",
+		"whatsappText": "Usamos a API oficial do WhatsApp Business para integrar chatbot, atendimento, vendas e recomendações em um único fluxo.",
+		"whatsappImage": "img/solucao/capa-privacidade-whatsapp_tb.webp",
+		"trendsTitle": "5 tendências que guiamos hoje",
+		"trendsText": "Tecnologias que já aplicamos no PDV para antecipar o futuro do varejo.",
+		"trendsList": [
+			"Inteligência artificial aplicada ao atendimento.",
+			"Mobilidade no atendimento ao cliente.",
+			"Segurança da informação em toda a jornada.",
+			"Infraestrutura híbrida entre equipamento e nuvem.",
+			"Fidelização com experiências digitais completas."
+		],
+		"trendsCta": "Quero evoluir agora",
+		"trendsLink": "https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
 	},
 	"pricing": {
 		"pageTitle": "Preços - UAI PDV",

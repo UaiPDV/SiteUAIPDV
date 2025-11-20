@@ -4,8 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title data-key="pageTitle">Soluções - UAI PDV</title>
-		<!-- Tailwind CSS CDN -->
-		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="css/tailwind.css" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
@@ -22,6 +21,30 @@
 			}
 			.hover\:bg-brand-blue-dark:hover {
 				background-color: #2563eb;
+			}
+			.hero-glow {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 120%;
+				height: 120%;
+				background: radial-gradient(circle at top, #1d4ed8 0%, transparent 60%),
+					linear-gradient(120deg, rgba(37, 99, 235, 0.4), rgba(37, 99, 235, 0));
+				filter: blur(60px);
+				opacity: 0.7;
+				pointer-events: none;
+			}
+			.badge-glow {
+				position: relative;
+			}
+			.badge-glow::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				border-radius: 9999px;
+				box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+				z-index: -1;
 			}
 		</style>
 	</head>
@@ -90,70 +113,258 @@
 
 			<!-- Conteúdo Principal -->
 			<main id="page-content" class="flex-grow">
-				<!-- Seção de Título da Página -->
-				<section class="bg-gray-50 py-16 sm:py-24">
+				<section
+					class="relative isolate overflow-hidden py-24 sm:py-32 bg-gray-950 text-white"
+				>
+					<div class="hero-glow" aria-hidden="true"></div>
 					<div
-						class="container mx-auto px-4 sm:px-6 lg:px-8 text-center"
+						class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center"
 					>
-						<h1
-							class="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900"
-							data-key="title"
-						>
-							Carregando...
-						</h1>
-						<p
-							class="mt-4 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto"
-							data-key="subtitle"
-						>
-							Carregando...
-						</p>
+						<div>
+							<p
+								class="text-sm uppercase tracking-[0.3em] text-white/70"
+								data-key="heroKicker"
+							></p>
+							<h1
+								class="mt-6 text-4xl sm:text-5xl font-bold leading-tight"
+								data-key="heroTitle"
+							></h1>
+							<p
+								class="mt-6 text-lg text-white/80"
+								data-key="heroSubtitle"
+							></p>
+							<div class="mt-8 flex flex-col sm:flex-row gap-4">
+								<a
+									class="inline-flex items-center justify-center rounded-full px-6 py-3 bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition"
+									data-key="heroPrimaryCta"
+									data-link-key="heroPrimaryLink"
+									href="#"
+								></a>
+								<a
+									class="inline-flex items-center justify-center rounded-full px-6 py-3 border border-white/40 text-white font-semibold hover:bg-white/10 transition"
+									data-key="heroSecondaryCta"
+									data-link-key="heroSecondaryLink"
+									href="solucoes.html"
+								></a>
+							</div>
+							<p
+								class="mt-6 text-sm text-white/70"
+								data-key="heroNote"
+							></p>
+							<div
+								id="plus-hero-badges"
+								class="mt-8 flex flex-wrap gap-4"
+							></div>
+						</div>
+						<div class="relative">
+							<div
+								class="absolute inset-0 rounded-3xl bg-brand-blue/20 blur-3xl -z-10"
+							></div>
+							<img
+								class="w-full rounded-3xl border border-white/10 shadow-2xl object-cover"
+								data-key="heroImage"
+								alt="UAI PDV Mais"
+							/>
+						</div>
 					</div>
 				</section>
 
-				<!-- Seção de Features/Soluções -->
-				<section class="py-16 sm:py-24">
+				<section class="py-16 sm:py-24 bg-white">
+					<div
+						class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center"
+					>
+						<div>
+							<p
+								class="text-sm uppercase tracking-widest text-brand-blue"
+								data-key="deliveryKicker"
+							></p>
+							<h2
+								class="mt-4 text-3xl sm:text-4xl font-bold"
+								data-key="deliveryTitle"
+							></h2>
+							<p
+								class="mt-4 text-lg text-gray-600"
+								data-key="deliverySubtitle"
+							></p>
+							<p
+								class="mt-4 text-gray-600"
+								data-key="deliveryText"
+							></p>
+							<ul
+								id="delivery-points"
+								class="mt-6 space-y-3"
+							></ul>
+						</div>
+						<div class="relative">
+							<div
+								class="absolute inset-0 bg-brand-blue/10 blur-3xl -z-10"
+							></div>
+							<div
+								class="rounded-3xl overflow-hidden shadow-xl ring-1 ring-gray-100"
+							>
+								<img
+									class="w-full object-cover"
+									data-key="deliveryPrimaryImage"
+									alt="Aplicativo UAI PDV Mais"
+								/>
+							</div>
+							<div
+								class="absolute -bottom-6 -left-6 w-40 sm:w-48 rounded-2xl border border-white shadow-lg bg-white"
+							>
+								<img
+									class="w-full object-cover rounded-2xl"
+									data-key="deliverySecondaryImage"
+									alt="Menu digital"
+								/>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-16 sm:py-24 bg-gray-50">
+					<div
+						class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center"
+					>
+						<div class="order-2 lg:order-1">
+							<p
+								class="text-sm uppercase tracking-widest text-brand-blue"
+							>
+								Smart POS
+							</p>
+							<h2
+								class="mt-4 text-3xl font-bold"
+								data-key="paymentTitle"
+							></h2>
+							<p
+								class="mt-4 text-gray-600"
+								data-key="paymentText"
+							></p>
+							<div
+								id="payment-highlights"
+								class="mt-6 space-y-4"
+							></div>
+						</div>
+						<div class="order-1 lg:order-2">
+							<div
+								class="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-gray-100"
+							>
+								<img
+									class="w-full object-cover"
+									data-key="paymentImage"
+									alt="Pagamento integrado"
+								/>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-16 sm:py-24 bg-white">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="text-center max-w-3xl mx-auto mb-12">
+							<p
+								class="text-sm uppercase tracking-widest text-brand-blue"
+								data-key="integrationSubtitle"
+							></p>
+							<h2
+								class="mt-4 text-3xl sm:text-4xl font-bold"
+								data-key="integrationTitle"
+							></h2>
+						</div>
+						<div
+							id="solutions-plus-integrations"
+							class="grid grid-cols-1 md:grid-cols-3 gap-6"
+						></div>
+					</div>
+				</section>
+
+				<section class="py-16 sm:py-24 bg-gray-50">
+					<div
+						class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center"
+					>
+						<div>
+							<p
+								class="text-sm uppercase tracking-widest text-brand-blue"
+							>
+								Autoatendimento
+							</p>
+							<h2
+								class="mt-4 text-3xl font-bold"
+								data-key="tableTitle"
+							></h2>
+							<p
+								class="mt-4 text-gray-600"
+								data-key="tableText"
+							></p>
+						</div>
+						<div
+							class="rounded-3xl overflow-hidden shadow-xl ring-1 ring-gray-100"
+						>
+							<img
+								class="w-full object-cover"
+								data-key="tableImage"
+								alt="Pedidos na mesa"
+							/>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-16 sm:py-24 bg-gray-900 text-white">
+					<div
+						class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center"
+					>
+						<div>
+							<p
+								class="text-sm uppercase tracking-widest text-white/70"
+							>
+								WhatsApp Business
+							</p>
+							<h2
+								class="mt-4 text-3xl font-bold"
+								data-key="whatsappTitle"
+							></h2>
+							<p
+								class="mt-4 text-white/80"
+								data-key="whatsappText"
+							></p>
+						</div>
+						<div
+							class="rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+						>
+							<img
+								class="w-full object-cover"
+								data-key="whatsappImage"
+								alt="Atendimento WhatsApp"
+							/>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-16 sm:py-24 bg-white">
 					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 						<div
-							class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+							class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl p-10 text-white overflow-hidden"
 						>
-							<!-- Card 1 -->
-							<div
-								class="bg-white border border-gray-200 rounded-lg shadow-sm p-6"
-							>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="feature1Title"
-								></h3>
+							<div class="max-w-3xl">
 								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="feature1Desc"
+									class="text-sm uppercase tracking-[0.3em] text-white/60"
+									data-key="trendsText"
 								></p>
+								<h2
+									class="mt-4 text-3xl sm:text-4xl font-semibold"
+									data-key="trendsTitle"
+								></h2>
 							</div>
-							<!-- Card 2 -->
 							<div
-								class="bg-white border border-gray-200 rounded-lg shadow-sm p-6"
-							>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="feature2Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="feature2Desc"
-								></p>
-							</div>
-							<!-- Card 3 -->
-							<div
-								class="bg-white border border-gray-200 rounded-lg shadow-sm p-6"
-							>
-								<h3
-									class="text-xl font-semibold text-gray-900"
-									data-key="feature3Title"
-								></h3>
-								<p
-									class="mt-2 text-base text-gray-600"
-									data-key="feature3Desc"
-								></p>
+								id="solutions-plus-trends"
+								class="mt-8 space-y-3"
+							></div>
+							<div class="mt-12">
+								<a
+									class="inline-flex items-center gap-2 rounded-full px-6 py-3 bg-white text-gray-900 font-semibold hover:bg-gray-100 transition"
+									data-key="trendsCta"
+									data-link-key="trendsLink"
+									href="#"
+								></a>
 							</div>
 						</div>
 					</div>

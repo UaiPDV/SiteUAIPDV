@@ -1,0 +1,27 @@
+{
+  "name": "siteuaipdv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./css/tailwind.css --minify",
+    "dev:css": "tailwindcss -i ./src/styles/tailwind.css -o ./css/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasPedropl/SiteUAIPDV.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LucasPedropl/SiteUAIPDV/issues"
+  },
+  "homepage": "https://github.com/LucasPedropl/SiteUAIPDV#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.14"
+  }
+}
