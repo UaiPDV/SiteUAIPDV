@@ -22,18 +22,29 @@
 			.hover\:bg-brand-blue-dark:hover {
 				background-color: #2563eb;
 			}
+			.nav-dropdown .dropdown-menu {
+				display: none;
+				opacity: 0;
+				transform: translateY(8px);
+				transition: opacity 0.2s ease, transform 0.2s ease;
+			}
+			.nav-dropdown.dropdown-open .dropdown-menu {
+				display: block;
+				opacity: 1;
+				transform: translateY(0);
+			}
 		</style>
 	</head>
 	<body id="videos" class="bg-white text-gray-900 antialiased">
 		<div class="flex flex-col min-h-screen">
-			<header class="border-b border-gray-200">
+			<header id="main-nav" class="border-b border-gray-200">
 				<nav
 					class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
 				>
 					<a href="index.html" class="flex items-center">
 						<img src="img/logo.png" alt="UAI PDV" class="h-10" />
 					</a>
-					<div class="hidden md:flex space-x-6">
+					<div class="hidden md:flex space-x-6 items-center">
 						<a
 							href="index.html"
 							class="font-medium text-gray-600 hover:text-gray-900"
@@ -54,11 +65,66 @@
 							class="font-medium text-brand-blue"
 							data-key="navVideos"
 						></a>
-						<a
-							href="acesso.html"
-							class="font-medium text-gray-600 hover:text-gray-900"
-							data-key="navAccess"
-						></a>
+						<div class="relative nav-dropdown">
+							<button
+								type="button"
+								class="font-medium text-gray-600 hover:text-gray-900 flex items-center gap-1"
+								data-dropdown-trigger
+								aria-expanded="false"
+							>
+								<span data-key="navAccess"></span>
+								<svg
+									class="w-4 h-4"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M19 9l-7 7-7-7"
+									></path>
+								</svg>
+							</button>
+							<div
+								class="dropdown-menu absolute left-0 top-full pt-2 w-56 bg-white rounded-xl shadow-lg py-2 border border-gray-100"
+							>
+								<a
+									href="https://web.invoicy.com.br/login.aspx"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+								>
+									Acesso Fiscal
+								</a>
+								<a
+									href="http://webmail.uaipdv.com.br/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+								>
+									Web Mail
+								</a>
+								<a
+									href="http://uai.tabletcloud.com.br/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+								>
+									Acesso Gerencial
+								</a>
+								<a
+									href="https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+								>
+									Contato WhatsApp
+								</a>
+							</div>
+						</div>
 						<a
 							href="segmentos/index.html"
 							class="font-medium text-gray-600 hover:text-gray-900"
@@ -93,24 +159,158 @@
 			</header>
 
 			<main class="flex-grow">
-				<section class="py-24 bg-gray-50">
+				<section
+					class="relative overflow-hidden py-20 bg-gradient-to-br from-[#04081c] via-[#050c27] to-[#01030c] text-white"
+				>
+					<div class="absolute inset-0">
+						<div
+							class="absolute -top-32 -right-24 w-96 h-96 bg-brand-blue/30 blur-[120px]"
+						></div>
+						<div
+							class="absolute -bottom-24 -left-28 w-80 h-80 bg-purple-500/20 blur-[120px]"
+						></div>
+					</div>
 					<div
-						class="container mx-auto px-4 sm:px-6 lg:px-8 text-center"
+						class="relative container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center"
 					>
-						<p
-							class="text-sm uppercase tracking-[0.3em] text-brand-blue"
+						<div class="space-y-8">
+							<span
+								class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-xs font-semibold tracking-[0.3em]"
+							>
+								Centro de vídeos
+							</span>
+							<h1
+								class="text-3xl sm:text-4xl lg:text-5xl font-bold"
+								data-key="heroTitle"
+							></h1>
+							<p
+								class="text-lg text-white/80 max-w-2xl"
+								data-key="heroSubtitle"
+							></p>
+							<div class="flex flex-wrap gap-4">
+								<a
+									href="#videos-play-section"
+									class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-brand-blue text-sm font-semibold shadow-lg shadow-brand-blue/30 hover:bg-brand-blue-dark"
+								>
+									Assistir agora
+								</a>
+								<a
+									href="acesso.html"
+									class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-white/30 text-sm font-semibold text-white/80 hover:text-white"
+								>
+									Preciso de suporte
+								</a>
+							</div>
+							<div
+								class="grid sm:grid-cols-2 gap-4"
+								id="videos-hero-list"
+							></div>
+						</div>
+						<div class="relative">
+							<div
+								class="absolute inset-0 rounded-[40px] bg-white/10 blur-2xl"
+							></div>
+							<div
+								class="relative rounded-[32px] border border-white/10 bg-white/5 p-6 backdrop-blur"
+							>
+								<div
+									class="rounded-3xl overflow-hidden bg-gray-900/40"
+								>
+									<img
+										data-key="heroImage"
+										alt="Demonstração da plataforma UAI PDV"
+										class="w-full h-full object-cover"
+										loading="lazy"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section
+					id="videos-modules-section"
+					class="relative py-24 text-white"
+				>
+					<div class="absolute inset-0">
+						<div
+							id="videos-modules-bg"
+							class="absolute inset-0 bg-cover bg-center"
+							aria-hidden="true"
+						></div>
+						<div
+							class="absolute inset-0 bg-gradient-to-r from-[#040a16]/95 via-[#02060f]/92 to-[#00040c]/96"
+						></div>
+					</div>
+					<div
+						class="relative container mx-auto px-4 sm:px-6 lg:px-8"
+					>
+						<div class="max-w-3xl">
+							<p
+								class="text-sm uppercase tracking-[0.3em] text-white/70"
+							>
+								Conheça
+							</p>
+							<h2
+								class="mt-4 text-3xl font-semibold"
+								data-key="modulesTitle"
+							></h2>
+							<p class="mt-3 text-white/70 max-w-2xl">
+								Visualize rapidamente onde cada módulo atua e
+								como ele conecta a operação do PDV à retaguarda.
+							</p>
+						</div>
+						<div
+							class="mt-12 grid gap-6 md:grid-cols-2"
+							id="videos-modules-grid"
+						></div>
+					</div>
+				</section>
+
+				<section
+					class="relative py-24 text-white overflow-hidden"
+					id="videos-play-section"
+				>
+					<div class="absolute inset-0">
+						<div
+							id="videos-play-bg"
+							class="absolute inset-0 bg-cover bg-center"
+							aria-hidden="true"
+						></div>
+						<div
+							class="absolute inset-0 bg-gradient-to-b from-[#01030d]/96 via-[#010310]/94 to-[#010410]/98"
+						></div>
+						<div
+							class="absolute -right-32 top-0 w-2/3 h-full bg-brand-blue/15 blur-[120px]"
+						></div>
+					</div>
+					<div
+						class="relative container mx-auto px-4 sm:px-6 lg:px-8"
+					>
+						<div
+							class="flex flex-col md:flex-row md:items-end md:justify-between gap-8"
 						>
-							Conteúdo em breve
-						</p>
-						<h1
-							class="mt-6 text-3xl sm:text-4xl font-bold"
-							data-key="pageTitle"
-						></h1>
-						<p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-							Preparando uma galeria com demonstrações e cases em
-							vídeo. Em breve você poderá assistir aos recursos do
-							UAI PDV em ação.
-						</p>
+							<div>
+								<p
+									class="text-sm uppercase tracking-[0.3em] text-white/60"
+								>
+									Biblioteca
+								</p>
+								<h2
+									class="text-3xl font-semibold"
+									data-key="playTitle"
+								></h2>
+							</div>
+							<p class="text-white/80 max-w-2xl">
+								Escolha um módulo para assistir e avance pela
+								jornada do operador: abertura de caixa,
+								lançamento, entrega e gestão completa em nuvem.
+							</p>
+						</div>
+						<div
+							class="mt-12 grid gap-6 lg:grid-cols-2"
+							id="videos-gallery"
+						></div>
 					</div>
 				</section>
 			</main>

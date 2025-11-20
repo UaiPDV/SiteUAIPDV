@@ -857,6 +857,127 @@ const solutionsPage = (() => {
 	return { render };
 })();
 
+const videosPage = (() => {
+	const renderCollection = (containerId, items = [], builder) => {
+		const container = document.getElementById(containerId);
+		if (!container || !Array.isArray(items)) return;
+		container.innerHTML = '';
+		items.forEach((item, index) => {
+			const element = builder(item, index);
+			if (element) {
+				container.appendChild(element);
+			}
+		});
+	};
+
+	const setBackgroundImage = (elementId, imageUrl) => {
+		if (!imageUrl) return;
+		const element = document.getElementById(elementId);
+		if (element) {
+			element.style.backgroundImage = `url(${imageUrl})`;
+			element.style.backgroundSize = 'cover';
+			element.style.backgroundPosition = 'center';
+		}
+	};
+
+	const buildHeroItem = (item = {}, index = 0) => {
+		const wrapper = document.createElement('div');
+		wrapper.className =
+			'flex items-center gap-4 rounded-2xl border border-gray-200 bg-white/80 p-4 shadow-sm animate-on-scroll';
+		wrapper.style.transitionDelay = `${index * 80}ms`;
+		const iconWrapper = document.createElement('div');
+		iconWrapper.className =
+			'flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue/10';
+		const icon = document.createElement('img');
+		icon.src = item.icon || '';
+		icon.alt = item.text || 'Recurso disponível';
+		icon.loading = 'lazy';
+		icon.className = 'h-6 w-6 object-contain';
+		iconWrapper.appendChild(icon);
+		const text = document.createElement('p');
+		text.className = 'font-semibold text-gray-900';
+		text.textContent = item.text || '';
+		wrapper.appendChild(iconWrapper);
+		wrapper.appendChild(text);
+		return wrapper;
+	};
+
+	const buildModuleCard = (module = {}, index = 0) => {
+		const card = document.createElement('article');
+		card.className =
+			'rounded-3xl border border-white/10 bg-white/10 backdrop-blur p-6 flex gap-4 animate-on-scroll';
+		card.style.transitionDelay = `${index * 80}ms`;
+		const iconWrapper = document.createElement('div');
+		iconWrapper.className =
+			'flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20';
+		const icon = document.createElement('img');
+		icon.src = module.icon || '';
+		icon.alt = module.title || 'Módulo UAI PDV';
+		icon.loading = 'lazy';
+		icon.className = 'h-8 w-8 object-contain';
+		iconWrapper.appendChild(icon);
+		const copy = document.createElement('div');
+		const title = document.createElement('h3');
+		title.className = 'text-xl font-semibold text-white';
+		title.textContent = module.title || '';
+		const desc = document.createElement('p');
+		desc.className = 'mt-2 text-white/80 text-sm';
+		desc.textContent = module.desc || '';
+		copy.appendChild(title);
+		copy.appendChild(desc);
+		card.appendChild(iconWrapper);
+		card.appendChild(copy);
+		return card;
+	};
+
+	const buildVideoCard = (video = {}, index = 0) => {
+		const card = document.createElement('article');
+		card.className =
+			'rounded-3xl bg-white text-gray-900 p-5 flex flex-col gap-4 shadow-2xl shadow-black/10 border border-white/10 animate-on-scroll';
+		card.style.transitionDelay = `${index * 80}ms`;
+		const frame = document.createElement('div');
+		frame.className =
+			'aspect-video rounded-2xl overflow-hidden bg-gray-900/10 ring-1 ring-black/5';
+		const iframe = document.createElement('iframe');
+		const youtubeId = video.youtube || '';
+		iframe.src = youtubeId
+			? `https://www.youtube.com/embed/${youtubeId}`
+			: 'about:blank';
+		iframe.title = video.title || 'Vídeo demonstrativo';
+		iframe.loading = 'lazy';
+		iframe.className = 'w-full h-full';
+		iframe.allow =
+			'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+		iframe.setAttribute('allowfullscreen', '');
+		frame.appendChild(iframe);
+		const title = document.createElement('h3');
+		title.className = 'text-xl font-semibold text-gray-900';
+		title.textContent = video.title || '';
+		const desc = document.createElement('p');
+		desc.className = 'text-gray-600';
+		desc.textContent = video.desc || '';
+		card.appendChild(frame);
+		card.appendChild(title);
+		card.appendChild(desc);
+		return card;
+	};
+
+	const render = (content = {}) => {
+		setBackgroundImage('videos-modules-bg', content.modulesBg);
+		setBackgroundImage('videos-play-bg', content.playBg);
+		renderCollection('videos-hero-list', content.heroList, buildHeroItem);
+		renderCollection(
+			'videos-modules-grid',
+			content.modules,
+			buildModuleCard
+		);
+		renderCollection('videos-gallery', content.videos, buildVideoCard);
+		return () => {};
+	};
+
+	return { render };
+})();
+
 const SiteApp = (() => {
 	let cachedContent = null;
 
@@ -917,6 +1038,9 @@ const SiteApp = (() => {
 			} else if (normalizedKey === 'solutions') {
 				cleanups.push(solutionsPage.render(pageContent));
 				cleanups.push(pageInteractions.initScrollAnimations());
+			} else if (normalizedKey === 'videos') {
+				cleanups.push(videosPage.render(pageContent));
+				cleanups.push(pageInteractions.initScrollAnimations());
 			}
 			return () => {
 				cleanups.forEach((fn) => {
@@ -943,6 +1067,8 @@ const SiteApp = (() => {
 	};
 
 	const initializeStandalonePage = async () => {
+		pageInteractions.initNavDropdowns();
+		pageInteractions.initMobileNav();
 		const pageKey = document.body.id || 'home';
 		const result = await renderPage(pageKey);
 		return result;

@@ -16,22 +16,22 @@
 			{
 				"title": "PDV Completo",
 				"subtitle": "Funções de Fundo de Caixa, Sangria e Vendas",
-				"image": "https://blog.connectplug.com.br/wp-content/uploads/2022/10/pdv-_.png"
+				"image": "img/home/android-repair-banner1.png"
 			},
 			{
 				"title": "Cartões de Débito, Crédito e NFC-e",
 				"subtitle": "Sistema integrado ao seu Ponto de Venda",
-				"image": "https://solidcon.com.br/wp-content/uploads/2025/05/SISTEMA-PDVblog-scaled.webp"
+				"image": "img/home/restore-icloud-itunes-backup-home-banner1.jpg"
 			},
 			{
 				"title": "Funções Inteligentes",
 				"subtitle": "Para gerenciar seu negócio é necessário integração com automação",
-				"image": "https://tassistemas.com.br/wp-content/uploads/2019/11/pos-650x310.jpg"
+				"image": "img/home/itunes-repair-banner1.png"
 			},
 			{
 				"title": "Gestão Completa em Nuvem",
 				"subtitle": "Gestão Financeira X Controle de Estoque X Conciliação de Cartões",
-				"image": "https://marketup.com/wp-content/uploads/2022/04/Finalizac%CC%A7a%CC%83o-de-Vendas.png"
+				"image": "img/home/home_banner21.jpg"
 			}
 		],
 		"heroCtaPrimary": "Comece Agora",
@@ -82,16 +82,16 @@
 		],
 		"equipTitle": "Equipamentos Homologados",
 		"equip1Title": "PDV Elgin M10",
-		"equip1Img": "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=600&q=80",
+		"equip1Img": "img/home/2-11.png",
 		"equip1Desc": "Impressora embutida - Tela: 10” - Sistema Operacional: 2 GB RAM Comunicação via cabo RJ45, Bluetooth e WI-Fi. Imprimir fichas com código de barras e automação. Conector da Gaveta, Portas USB, Porta Com, Conector da fonte. Funções: Full. Consulte opções de Equipamentos. Suporta NFC-e, SAT ou Gerencial",
 		"equip2Title": "Sunmi T2 mini",
-		"equip2Img": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+		"equip2Img": "img/home/Sunmi20T220Mini1.jpg",
 		"equip2Desc": "Impressora embutida - Tela: 11.6” HD 1366 x 768 -Sistema Operacional: Android 7.1 -Processador: Snapdragon Octa-Core -Memória: 8GB ROM | 1GB RAM Comunicação via cabo RJ45 ou USB. Imprimir fichas com código de barras e automação. Funções: Full. Consulte opções de Equipamentos. Suporta NFC-e, SAT ou Gerencial",
 		"equip3Title": "POS Integrado",
-		"equip3Img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80",
+		"equip3Img": "img/home/stone-p2-maquininha-de-cartao-david-tech1.webp",
 		"equip3Desc": "Solução integrada com recebimento de cartões, impressão de fichas e expedição. Ótima solução para caixa volante e vendas com emissão de fichas com código de barras ou sem. Segurança de Recebimento, antes de realizar a operação é obrigatório autorização do cartão. Funções: Full. Suporta NFC-e, SAT ou Gerencial",
 		"equip4Title": "Uai Print TS 7",
-		"equip4Img": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80",
+		"equip4Img": "img/home/pos-system-homepage-stack-01-ratio_16-9-for_tablet-up1.png",
 		"equip4Desc": "Impressora embutida - Tela: 8” - Sistema Operacional: Android 7.1 | 1GB RAM Comunicação via cabo RJ45, Bluetooth e WI-Fi. Imprimir fichas com código de barras e automação. Conector da Gaveta, Portas USB, Porta Com, Conector da fonte. Funções: Full. Consulte opções de Equipamentos. Suporta NFC-e, SAT ou Gerencial",
 		"segmentsTitle": "Perfeito para o seu Segmento",
 		"segment1Title": "Food Truck",
@@ -320,7 +320,89 @@
 		"trendsLink": "https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
 	},
 	"videos": {
-		"pageTitle": "Vídeos - UAI PDV"
+		"pageTitle": "Vídeos - UAI PDV",
+		"heroTitle": "Precisando de Ajuda?",
+		"heroSubtitle": "Está no lugar certo.",
+		"heroImage": "img/videos/eeee-min.jpg",
+		"heroList": [
+			{ "icon": "img/videos/711239-88923138.png", "text": "Vídeos" },
+			{ "icon": "img/videos/711239-88923138.png", "text": "Orientação" },
+			{ "icon": "img/videos/711239-88923138.png", "text": "Suporte" },
+			{ "icon": "img/videos/711239-88923138.png", "text": "Chat" }
+		],
+		"modulesTitle": "Os Módulos",
+		"modulesBg": "img/videos/t4r.png",
+		"modules": [
+			{
+				"icon": "img/videos/1107201-c8cb2706.png",
+				"title": "PDV Produção",
+				"desc": "Sistema instalado nos equipamentos para lançamento de pedidos e emissão de notas."
+			},
+			{
+				"icon": "img/videos/422315-80f3769d.png",
+				"title": "Retaguarda",
+				"desc": "Gestão das vendas realizadas pelo PDVs com controle financeiro, estoque e fiscal integrado."
+			},
+			{
+				"icon": "img/videos/5035738-8e267345.png",
+				"title": "Fiscal",
+				"desc": "Emissão de documentos fiscais no formato NFC-e/NF-e. Manifesto e Sintegra."
+			},
+			{
+				"icon": "img/videos/7315554-4059ab86.png",
+				"title": "Print PDV",
+				"desc": "Sistema para criar cartelas, cartões, ingressos, cupons, senhas e muito mais."
+			}
+		],
+		"playTitle": "Play",
+		"playBg": "img/videos/421.png",
+		"videos": [
+			{
+				"title": "Abertura e Fechamento",
+				"desc": "Função de fundo de caixa, sangria e encerramento do caixa. Emissão de relatórios e conferência de produtos e faturamento por operador.",
+				"youtube": "liREPsYHwiE"
+			},
+			{
+				"title": "Venda Balcão",
+				"desc": "Realizar vendas no módulo balcão com seleção de produtos e pagamentos múltiplos.",
+				"youtube": "pQl5gU6VpdM"
+			},
+			{
+				"title": "Modificadores de Produtos",
+				"desc": "Modificadores: acréscimo, observação ou restrições que são associados a cada produto selecionado. Lembra-se ao confirmar é impresso na impressora de expedição ou exibido no KDS.",
+				"youtube": "3Rd4g4kjH7A"
+			},
+			{
+				"title": "Lançar pedidos na Mesa",
+				"desc": "As principais funções de lançamento de pedidos no módulo mesa ou cartela. Transferência de produtos e pagamentos múltiplos.",
+				"youtube": "q7leilA6gkI"
+			},
+			{
+				"title": "Lançamento por Código de Barras",
+				"desc": "Lançamento de produtos Identificando a mesa ou comanda pelo código de barras.",
+				"youtube": "mm6ebPQokyQ"
+			},
+			{
+				"title": "Delivery",
+				"desc": "Cadastro de cliente e registrando pedidos para o cliente e expedição de motoboy.",
+				"youtube": "VLNapl_AlSA"
+			},
+			{
+				"title": "Pizzaria",
+				"desc": "Funções específicas para pizzaria e controle no pedido e preparo.",
+				"youtube": "147znc-JRD4"
+			},
+			{
+				"title": "Retaguarda",
+				"desc": "Sistema retaguarda 100% em nuvem com módulos de monitoramento de vendas, financeiro, estoque e fiscal. Pode ser acessado por computador ou celular em qualquer lugar.",
+				"youtube": "RW89ZFTJ9B0"
+			},
+			{
+				"title": "Controle de Matriz e Filiais",
+				"desc": "Gestão e controle de empresas no contexto de matriz e filial com estoque, fiscal e financeiro compartilhados.",
+				"youtube": "liREPsYHwiE"
+			}
+		]
 	},
 	"acesso": {
 		"pageTitle": "Acesso - UAI PDV"

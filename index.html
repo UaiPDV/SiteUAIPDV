@@ -24,9 +24,14 @@
 			}
 			.nav-dropdown .dropdown-menu {
 				display: none;
+				opacity: 0;
+				transform: translateY(8px);
+				transition: opacity 0.2s ease, transform 0.2s ease;
 			}
 			.nav-dropdown.dropdown-open .dropdown-menu {
 				display: block;
+				opacity: 1;
+				transform: translateY(0);
 			}
 			#hero-carousel img {
 				min-width: 100%;
@@ -138,26 +143,17 @@
 							data-key="navVideos"
 							>Vídeos</a
 						>
-						<a
-							href="#"
-							class="font-medium text-white transition-colors"
-							data-route="acesso"
-							data-nav-link
-							data-key="navAccess"
-							>Acesso</a
-						>
-
 						<div class="relative nav-dropdown">
 							<button
 								type="button"
-								class="font-medium text-white transition-colors flex items-center"
-								data-dropdown-trigger
+								class="font-medium text-white transition-colors flex items-center gap-1"
 								data-nav-link
+								data-dropdown-trigger
 								aria-expanded="false"
 							>
-								<span data-key="navSegments">Segmentos</span>
+								<span data-key="navAccess">Acesso</span>
 								<svg
-									class="w-4 h-4 ml-1"
+									class="w-4 h-4"
 									fill="none"
 									stroke="currentColor"
 									viewBox="0 0 24 24"
@@ -172,30 +168,117 @@
 								</svg>
 							</button>
 							<div
-								class="dropdown-menu absolute left-0 top-full pt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10"
+								class="dropdown-menu absolute left-0 top-full pt-3 w-60 bg-white rounded-xl shadow-xl border border-gray-100"
 							>
-								<a
-									href="segmentos/bar-restaurante.html"
-									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-									>Bar e Restaurante</a
-								>
-								<a
-									href="segmentos/distribuidora.html"
-									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-									>Distribuidora</a
-								>
-								<a
-									href="segmentos/hortifruti.html"
-									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-									>Hortifruti</a
-								>
-								<a
-									href="segmentos/eventos-festas.html"
-									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-									>Eventos e Festas</a
-								>
+								<div class="px-4 pb-2 border-b border-gray-100">
+									<p
+										class="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400"
+									>
+										Portais
+									</p>
+								</div>
+								<div class="py-2">
+									<a
+										href="https://web.invoicy.com.br/login.aspx"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>
+										Acesso Fiscal
+									</a>
+									<a
+										href="http://webmail.uaipdv.com.br/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>
+										Web Mail
+									</a>
+									<a
+										href="http://uai.tabletcloud.com.br/"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>
+										Acesso Gerencial
+									</a>
+									<a
+										href="https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+									>
+										Contato WhatsApp
+									</a>
+								</div>
 							</div>
 						</div>
+
+						<div class="relative nav-dropdown">
+							<button
+								type="button"
+								class="font-medium text-white transition-colors flex items-center gap-1"
+								data-dropdown-trigger
+								data-nav-link
+								aria-expanded="false"
+							>
+								<span data-key="navSegments">Segmentos</span>
+								<svg
+									class="w-4 h-4"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M19 9l-7 7-7-7"
+									></path>
+								</svg>
+							</button>
+							<div
+								class="dropdown-menu absolute left-0 top-full pt-3 w-60 bg-white rounded-xl shadow-xl border border-gray-100"
+							>
+								<div class="px-4 pb-2 border-b border-gray-100">
+									<p
+										class="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400"
+									>
+										Setores
+									</p>
+								</div>
+								<div class="py-2">
+									<a
+										href="segmentos/bar-restaurante.html"
+										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+										>Bar e Restaurante</a
+									>
+									<a
+										href="segmentos/distribuidora.html"
+										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+										>Distribuidora</a
+									>
+									<a
+										href="segmentos/hortifruti.html"
+										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+										>Hortifruti</a
+									>
+									<a
+										href="segmentos/eventos-festas.html"
+										class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+										>Eventos e Festas</a
+									>
+								</div>
+							</div>
+						</div>
+						<a
+							href="acesso.html"
+							class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-brand-blue hover:bg-brand-blue-dark"
+							data-key="navCta"
+						>
+							Abrir chamado
+						</a>
 					</div>
 
 					<div class="md:hidden">
@@ -225,6 +308,161 @@
 					</div>
 				</nav>
 			</header>
+
+			<div
+				id="mobile-nav-panel"
+				class="mobile-nav-panel fixed inset-0 z-40"
+				aria-hidden="true"
+			>
+				<div
+					class="absolute inset-0 bg-black/50"
+					data-mobile-nav-close
+				></div>
+				<div
+					class="mobile-nav-drawer absolute top-0 right-0 h-full w-full max-w-sm bg-white shadow-2xl flex flex-col"
+				>
+					<div
+						class="flex items-center justify-between px-6 py-4 border-b border-gray-200"
+					>
+						<span class="text-sm font-semibold text-gray-900"
+							>Menu</span
+						>
+						<button
+							class="p-2 rounded-full text-gray-400 hover:text-gray-600"
+							data-mobile-nav-close
+							aria-label="Fechar menu"
+						>
+							<svg
+								class="w-5 h-5"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M6 18L18 6M6 6l12 12"
+								></path>
+							</svg>
+						</button>
+					</div>
+					<nav
+						class="flex-1 overflow-y-auto px-6 py-6 space-y-6 text-base font-medium text-gray-900"
+					>
+						<div class="space-y-3">
+							<a
+								href="#"
+								class="block"
+								data-route="home"
+								data-key="navHome"
+								>Início</a
+							>
+							<a
+								href="#"
+								class="block"
+								data-route="mobilidade"
+								data-key="navMobilidade"
+								>Mobilidade</a
+							>
+							<a
+								href="#"
+								class="block"
+								data-route="solutions"
+								data-key="navSolutions"
+								>Soluções</a
+							>
+							<a
+								href="#"
+								class="block"
+								data-route="videos"
+								data-key="navVideos"
+								>Vídeos</a
+							>
+						</div>
+						<div>
+							<p
+								class="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400"
+							>
+								Acesso
+							</p>
+							<div class="mt-3 space-y-2">
+								<a
+									href="https://web.invoicy.com.br/login.aspx"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block text-sm text-gray-600"
+								>
+									Acesso Fiscal
+								</a>
+								<a
+									href="http://webmail.uaipdv.com.br/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block text-sm text-gray-600"
+								>
+									Web Mail
+								</a>
+								<a
+									href="http://uai.tabletcloud.com.br/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block text-sm text-gray-600"
+								>
+									Acesso Gerencial
+								</a>
+								<a
+									href="https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block text-sm text-gray-600"
+								>
+									Contato WhatsApp
+								</a>
+							</div>
+						</div>
+						<div>
+							<p
+								class="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400"
+							>
+								Segmentos
+							</p>
+							<div class="mt-3 space-y-2 text-sm text-gray-600">
+								<a
+									href="segmentos/bar-restaurante.html"
+									class="block"
+									>Bar e Restaurante</a
+								>
+								<a
+									href="segmentos/distribuidora.html"
+									class="block"
+									>Distribuidora</a
+								>
+								<a
+									href="segmentos/hortifruti.html"
+									class="block"
+									>Hortifruti</a
+								>
+								<a
+									href="segmentos/eventos-festas.html"
+									class="block"
+									>Eventos e Festas</a
+								>
+							</div>
+						</div>
+					</nav>
+					<div class="border-t border-gray-100 px-6 py-5">
+						<a
+							href="acesso.html"
+							class="flex items-center justify-center w-full px-4 py-3 rounded-full bg-brand-blue text-white text-sm font-semibold shadow-sm hover:bg-brand-blue-dark"
+							data-key="navCta"
+						>
+							Abrir chamado
+						</a>
+					</div>
+				</div>
+			</div>
 
 			<main id="page-content" class="flex-grow"></main>
 
