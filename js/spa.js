@@ -6,6 +6,7 @@
 		videos: 'videos.html',
 		acesso: 'acesso.html',
 		segmentos: 'segmentos/index.html',
+		'segmento-bar-restaurante': 'segmentos/bar-restaurante.html',
 	};
 
 	const defaultRoute = 'home';

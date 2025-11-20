@@ -987,6 +987,7 @@ const SiteApp = (() => {
 		videos: 'videos',
 		acesso: 'acesso',
 		segmentos: 'segmentos',
+		'segmento-bar-restaurante': 'segmentos',
 	};
 
 	const normalizePageKey = (key = 'home') => PAGE_ALIASES[key] || key;
