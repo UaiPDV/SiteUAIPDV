@@ -65,6 +65,28 @@ const contentLoader = {
 
 			element.textContent = content[key];
 		});
+
+		const bgElements = document.querySelectorAll('[data-bg-key]');
+		bgElements.forEach((element) => {
+			const key = element.getAttribute('data-bg-key');
+			if (!content.hasOwnProperty(key)) {
+				console.warn(
+					`Chave de background não encontrada no JSON: ${key}`,
+					element
+				);
+				return;
+			}
+			const imageUrl = content[key];
+			if (imageUrl) {
+				element.style.backgroundImage = `url(${imageUrl})`;
+				if (!element.style.backgroundSize) {
+					element.style.backgroundSize = 'cover';
+				}
+				if (!element.style.backgroundPosition) {
+					element.style.backgroundPosition = 'center';
+				}
+			}
+		});
 	},
 };
 
@@ -987,7 +1009,9 @@ const SiteApp = (() => {
 		videos: 'videos',
 		acesso: 'acesso',
 		segmentos: 'segmentos',
-		'segmento-bar-restaurante': 'segmentos',
+		'segmento-distribuidora': 'segmentoDistribuidora',
+		'segmento-hortifruti': 'segmentoHortifruti',
+		'segmento-eventos': 'segmentoEventos',
 	};
 
 	const normalizePageKey = (key = 'home') => PAGE_ALIASES[key] || key;
@@ -1021,6 +1045,7 @@ const SiteApp = (() => {
 			return { content: null, cleanup: () => {} };
 		}
 		contentLoader.populatePage(pageContent);
+		applyLinkKeys(pageContent);
 		pageInteractions.setNavMode(
 			normalizedKey === 'home' ? 'transparent' : 'solid'
 		);
@@ -1062,6 +1087,7 @@ const SiteApp = (() => {
 		const allContent = await loadContent();
 		if (!allContent) return null;
 		contentLoader.populatePage(allContent.common);
+		applyLinkKeys(allContent.common);
 		pageInteractions.initNavDropdowns();
 		pageInteractions.initMobileNav();
 		return allContent;

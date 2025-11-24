@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Segmentos - Hortifruti</title>
+		<title data-key="hortMetaTitle">Segmentos - Hortifruti</title>
 		<link rel="stylesheet" href="../css/tailwind.css" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
@@ -22,9 +22,14 @@
 			.hover\:bg-brand-blue-dark:hover {
 				background-color: #2563eb;
 			}
+			.section-kicker {
+				letter-spacing: 0.35em;
+				text-transform: uppercase;
+				font-size: 0.75rem;
+			}
 		</style>
 	</head>
-	<body id="segmentos" class="bg-white text-gray-900 antialiased">
+	<body id="segmento-hortifruti" class="bg-white text-gray-900 antialiased">
 		<div class="flex flex-col min-h-screen">
 			<header class="border-b border-gray-200">
 				<nav
@@ -93,38 +98,560 @@
 			</header>
 
 			<main class="flex-grow">
-				<section class="py-24 bg-gray-50">
+				<section
+					class="relative isolate overflow-hidden bg-gray-900 text-white"
+				>
 					<div
-						class="container mx-auto px-4 sm:px-6 lg:px-8 text-center"
+						class="absolute inset-0 h-full w-full opacity-60"
+						data-bg-key="hortHeroBackground"
+					></div>
+					<div class="absolute inset-0 bg-black/70"></div>
+					<div
+						class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"
 					>
+						<div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+							<div>
+								<p
+									class="section-kicker text-white/70"
+									data-key="hortHeroKicker"
+								></p>
+								<h1
+									class="mt-6 text-3xl sm:text-5xl font-bold leading-tight"
+									data-key="hortHeroTitle"
+								></h1>
+								<p
+									class="mt-6 text-lg text-white/80"
+									data-key="hortHeroSubtitle"
+								></p>
+								<div class="mt-8 flex flex-wrap gap-4">
+									<a
+										class="inline-flex items-center justify-center rounded-full px-6 py-3 bg-white text-gray-900 font-semibold shadow-lg shadow-black/30"
+										data-key="hortHeroPrimaryCta"
+										data-link-key="hortHeroPrimaryLink"
+										href="#"
+									></a>
+									<a
+										class="inline-flex items-center justify-center rounded-full px-6 py-3 border border-white/30 text-white font-semibold hover:bg-white/10"
+										data-key="hortHeroSecondaryCta"
+										data-link-key="hortHeroSecondaryLink"
+										href="#"
+									></a>
+								</div>
+								<dl
+									class="mt-12 grid gap-6 sm:grid-cols-3 text-white/80"
+								>
+									<div>
+										<dt
+											class="text-sm uppercase tracking-widest text-white/60"
+											data-key="hortHeroStat1Label"
+										></dt>
+										<dd
+											class="mt-2 text-2xl font-semibold"
+											data-key="hortHeroStat1Value"
+										></dd>
+									</div>
+									<div>
+										<dt
+											class="text-sm uppercase tracking-widest text-white/60"
+											data-key="hortHeroStat2Label"
+										></dt>
+										<dd
+											class="mt-2 text-2xl font-semibold"
+											data-key="hortHeroStat2Value"
+										></dd>
+									</div>
+									<div>
+										<dt
+											class="text-sm uppercase tracking-widest text-white/60"
+											data-key="hortHeroStat3Label"
+										></dt>
+										<dd
+											class="mt-2 text-2xl font-semibold"
+											data-key="hortHeroStat3Value"
+										></dd>
+									</div>
+								</dl>
+							</div>
+							<div class="relative">
+								<div
+									class="rounded-3xl bg-white/10 backdrop-blur border border-white/20 p-6 shadow-2xl"
+								>
+									<img
+										class="mx-auto max-h-[420px] w-full object-contain"
+										data-key="hortHeroImage"
+										alt="Equipamentos para hortifruti"
+										loading="lazy"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+							<div>
+								<p
+									class="section-kicker text-brand-blue"
+									data-key="hortOverviewHighlight"
+								></p>
+								<h2
+									class="mt-4 text-3xl font-semibold text-gray-900"
+									data-key="hortOverviewTitle"
+								></h2>
+								<p
+									class="mt-4 text-gray-600"
+									data-key="hortOverviewDescription"
+								></p>
+								<ul class="mt-6 space-y-4 text-gray-700">
+									<li class="flex items-start gap-3">
+										<span
+											class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue"
+										>
+											<svg
+												class="h-3.5 w-3.5"
+												fill="none"
+												stroke="currentColor"
+												viewBox="0 0 24 24"
+											>
+												<path
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2"
+													d="M5 13l4 4L19 7"
+												></path>
+											</svg>
+										</span>
+										<span
+											data-key="hortOverviewBullet1"
+										></span>
+									</li>
+									<li class="flex items-start gap-3">
+										<span
+											class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue"
+										>
+											<svg
+												class="h-3.5 w-3.5"
+												fill="none"
+												stroke="currentColor"
+												viewBox="0 0 24 24"
+											>
+												<path
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2"
+													d="M5 13l4 4L19 7"
+												></path>
+											</svg>
+										</span>
+										<span
+											data-key="hortOverviewBullet2"
+										></span>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<div
+									class="rounded-3xl bg-gray-50 p-6 shadow-inner"
+								>
+									<img
+										class="w-full rounded-2xl object-cover"
+										data-key="hortOverviewImage"
+										alt="PDV completo para hortifruti"
+										loading="lazy"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20 bg-gray-50">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 						<p
-							class="text-sm uppercase tracking-[0.3em] text-brand-blue"
-						>
-							Segmentos atendidos
-						</p>
-						<h1 class="mt-6 text-3xl sm:text-4xl font-bold">
-							Hortifruti
-						</h1>
-						<p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-							Conteúdos sobre balanças, etiquetagem nutricional e
-							mix de produtos estão sendo produzidos. Teremos
-							roteiros completos para varejo focado em FLV e
-							minimercados.
-						</p>
-						<div
-							class="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
-						>
-							<a
-								href="https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
-								class="inline-flex items-center justify-center rounded-full px-6 py-3 bg-brand-blue text-white font-semibold hover:bg-brand-blue-dark transition"
+							class="section-kicker text-brand-blue"
+							data-key="hortFeatureSectionKicker"
+						></p>
+						<h2
+							class="mt-4 text-3xl font-semibold text-gray-900"
+							data-key="hortFeatureSectionTitle"
+						></h2>
+						<p
+							class="mt-4 text-gray-600 max-w-3xl"
+							data-key="hortFeatureSectionDescription"
+						></p>
+						<div class="mt-10 grid gap-8 md:grid-cols-2">
+							<article class="rounded-3xl bg-white p-8 shadow">
+								<img
+									class="h-56 w-full rounded-2xl object-cover"
+									data-key="hortFeatureCard1Image"
+									alt="Balança integrada"
+									loading="lazy"
+								/>
+								<h3
+									class="mt-6 text-2xl font-semibold text-gray-900"
+									data-key="hortFeatureCard1Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortFeatureCard1Description"
+								></p>
+							</article>
+							<article class="rounded-3xl bg-white p-8 shadow">
+								<img
+									class="h-56 w-full rounded-2xl object-contain bg-gray-50"
+									data-key="hortFeatureCard2Image"
+									alt="PDV Elgin"
+									loading="lazy"
+								/>
+								<h3
+									class="mt-6 text-2xl font-semibold text-gray-900"
+									data-key="hortFeatureCard2Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortFeatureCard2Description"
+								></p>
+							</article>
+							<article class="rounded-3xl bg-white p-8 shadow">
+								<img
+									class="h-56 w-full rounded-2xl object-cover"
+									data-key="hortFeatureCard3Image"
+									alt="Leitor manual"
+									loading="lazy"
+								/>
+								<h3
+									class="mt-6 text-2xl font-semibold text-gray-900"
+									data-key="hortFeatureCard3Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortFeatureCard3Description"
+								></p>
+							</article>
+							<article class="rounded-3xl bg-white p-8 shadow">
+								<img
+									class="h-56 w-full rounded-2xl object-cover"
+									data-key="hortFeatureCard4Image"
+									alt="Leitor fixo"
+									loading="lazy"
+								/>
+								<h3
+									class="mt-6 text-2xl font-semibold text-gray-900"
+									data-key="hortFeatureCard4Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortFeatureCard4Description"
+								></p>
+							</article>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="max-w-2xl">
+							<p
+								class="section-kicker text-brand-blue"
+								data-key="hortDemoSectionTitle"
+							></p>
+							<p
+								class="mt-4 text-3xl font-semibold text-gray-900"
+								data-key="hortDemoSectionSubtitle"
+							></p>
+						</div>
+						<div class="mt-10 grid gap-8 md:grid-cols-2">
+							<article
+								class="rounded-3xl border border-gray-200 p-6 shadow-sm"
 							>
-								Falar com um especialista
+								<div class="rounded-2xl bg-gray-50 p-6">
+									<img
+										class="h-64 w-full object-contain"
+										data-key="hortDemoCard1Image"
+										alt="Integração Urano"
+										loading="lazy"
+									/>
+								</div>
+								<h3
+									class="mt-6 text-2xl font-semibold text-gray-900"
+									data-key="hortDemoCard1Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortDemoCard1Description"
+								></p>
+								<a
+									class="mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 bg-brand-blue text-white font-semibold hover:bg-brand-blue-dark"
+									data-key="hortDemoCard1Cta"
+									data-link-key="hortDemoCard1Link"
+									href="#"
+								></a>
+							</article>
+							<article
+								class="rounded-3xl border border-gray-200 p-6 shadow-sm"
+							>
+								<div class="rounded-2xl bg-gray-50 p-6">
+									<img
+										class="h-64 w-full object-contain"
+										data-key="hortDemoCard2Image"
+										alt="PDV mobile"
+										loading="lazy"
+									/>
+								</div>
+								<h3
+									class="mt-6 text-2xl font-semibold text-gray-900"
+									data-key="hortDemoCard2Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortDemoCard2Description"
+								></p>
+								<a
+									class="mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 border border-gray-300 text-gray-900 font-semibold hover:bg-gray-50"
+									data-key="hortDemoCard2Cta"
+									data-link-key="hortDemoCard2Link"
+									href="#"
+								></a>
+							</article>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20 bg-brand-blue text-white">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<h2
+							class="text-3xl font-semibold"
+							data-key="hortReasonsTitle"
+						></h2>
+						<div class="mt-10 grid gap-6 md:grid-cols-3">
+							<article
+								class="rounded-3xl bg-white/10 p-6 backdrop-blur"
+							>
+								<p
+									class="text-sm font-semibold text-white/80"
+									data-key="hortReason1Label"
+								></p>
+								<h3
+									class="mt-2 text-2xl font-semibold"
+									data-key="hortReason1Title"
+								></h3>
+								<p
+									class="mt-3 text-white/80"
+									data-key="hortReason1Description"
+								></p>
+							</article>
+							<article
+								class="rounded-3xl bg-white/10 p-6 backdrop-blur"
+							>
+								<p
+									class="text-sm font-semibold text-white/80"
+									data-key="hortReason2Label"
+								></p>
+								<h3
+									class="mt-2 text-2xl font-semibold"
+									data-key="hortReason2Title"
+								></h3>
+								<p
+									class="mt-3 text-white/80"
+									data-key="hortReason2Description"
+								></p>
+							</article>
+							<article
+								class="rounded-3xl bg-white/10 p-6 backdrop-blur"
+							>
+								<p
+									class="text-sm font-semibold text-white/80"
+									data-key="hortReason3Label"
+								></p>
+								<h3
+									class="mt-2 text-2xl font-semibold"
+									data-key="hortReason3Title"
+								></h3>
+								<p
+									class="mt-3 text-white/80"
+									data-key="hortReason3Description"
+								></p>
+							</article>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="max-w-2xl">
+							<p
+								class="section-kicker text-brand-blue"
+								data-key="hortModulesKicker"
+							></p>
+							<h2
+								class="mt-4 text-3xl font-semibold text-gray-900"
+								data-key="hortModulesTitle"
+							></h2>
+							<p
+								class="mt-4 text-gray-600"
+								data-key="hortModulesSubtitle"
+							></p>
+						</div>
+						<div class="mt-10 grid gap-8 md:grid-cols-3">
+							<article
+								class="rounded-3xl border border-gray-200 p-6 text-center"
+							>
+								<img
+									class="mx-auto h-40 w-full rounded-2xl object-cover"
+									data-key="hortModule1Image"
+									alt="Financeiro"
+									loading="lazy"
+								/>
+								<h3
+									class="mt-6 text-xl font-semibold"
+									data-key="hortModule1Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortModule1Description"
+								></p>
+							</article>
+							<article
+								class="rounded-3xl border border-gray-200 p-6 text-center"
+							>
+								<img
+									class="mx-auto h-40 w-full rounded-2xl object-cover"
+									data-key="hortModule2Image"
+									alt="Estoque"
+									loading="lazy"
+								/>
+								<h3
+									class="mt-6 text-xl font-semibold"
+									data-key="hortModule2Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortModule2Description"
+								></p>
+							</article>
+							<article
+								class="rounded-3xl border border-gray-200 p-6 text-center"
+							>
+								<img
+									class="mx-auto h-40 w-full rounded-2xl object-cover"
+									data-key="hortModule3Image"
+									alt="Fiscal"
+									loading="lazy"
+								/>
+								<h3
+									class="mt-6 text-xl font-semibold"
+									data-key="hortModule3Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortModule3Description"
+								></p>
+							</article>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20 bg-gray-50">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+							<div>
+								<p
+									class="section-kicker text-brand-blue"
+									data-key="hortCloudKicker"
+								></p>
+								<h2
+									class="mt-4 text-3xl font-semibold text-gray-900"
+									data-key="hortCloudTitle"
+								></h2>
+								<p
+									class="mt-4 text-gray-600"
+									data-key="hortCloudDescription"
+								></p>
+							</div>
+							<div class="rounded-3xl bg-white p-6 shadow">
+								<img
+									class="w-full rounded-2xl object-contain"
+									data-key="hortCloudImage"
+									alt="Gestão em nuvem"
+									loading="lazy"
+								/>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="text-center max-w-3xl mx-auto">
+							<h2
+								class="text-3xl font-semibold text-gray-900"
+								data-key="hortContactTitle"
+							></h2>
+							<p
+								class="mt-4 text-gray-600"
+								data-key="hortContactDescription"
+							></p>
+							<div
+								class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center"
+							>
+								<a
+									class="inline-flex items-center justify-center rounded-full px-6 py-3 bg-brand-blue text-white font-semibold hover:bg-brand-blue-dark"
+									data-key="hortContactPrimaryCta"
+									data-link-key="hortContactPrimaryLink"
+									href="#"
+								></a>
+								<a
+									class="inline-flex items-center justify-center rounded-full px-6 py-3 border border-gray-300 text-gray-900 font-semibold hover:bg-gray-50"
+									data-key="hortContactSecondaryCta"
+									data-link-key="hortContactSecondaryLink"
+									href="#"
+								></a>
+							</div>
+						</div>
+						<div class="mt-12 grid gap-6 md:grid-cols-3">
+							<a
+								class="rounded-3xl border border-gray-200 p-6 text-center hover:border-brand-blue transition"
+								data-link-key="hortContactCard1Link"
+								href="#"
+							>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="hortContactCard1Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortContactCard1Description"
+								></p>
 							</a>
 							<a
-								href="index.html"
-								class="inline-flex items-center justify-center rounded-full px-6 py-3 border border-gray-300 text-gray-800 font-semibold hover:bg-gray-100 transition"
+								class="rounded-3xl border border-gray-200 p-6 text-center hover:border-brand-blue transition"
+								data-link-key="hortContactCard2Link"
+								href="#"
 							>
-								Ver todos os segmentos
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="hortContactCard2Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortContactCard2Description"
+								></p>
+							</a>
+							<a
+								class="rounded-3xl border border-gray-200 p-6 text-center hover:border-brand-blue transition"
+								data-link-key="hortContactCard3Link"
+								href="#"
+							>
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="hortContactCard3Title"
+								></h3>
+								<p
+									class="mt-3 text-gray-600"
+									data-key="hortContactCard3Description"
+								></p>
 							</a>
 						</div>
 					</div>

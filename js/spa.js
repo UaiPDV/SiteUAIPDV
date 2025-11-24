@@ -7,6 +7,9 @@
 		acesso: 'acesso.html',
 		segmentos: 'segmentos/index.html',
 		'segmento-bar-restaurante': 'segmentos/bar-restaurante.html',
+		'segmento-distribuidora': 'segmentos/distribuidora.html',
+		'segmento-hortifruti': 'segmentos/hortifruti.html',
+		'segmento-eventos-festas': 'segmentos/eventos-festas.html',
 	};
 
 	const defaultRoute = 'home';

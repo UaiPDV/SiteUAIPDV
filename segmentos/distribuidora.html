@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Segmentos - Distribuidora</title>
+		<title data-key="distMetaTitle">Segmentos - Distribuidora</title>
 		<link rel="stylesheet" href="../css/tailwind.css" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
@@ -22,9 +22,17 @@
 			.hover\:bg-brand-blue-dark:hover {
 				background-color: #2563eb;
 			}
+			.section-kicker {
+				letter-spacing: 0.35em;
+				text-transform: uppercase;
+				font-size: 0.75rem;
+			}
 		</style>
 	</head>
-	<body id="segmentos" class="bg-white text-gray-900 antialiased">
+	<body
+		id="segmento-distribuidora"
+		class="bg-white text-gray-900 antialiased"
+	>
 		<div class="flex flex-col min-h-screen">
 			<header class="border-b border-gray-200">
 				<nav
@@ -92,40 +100,900 @@
 				</nav>
 			</header>
 
-			<main class="flex-grow">
-				<section class="py-24 bg-gray-50">
+			<main id="page-content" class="flex-grow">
+				<section
+					class="relative isolate overflow-hidden bg-gray-900 text-white"
+				>
+					<img
+						src="../img/segmentos/distribuidora/hero-distribuidora.jpg"
+						data-key="distHeroBackground"
+						alt="Operação de distribuidora"
+						class="absolute inset-0 h-full w-full object-cover"
+						loading="lazy"
+					/>
+					<div class="absolute inset-0 bg-black/70"></div>
 					<div
-						class="container mx-auto px-4 sm:px-6 lg:px-8 text-center"
+						class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"
 					>
 						<p
-							class="text-sm uppercase tracking-[0.3em] text-brand-blue"
+							class="section-kicker text-white/70"
+							data-key="distHeroKicker"
 						>
-							Segmentos atendidos
+							Sistema para DISTRIBUIDORA
 						</p>
-						<h1 class="mt-6 text-3xl sm:text-4xl font-bold">
-							Distribuidora
+						<h1
+							class="mt-6 text-3xl sm:text-5xl font-bold leading-tight max-w-3xl"
+							data-key="distHeroTitle"
+						>
+							Bebidas, Gás e Diversos Itens
 						</h1>
-						<p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-							Dashboard logístico, integração com fiscais,
-							controle avançado de estoque e mobilidade para
-							vendedores ainda estão em construção. Em breve,
-							compartilharemos os fluxos completos.
-						</p>
-						<div
-							class="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+						<p
+							class="mt-6 max-w-2xl text-lg text-white/80"
+							data-key="distHeroSubtitle"
 						>
+							Com a capacidade de utilização a solução em
+							computadores, máquina de cartão, tablets e
+							celulares, garantimos a flexibilidade necessária
+							para atender às demandas do seu negócio. Além disso,
+							integramos meios de pagamento para facilitar as
+							transações financeiras.
+						</p>
+						<div class="mt-10 flex flex-wrap gap-4">
 							<a
+								data-link-key="distHeroPrimaryLink"
 								href="https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
-								class="inline-flex items-center justify-center rounded-full px-6 py-3 bg-brand-blue text-white font-semibold hover:bg-brand-blue-dark transition"
+								target="_blank"
+								rel="noreferrer"
+								class="inline-flex items-center justify-center rounded-full px-6 py-3 bg-white text-gray-900 font-semibold shadow-lg shadow-black/30"
+								data-key="distHeroPrimaryCta"
 							>
-								Falar com um especialista
+								TIRE SUA DÚVIDA
 							</a>
 							<a
-								href="index.html"
-								class="inline-flex items-center justify-center rounded-full px-6 py-3 border border-gray-300 text-gray-800 font-semibold hover:bg-gray-100 transition"
+								data-link-key="distHeroSecondaryLink"
+								href="../solucoes.html"
+								class="inline-flex items-center justify-center rounded-full px-6 py-3 border border-white/30 text-white font-semibold hover:bg-white/10"
+								data-key="distHeroSecondaryCta"
 							>
-								Ver todos os segmentos
+								Ver integrações
 							</a>
+						</div>
+						<dl
+							class="mt-12 grid gap-6 sm:grid-cols-3 text-white/80"
+						>
+							<div>
+								<dt
+									class="text-sm uppercase tracking-widest text-white/60"
+									data-key="distHeroStat1Label"
+								>
+									Operação híbrida
+								</dt>
+								<dd
+									class="mt-2 text-2xl font-semibold"
+									data-key="distHeroStat1Value"
+								>
+									Computador, tablet e POS
+								</dd>
+							</div>
+							<div>
+								<dt
+									class="text-sm uppercase tracking-widest text-white/60"
+									data-key="distHeroStat2Label"
+								>
+									Pagamentos integrados
+								</dt>
+								<dd
+									class="mt-2 text-2xl font-semibold"
+									data-key="distHeroStat2Value"
+								>
+									Sem dupla digitação
+								</dd>
+							</div>
+							<div>
+								<dt
+									class="text-sm uppercase tracking-widest text-white/60"
+									data-key="distHeroStat3Label"
+								>
+									Gestão em nuvem
+								</dt>
+								<dd
+									class="mt-2 text-2xl font-semibold"
+									data-key="distHeroStat3Value"
+								>
+									Rastreabilidade total
+								</dd>
+							</div>
+						</dl>
+					</div>
+				</section>
+
+				<section class="py-20">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<p
+							class="section-kicker text-brand-blue"
+							data-key="distHybridKicker"
+						>
+							Controle na Palma da Mão
+						</p>
+						<h2
+							class="mt-4 text-3xl font-semibold text-gray-900"
+							data-key="distHybridTitle"
+						>
+							Sistema Híbrido
+						</h2>
+						<p
+							class="mt-4 text-gray-600 max-w-3xl"
+							data-key="distHybridDescription"
+						>
+							Simplifique a operação do seu negócio com nossa
+							solução completa de gestão. Aproveite a praticidade
+							e eficiência do nosso sistema para aumentar a
+							produtividade e impulsionar o crescimento da sua
+							distribuidora.
+						</p>
+					</div>
+				</section>
+
+				<section class="py-20 bg-gray-50">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="grid gap-10 lg:grid-cols-2">
+							<article
+								class="rounded-3xl bg-white p-8 shadow-lg shadow-gray-200/70"
+							>
+								<img
+									src="../img/segmentos/distribuidora/maq-cartao-pc.png"
+									data-key="distHybridCard1Image"
+									alt="Sistema integrado em diferentes telas"
+									class="w-full rounded-2xl border border-gray-100"
+									loading="lazy"
+								/>
+								<h3
+									class="mt-6 text-2xl font-semibold text-gray-900"
+									data-key="distHybridCard1Title"
+								>
+									Controle de Vendas e Estoque
+								</h3>
+								<p
+									class="mt-4 text-gray-600"
+									data-key="distHybridCard1Description"
+								>
+									Sistema de distribuição eficiente com
+									estoque e faturamento integrado a
+									computador, tablet e celulares com meio de
+									pagamento integrado.
+								</p>
+								<a
+									data-link-key="distHybridCard1CtaLink"
+									href="https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
+									target="_blank"
+									rel="noreferrer"
+									class="mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 bg-brand-blue text-white font-semibold hover:bg-brand-blue-dark"
+									data-key="distHybridCard1CtaLabel"
+								>
+									TIRE SUA DÚVIDA
+								</a>
+							</article>
+							<article
+								class="rounded-3xl bg-white p-8 shadow-lg shadow-gray-200/70"
+							>
+								<img
+									src="../img/segmentos/distribuidora/img-catalogo.png"
+									data-key="distHybridCard2Image"
+									alt="Aplicativo para clientes"
+									class="w-full rounded-2xl border border-gray-100"
+									loading="lazy"
+								/>
+								<h3
+									class="mt-6 text-2xl font-semibold text-gray-900"
+									data-key="distHybridCard2Title"
+								>
+									Gestão de Bebidas e Gás
+								</h3>
+								<p
+									class="mt-4 text-gray-600"
+									data-key="distHybridCard2Description"
+								>
+									Pode disponibilizar aplicativo para os
+									clientes comprar e pagar de forma simples!
+								</p>
+								<a
+									data-link-key="distHybridCard2CtaLink"
+									href="https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
+									target="_blank"
+									rel="noreferrer"
+									class="mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 bg-brand-blue text-white font-semibold hover:bg-brand-blue-dark"
+									data-key="distHybridCard2CtaLabel"
+								>
+									TIRE SUA DÚVIDA
+								</a>
+							</article>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div
+							class="rounded-3xl bg-gray-900 text-white p-10 shadow-2xl"
+						>
+							<p
+								class="section-kicker text-white/60"
+								data-key="distPricingKicker"
+							>
+								Controle de Vendas e Estoque
+							</p>
+							<h2
+								class="mt-6 text-3xl font-semibold"
+								data-key="distPricingTitle"
+							>
+								Solução por R$ 179,90
+							</h2>
+							<p
+								class="mt-4 text-white/80 max-w-3xl"
+								data-key="distPricingDescription"
+							>
+								Nosso sistema é projetado para controlar
+								eficientemente as vendas de bebidas, água, gás e
+								itens de mercadinho. Oferecemos controle de
+								estoque, faturamento, aplicativo de vendas,
+								IFOOD, fiscal e gestão de clientes mensalistas.
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20 bg-gray-50">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="grid gap-8 md:grid-cols-2">
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<p
+									class="text-sm font-semibold text-brand-blue"
+									data-key="distFeaturesStep1Number"
+								>
+									01
+								</p>
+								<h3
+									class="mt-3 text-2xl font-semibold text-gray-900"
+									data-key="distFeaturesStep1Title"
+								>
+									Sistema Integrado
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distFeaturesStep1Description"
+								>
+									Nosso sistema é projetado para controlar
+									eficientemente as vendas de bebidas, água,
+									gás e itens de mercadinho. Oferecemos
+									controle de estoque, faturamento e gestão de
+									clientes mensalistas.
+								</p>
+							</div>
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<p
+									class="text-sm font-semibold text-brand-blue"
+									data-key="distFeaturesStep2Number"
+								>
+									02
+								</p>
+								<h3
+									class="mt-3 text-2xl font-semibold text-gray-900"
+									data-key="distFeaturesStep2Title"
+								>
+									Controle de Mercadinho
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distFeaturesStep2Description"
+								>
+									Com a capacidade de utilização em
+									computadores, tablets e celulares,
+									garantimos a flexibilidade necessária para
+									atender às demandas do seu negócio. Além
+									disso, integramos meios de pagamento para
+									facilitar as transações financeiras.
+								</p>
+							</div>
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<p
+									class="text-sm font-semibold text-brand-blue"
+									data-key="distFeaturesStep3Number"
+								>
+									03
+								</p>
+								<h3
+									class="mt-3 text-2xl font-semibold text-gray-900"
+									data-key="distFeaturesStep3Title"
+								>
+									Faturamento Mensalista/Caderneta
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distFeaturesStep3Description"
+								>
+									Simplifique a operação do seu negócio com
+									nossa solução completa de gestão. Aproveite
+									a praticidade e eficiência do nosso sistema
+									para aumentar a produtividade e impulsionar
+									o crescimento da sua distribuidora.
+								</p>
+							</div>
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<p
+									class="text-sm font-semibold text-brand-blue"
+									data-key="distFeaturesStep4Number"
+								>
+									04
+								</p>
+								<h3
+									class="mt-3 text-2xl font-semibold text-gray-900"
+									data-key="distFeaturesStep4Title"
+								>
+									Integração de Meio de Pagamento
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distFeaturesStep4Description"
+								>
+									Nosso sistema controlar eficientemente as
+									vendas de bebidas, água, gás e itens de
+									mercadinho. Oferecemos controle de estoque,
+									faturamento e gestão de clientes
+									mensalistas.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section
+					class="relative isolate h-64 md:h-80"
+					style="
+						background-image: url('../img/segmentos/distribuidora/bg-parallax-industrial.jpg');
+						background-size: cover;
+						background-position: center;
+					"
+					data-bg-key="distParallaxBackground"
+					aria-hidden="true"
+				></section>
+
+				<section class="py-20">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="grid gap-8 md:grid-cols-3">
+							<article
+								class="rounded-3xl border border-gray-200 overflow-hidden"
+							>
+								<img
+									src="../img/segmentos/distribuidora/segmento-gas.webp"
+									data-key="distSegment1Image"
+									alt="Entrega de botijão de gás"
+									class="h-64 w-full object-cover"
+									loading="lazy"
+								/>
+								<div class="p-6 text-center">
+									<h3
+										class="text-xl font-semibold text-gray-900"
+										data-key="distSegment1Title"
+									>
+										Botijão de Gás
+									</h3>
+									<p
+										class="mt-2 text-gray-600"
+										data-key="distSegment1Description"
+									>
+										Com aplicativo de Entrega rápida
+									</p>
+								</div>
+							</article>
+							<article
+								class="rounded-3xl border border-gray-200 overflow-hidden"
+							>
+								<img
+									src="../img/segmentos/distribuidora/segmento-cerveja.jpg"
+									data-key="distSegment2Image"
+									alt="Cervejas geladas"
+									class="h-64 w-full object-cover"
+									loading="lazy"
+								/>
+								<div class="p-6 text-center">
+									<h3
+										class="text-xl font-semibold text-gray-900"
+										data-key="distSegment2Title"
+									>
+										Cerveja
+									</h3>
+									<p
+										class="mt-2 text-gray-600"
+										data-key="distSegment2Description"
+									>
+										Com aplicativo de Entrega rápida
+									</p>
+								</div>
+							</article>
+							<article
+								class="rounded-3xl border border-gray-200 overflow-hidden"
+							>
+								<img
+									src="../img/segmentos/distribuidora/segmento-agua.jpg"
+									data-key="distSegment3Image"
+									alt="Galões de água"
+									class="h-64 w-full object-cover"
+									loading="lazy"
+								/>
+								<div class="p-6 text-center">
+									<h3
+										class="text-xl font-semibold text-gray-900"
+										data-key="distSegment3Title"
+									>
+										Água
+									</h3>
+									<p
+										class="mt-2 text-gray-600"
+										data-key="distSegment3Description"
+									>
+										Com aplicativo de Entrega rápida
+									</p>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-16 bg-brand-blue text-white">
+					<div
+						class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"
+					>
+						<div>
+							<h2
+								class="text-3xl font-semibold"
+								data-key="distCtaBandTitle"
+							>
+								Sistema de Distribuidora Integrado com
+								Aplicativo!
+							</h2>
+						</div>
+						<a
+							data-link-key="distCtaBandLink"
+							href="https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
+							target="_blank"
+							rel="noreferrer"
+							class="inline-flex items-center justify-center rounded-full px-6 py-3 bg-white text-brand-blue font-semibold"
+							data-key="distCtaBandLabel"
+						>
+							TIRE SUA DÚVIDA
+						</a>
+					</div>
+				</section>
+
+				<section class="py-20">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="max-w-2xl">
+							<p
+								class="section-kicker text-brand-blue"
+								data-key="distPaymentKicker"
+							>
+								Integração de Pagamento
+							</p>
+						</div>
+						<div class="mt-10 space-y-4">
+							<details
+								class="rounded-3xl border border-gray-200 bg-white p-6"
+								open
+							>
+								<summary
+									class="flex cursor-pointer items-center justify-between text-lg font-semibold text-gray-900"
+								>
+									<span data-key="distPaymentAccordion1Title">
+										Presencial - Pagamento Balcão
+									</span>
+									<span class="text-brand-blue"
+										>&#x25BC;</span
+									>
+								</summary>
+								<p
+									class="mt-4 text-gray-600"
+									data-key="distPaymentAccordion1Description"
+								>
+									Com a capacidade de comunicação com
+									computadores, tablets e celulares,
+									garantimos a flexibilidade necessária para
+									atender às demandas do seu negócio.
+									Integramos meios de pagamento para facilitar
+									as transações financeiras.
+								</p>
+							</details>
+							<details
+								class="rounded-3xl border border-gray-200 bg-white p-6"
+							>
+								<summary
+									class="flex cursor-pointer items-center justify-between text-lg font-semibold text-gray-900"
+								>
+									<span data-key="distPaymentAccordion2Title">
+										Link - Pagamento On-Line
+									</span>
+									<span class="text-brand-blue"
+										>&#x25BC;</span
+									>
+								</summary>
+								<p
+									class="mt-4 text-gray-600"
+									data-key="distPaymentAccordion2Description"
+								>
+									Simplifique a operação do seu negócio com
+									nossa solução completa de pagamento on-line
+									pelo aplicativo de entrega rápida. Aproveite
+									a praticidade e eficiência do nosso sistema
+									para aumentar a produtividade e impulsionar
+									o crescimento da sua distribuidora.
+								</p>
+							</details>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20 bg-gray-50">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<h2
+							class="text-3xl font-semibold text-gray-900"
+							data-key="distMiniEquipmentTitle"
+						>
+							Equipamento Sugerido Para o Caixa
+						</h2>
+						<div class="mt-10 grid gap-6 lg:grid-cols-3">
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="distMiniEquipmentCard1Title"
+								>
+									Mini PDV Android da Elgin
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distMiniEquipmentCard1Description"
+								>
+									Eficiência e performance para seu negócio
+								</p>
+								<img
+									src="../img/segmentos/distribuidora/equip-mini-pdv-1.jpeg"
+									data-key="distMiniEquipmentCard1Image"
+									alt="Mini PDV Android da Elgin"
+									class="mt-6 h-64 w-full rounded-2xl object-cover"
+									loading="lazy"
+								/>
+							</div>
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="distMiniEquipmentCard2Title"
+								>
+									Processador
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distMiniEquipmentCard2Description"
+								>
+									Octacore (2 núcleos A75 de até 1,8GHz e 6
+									núcleos A55 de até 1,8GHz)
+								</p>
+								<img
+									src="../img/segmentos/distribuidora/equip-mini-pdv-2.jpeg"
+									data-key="distMiniEquipmentCard2Image"
+									alt="Detalhes do equipamento Android"
+									class="mt-6 h-64 w-full rounded-2xl object-cover"
+									loading="lazy"
+								/>
+							</div>
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="distMiniEquipmentCard3Title"
+								>
+									Interatividade
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distMiniEquipmentCard3Description"
+								>
+									Tela sensível ao toque 10,1' Display do
+									Cliente de 2,4
+								</p>
+								<img
+									src="../img/segmentos/distribuidora/equip-mini-pdv-3.jpeg"
+									data-key="distMiniEquipmentCard3Image"
+									alt="Display do cliente"
+									class="mt-6 h-64 w-full rounded-2xl object-cover"
+									loading="lazy"
+								/>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<h2
+							class="text-3xl font-semibold text-gray-900"
+							data-key="distPcSectionTitle"
+						>
+							PC Sugerido Para o Caixa
+						</h2>
+						<div class="mt-10 grid gap-6 lg:grid-cols-3">
+							<div
+								class="rounded-3xl bg-gray-900 text-white p-8 shadow"
+							>
+								<h3
+									class="text-xl font-semibold"
+									data-key="distPcCard1Title"
+								>
+									Windows 11 pro 64
+								</h3>
+								<p
+									class="mt-2 text-white/80"
+									data-key="distPcCard1Description"
+								>
+									Eficiência e performance para seu negócio
+								</p>
+							</div>
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<img
+									src="../img/segmentos/distribuidora/pc-sugerido-2.webp"
+									data-key="distPcCard2Image"
+									alt="PC completo para caixa"
+									class="h-64 w-full rounded-2xl object-cover"
+									loading="lazy"
+								/>
+							</div>
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="distPcCard3Title"
+								>
+									Características principais
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distPcCard3Description"
+								>
+									INTEL CORE I5 - 240 GB -8 GB
+								</p>
+							</div>
+						</div>
+						<div class="mt-10 grid gap-6 lg:grid-cols-3">
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<img
+									src="../img/segmentos/distribuidora/pc-sugerido-1.webp"
+									data-key="distPcCard4Image"
+									alt="PC compacto para balcão"
+									class="h-64 w-full rounded-2xl object-cover"
+									loading="lazy"
+								/>
+							</div>
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="distPcCard5Title"
+								>
+									Interatividade
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distPcCard5Description"
+								>
+									Monitor Led 19"
+								</p>
+							</div>
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<img
+									src="../img/segmentos/distribuidora/pc-sugerido-3.webp"
+									data-key="distPcCard6Image"
+									alt="Configuração adicional de PC"
+									class="h-64 w-full rounded-2xl object-cover"
+									loading="lazy"
+								/>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20 bg-gray-50">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<h2
+							class="text-3xl font-semibold text-gray-900"
+							data-key="distPosSectionTitle"
+						>
+							Máquina de Cartão Sugerida Para o Caixa
+						</h2>
+						<div class="mt-10 grid gap-6 lg:grid-cols-3">
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="distPosCard1Title"
+								>
+									POS Android P2
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distPosCard1Description"
+								>
+									Sistema embarcado e configurado​ e conta
+									digital sem custo.
+								</p>
+							</div>
+							<div
+								class="rounded-3xl bg-white p-8 shadow text-center"
+							>
+								<img
+									src="../img/segmentos/distribuidora/pos-android.gif"
+									data-key="distPosCard2Image"
+									alt="POS Android P2"
+									class="mx-auto h-64 object-contain"
+									loading="lazy"
+								/>
+							</div>
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="distPosCard3Title"
+								>
+									Características principais
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distPosCard3Description"
+								>
+									Impressora térmica e Processador Dual
+								</p>
+							</div>
+						</div>
+						<div class="mt-10 grid gap-6 lg:grid-cols-3">
+							<div
+								class="rounded-3xl bg-white p-8 shadow text-center"
+							>
+								<img
+									src="../img/segmentos/distribuidora/pos-detalhe.jpg"
+									data-key="distPosCard4Image"
+									alt="Detalhes POS"
+									class="mx-auto h-64 object-cover rounded-2xl"
+									loading="lazy"
+								/>
+							</div>
+							<div class="rounded-3xl bg-white p-8 shadow">
+								<h3
+									class="text-xl font-semibold text-gray-900"
+									data-key="distPosCard5Title"
+								>
+									Interatividade
+								</h3>
+								<p
+									class="mt-2 text-gray-600"
+									data-key="distPosCard5Description"
+								>
+									Tela 6.5"
+								</p>
+							</div>
+							<div
+								class="rounded-3xl bg-white p-8 shadow text-center"
+							>
+								<img
+									src="../img/segmentos/distribuidora/pos-smart.webp"
+									data-key="distPosCard6Image"
+									alt="POS smart adicional"
+									class="mx-auto h-64 object-cover rounded-2xl"
+									loading="lazy"
+								/>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-20">
+					<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="text-center">
+							<h2
+								class="text-3xl font-semibold text-gray-900"
+								data-key="distPartnersTitle"
+							>
+								Distribuidora Eficiente
+							</h2>
+							<p
+								class="mt-4 text-gray-600"
+								data-key="distPartnersDescription"
+							>
+								Integrações e dispositivos homologados para
+								garantir agilidade do pedido ao recebimento.
+							</p>
+						</div>
+						<div
+							class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+						>
+							<div
+								class="rounded-3xl border border-gray-200 p-6 flex items-center justify-center"
+							>
+								<img
+									src="../img/segmentos/distribuidora/logo-sistema-pedido.png"
+									data-key="distPartnersLogo1"
+									alt="Sistema pedido na mesa"
+									class="h-16 object-contain"
+									loading="lazy"
+								/>
+							</div>
+							<div
+								class="rounded-3xl border border-gray-200 p-6 flex items-center justify-center"
+							>
+								<img
+									src="../img/segmentos/distribuidora/logo-ifood.png"
+									data-key="distPartnersLogo2"
+									alt="iFood integrado"
+									class="h-12 object-contain"
+									loading="lazy"
+								/>
+							</div>
+							<div
+								class="rounded-3xl border border-gray-200 p-6 flex items-center justify-center"
+							>
+								<img
+									src="../img/segmentos/distribuidora/logo-stone.png"
+									data-key="distPartnersLogo3"
+									alt="Stone pagamentos"
+									class="h-10 object-contain"
+									loading="lazy"
+								/>
+							</div>
+							<div
+								class="rounded-3xl border border-gray-200 p-6 flex items-center justify-center"
+							>
+								<img
+									src="../img/segmentos/distribuidora/logo-aps.jpg"
+									data-key="distPartnersLogo4"
+									alt="APS integração"
+									class="h-14 object-contain"
+									loading="lazy"
+								/>
+							</div>
+							<div
+								class="rounded-3xl border border-gray-200 p-6 flex items-center justify-center"
+							>
+								<img
+									src="../img/segmentos/distribuidora/icon-tef.png"
+									data-key="distPartnersLogo5"
+									alt="Integração TEF"
+									class="h-12 object-contain"
+									loading="lazy"
+								/>
+							</div>
+							<div
+								class="rounded-3xl border border-gray-200 p-6 flex items-center justify-center"
+							>
+								<img
+									src="../img/segmentos/distribuidora/logo-app-delivery.jpg"
+									data-key="distPartnersLogo6"
+									alt="Aplicativos de delivery"
+									class="h-14 object-contain"
+									loading="lazy"
+								/>
+							</div>
+							<div
+								class="rounded-3xl border border-gray-200 p-6 flex items-center justify-center"
+							>
+								<img
+									src="../img/segmentos/distribuidora/logo-etiquetas.gif"
+									data-key="distPartnersLogo7"
+									alt="Etiquetas"
+									class="h-14 object-contain"
+									loading="lazy"
+								/>
+							</div>
+							<div
+								class="rounded-3xl border border-gray-200 p-6 flex items-center justify-center"
+							>
+								<img
+									src="../img/segmentos/distribuidora/logo-selos.png"
+									data-key="distPartnersLogo8"
+									alt="Selo de qualidade"
+									class="h-14 object-contain"
+									loading="lazy"
+								/>
+							</div>
 						</div>
 					</div>
 				</section>
