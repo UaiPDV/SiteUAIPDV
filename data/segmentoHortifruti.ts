@@ -5,8 +5,8 @@ export const segmentoHortifruti = {
         subtitle: "Solução completa para balanças, etiquetagem nutricional, PDV híbrido e gestão financeira com mobilidade, ideal para hortifrúti, padarias e minimercados.",
         ctaPrimary: "Falar com um especialista",
         ctaSecondary: "Ver todos os segmentos",
-        bgImage: "/img/segmentos/hortifruti/hero-bg.jpg",
-        deviceImage: "/img/segmentos/hortifruti/hero-device.png",
+        bgImage: "img/segmentos/hortifruti/hero-bg.jpg",
+        deviceImage: "img/segmentos/hortifruti/hero-device.png",
         stats: [
             { label: "Dia para startar", value: "1" },
             { label: "Clientes satisfeitos", value: "+380" },
@@ -21,7 +21,7 @@ export const segmentoHortifruti = {
             "Venda no balcão, tablet ou POS sem interromper a operação.",
             "Gestão na nuvem para analisar margens, estoque e crédito dos clientes."
         ],
-        image: "/img/segmentos/hortifruti/pdv-completo.jpg"
+        image: "img/segmentos/hortifruti/pdv-completo.jpg"
     },
     features: {
         kicker: "Equipamentos homologados",
@@ -31,22 +31,22 @@ export const segmentoHortifruti = {
             {
                 title: "Balança Urano Pop-Z 31/2 Serial",
                 desc: "Comunicação via cabo serial para capturar peso automaticamente e lançar o valor em segundos.",
-                img: "/img/segmentos/hortifruti/balanca-popz.jpg"
+                img: "img/segmentos/hortifruti/balanca-popz.jpg"
             },
             {
                 title: "PDV Elgin M10",
                 desc: "Tela de 10 polegadas com impressora embutida, conexões USB e Wi-Fi para agilizar o caixa.",
-                img: "/img/segmentos/hortifruti/pdv-m10.png"
+                img: "img/segmentos/hortifruti/pdv-m10.png"
             },
             {
                 title: "Leitor de Código Portátil",
                 desc: "Identifique rapidamente barcodes e QR Codes para reduzir filas e erros de precificação.",
-                img: "/img/segmentos/hortifruti/leitor-manual.jpg"
+                img: "img/segmentos/hortifruti/leitor-manual.jpg"
             },
             {
                 title: "Leitor Fixo 2D",
                 desc: "Scanner fixo com leitura por imagem para balanças e checkouts de alto giro.",
-                img: "/img/segmentos/hortifruti/leitor-fixo.jpg"
+                img: "img/segmentos/hortifruti/leitor-fixo.jpg"
             }
         ]
     },
@@ -57,14 +57,14 @@ export const segmentoHortifruti = {
             {
                 title: "Integração Urano + PDV M10",
                 desc: "Demonstração do peso sendo enviado direto para o caixa e impressão na hora.",
-                img: "/img/segmentos/hortifruti/pdv-m10.png",
+                img: "img/segmentos/hortifruti/pdv-m10.png",
                 cta: "Assistir vídeo",
                 link: "https://www.youtube.com/watch?v=-KHVql3nuhQ"
             },
             {
                 title: "PDV mobilidade no FLV",
                 desc: "Mostramos como o Mini PDV funciona como caixa volante com pagamento integrado.",
-                img: "/img/segmentos/hortifruti/hero-device.png",
+                img: "img/segmentos/hortifruti/hero-device.png",
                 cta: "Solicitar demonstração",
                 link: "https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
             }
@@ -98,17 +98,17 @@ export const segmentoHortifruti = {
             {
                 title: "Financeiro",
                 desc: "Plano de contas, fluxo de caixa e contas a pagar para prever necessidades de compra.",
-                img: "/img/segmentos/hortifruti/dashboard-financeiro.png"
+                img: "img/segmentos/hortifruti/dashboard-financeiro.png"
             },
             {
                 title: "Estoque",
                 desc: "Controle de entradas, perdas e validade garantindo o lucro do hortifruti.",
-                img: "/img/segmentos/hortifruti/dashboard-estoque.png"
+                img: "img/segmentos/hortifruti/dashboard-estoque.png"
             },
             {
                 title: "Fiscal",
                 desc: "NFC-e e NF-e com envio automático de XML e consulta rápida ao Sintegra.",
-                img: "/img/segmentos/hortifruti/dashboard-fiscal.png"
+                img: "img/segmentos/hortifruti/dashboard-fiscal.png"
             }
         ]
     },
@@ -116,7 +116,7 @@ export const segmentoHortifruti = {
         kicker: "Nuvem",
         title: "Gestão completa em nuvem",
         description: "Segurança e mobilidade para acompanhar vendas e produção pelo celular, tablet ou computador.",
-        image: "/img/segmentos/hortifruti/gestao-nuvem.png"
+        image: "img/segmentos/hortifruti/gestao-nuvem.png"
     },
     contact: {
         title: "Vamos acelerar o seu hortifruti",

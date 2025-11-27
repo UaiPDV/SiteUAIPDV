@@ -5,7 +5,7 @@ export const segmentoBarRestaurante = {
         subtitle: "A mobilidade no atendimento e recebimento pode ser feita em tablets, celulares e máquinas de cartão com integração aos meios de pagamento. A equipe acompanha mesas, cartelas e delivery em tempo real.",
         ctaPrimary: "Falar com um especialista",
         ctaSecondary: "Ver integrações",
-        bgImage: "/img/segmentos/bar-restaurantes/hero-mesas.webp",
+        bgImage: "img/segmentos/bar-restaurantes/hero-mesas.webp",
         stats: [
             { label: "Mesas e comandas", value: "Controle em tempo real" },
             { label: "Pagamento integrado", value: "POS homologado" },
@@ -53,8 +53,8 @@ export const segmentoBarRestaurante = {
         title: "Gestão em vendas",
         text: "Ideal para controlar o faturamento por balcão, mesa e mensalistas. Tablets, celulares e POS integrados fazem a emissão fiscal e a conferência automática do caixa.",
         cta: "saber mais",
-        image1: "/img/segmentos/bar-restaurantes/pagamentos-cartao.png",
-        image2: "/img/segmentos/bar-restaurantes/pagamentos-integrados.png"
+        image1: "img/segmentos/bar-restaurantes/pagamentos-cartao.png",
+        image2: "img/segmentos/bar-restaurantes/pagamentos-integrados.png"
     },
     processes: {
         title: "Processos conectados",
@@ -76,32 +76,32 @@ export const segmentoBarRestaurante = {
             {
                 title: "Caixa + Tablet 10\"",
                 desc: "Vendas no balcão, emissão NFC-e e impressão integrada para operações dinâmicas.",
-                img: "/img/segmentos/bar-restaurantes/equipamentos-tablet.webp"
+                img: "img/segmentos/bar-restaurantes/equipamentos-tablet.webp"
             },
             {
                 title: "Touch Screen Terminal",
                 desc: "Computador sensível ao toque para lançamento rápido e integração com periféricos.",
-                img: "/img/segmentos/bar-restaurantes/equipamentos-touch.webp"
+                img: "img/segmentos/bar-restaurantes/equipamentos-touch.webp"
             },
             {
                 title: "Atendimento com mobilidade",
                 desc: "Pedidos lançados na mesa, impressão na cozinha e comunicação com retaguarda.",
-                img: "/img/segmentos/bar-restaurantes/equipamentos-garcom.jpg"
+                img: "img/segmentos/bar-restaurantes/equipamentos-garcom.jpg"
             },
             {
                 title: "Tela 11\" + impressora",
                 desc: "Estação completa com portas USB/Rede e integração com balança.",
-                img: "/img/segmentos/bar-restaurantes/estacao-android.jpeg"
+                img: "img/segmentos/bar-restaurantes/estacao-android.jpeg"
             },
             {
                 title: "Comanda eletrônica",
                 desc: "Identificação por código de barras ou QR Code, com impressão a cada consumo.",
-                img: "/img/segmentos/bar-restaurantes/comandas.png"
+                img: "img/segmentos/bar-restaurantes/comandas.png"
             },
             {
                 title: "Atendimento com QR Code",
                 desc: "Cliente envia pedidos via WhatsApp ou cardápio digital e a cozinha recebe automaticamente.",
-                img: "/img/segmentos/bar-restaurantes/qrcode.png"
+                img: "img/segmentos/bar-restaurantes/qrcode.png"
             }
         ]
     },
@@ -115,9 +115,9 @@ export const segmentoBarRestaurante = {
         ],
         cta: "Ver plataforma omnichannel",
         images: [
-            "/img/segmentos/bar-restaurantes/delivery-apps.jpg",
-            "/img/segmentos/bar-restaurantes/menu-digital.png",
-            "/img/segmentos/bar-restaurantes/chatbot.png"
+            "img/segmentos/bar-restaurantes/delivery-apps.jpg",
+            "img/segmentos/bar-restaurantes/menu-digital.png",
+            "img/segmentos/bar-restaurantes/chatbot.png"
         ]
     },
     cloud: {
@@ -125,7 +125,7 @@ export const segmentoBarRestaurante = {
         title: "Informações disponíveis para toda a equipe",
         text: "Não é necessário servidor local: relatórios, estoque e fiscal ficam em nuvem com segurança e logs para auditoria. Supervisores acompanham rastreabilidade do consumo por cliente e fecham contas associadas em segundos.",
         tags: ["Dashboards em tempo real", "Acesso multi-dispositivo"],
-        image: "/img/segmentos/bar-restaurantes/cloud-team.jpeg"
+        image: "img/segmentos/bar-restaurantes/cloud-team.jpeg"
     },
     testimonials: {
         kicker: "Histórias reais",

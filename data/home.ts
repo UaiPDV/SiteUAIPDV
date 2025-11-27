@@ -1,28 +1,29 @@
+
 export const home = {
     heroSlides: [
       {
         id: 1,
         title: "PDV Completo",
         subtitle: "Funções de Fundo de Caixa, Sangria e Vendas",
-        image: "/img/home/android-repair-banner1.png"
+        image: "img/home/android-repair-banner1.png"
       },
       {
         id: 2,
         title: "Cartões de Débito, Crédito e NFC-e",
         subtitle: "Sistema integrado ao seu Ponto de Venda",
-        image: "/img/home/restore-icloud-itunes-backup-home-banner1.jpg"
+        image: "img/home/restore-icloud-itunes-backup-home-banner1.jpg"
       },
       {
         id: 3,
         title: "Funções Inteligentes",
         subtitle: "Para gerenciar seu negócio é necessário integração com automação",
-        image: "/img/home/itunes-repair-banner1.png"
+        image: "img/home/itunes-repair-banner1.png"
       },
       {
         id: 4,
         title: "Gestão Completa em Nuvem",
         subtitle: "Gestão Financeira X Controle de Estoque X Conciliação de Cartões",
-        image: "/img/home/home_banner21.jpg"
+        image: "img/home/home_banner21.jpg"
       }
     ],
     heroCtaPrimary: "Comece Agora",
@@ -39,7 +40,7 @@ export const home = {
         id: 2,
         title: "Solução com balança",
         description: "Balança integrada com PDV Elgin M10, comunicação realizada com 1 toque na tela.",
-        link: "https://www.youtube.com/embed/ysz5S6PUM-U"
+        link: "https://www.youtube.com/embed/xRYJH9yTyEQ"
       },
       {
         id: 3,
@@ -65,25 +66,25 @@ export const home = {
       {
         id: 1,
         title: "PDV Elgin M10",
-        img: "/img/home/2-11.png",
+        img: "img/home/2-11.png",
         desc: "Impressora embutida - Tela: 10” - Sistema Operacional: 2 GB RAM. Comunicação via cabo RJ45, Bluetooth e WI-Fi. Suporta NFC-e, SAT ou Gerencial."
       },
       {
         id: 2,
         title: "Sunmi T2 mini",
-        img: "/img/home/Sunmi20T220Mini1.jpg",
+        img: "img/home/Sunmi20T220Mini1.jpg",
         desc: "Impressora embutida - Tela: 11.6” HD - Android 7.1 - Processador Octa-Core. Comunicação via cabo RJ45 ou USB. Suporta NFC-e, SAT ou Gerencial."
       },
       {
         id: 3,
         title: "POS Integrado",
-        img: "/img/home/stone-p2-maquininha-de-cartao-david-tech1.webp",
+        img: "img/home/stone-p2-maquininha-de-cartao-david-tech1.webp",
         desc: "Solução integrada com recebimento de cartões, impressão de fichas e expedição. Segurança de Recebimento e autorização."
       },
       {
         id: 4,
         title: "Uai Print TS 7",
-        img: "/img/home/pos-system-homepage-stack-01-ratio_16-9-for_tablet-up1.png",
+        img: "img/home/pos-system-homepage-stack-01-ratio_16-9-for_tablet-up1.png",
         desc: "Impressora embutida - Tela: 8” - Android 7.1. Imprimir fichas com código de barras e automação. Suporta NFC-e, SAT ou Gerencial."
       }
     ],

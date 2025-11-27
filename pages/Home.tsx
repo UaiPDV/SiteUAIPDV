@@ -22,7 +22,7 @@ const useFadeIn = () => {
   return { ref: domRef, isVisible };
 };
 
-const FadeSection = ({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) => {
+const FadeSection: React.FC<{ children: React.ReactNode, delay?: number }> = ({ children, delay = 0 }) => {
     const { ref, isVisible } = useFadeIn();
     return (
         <div 
@@ -35,7 +35,7 @@ const FadeSection = ({ children, delay = 0 }: { children: React.ReactNode, delay
     );
 };
 
-const StatCounter = ({ number, label }: { number: string, label: string }) => {
+const StatCounter: React.FC<{ number: string, label: string }> = ({ number, label }) => {
     const { ref, isVisible } = useFadeIn();
     const [count, setCount] = useState(0);
 
@@ -115,7 +115,8 @@ export const Home = ({ content }: { content: any }) => {
               }}
             />
           ))}
-          <div className="absolute inset-0 bg-black/60"></div>
+          {/* Overlay darker and yellowish */}
+          <div className="absolute inset-0 bg-[#29220a]/85 mix-blend-multiply"></div>
           {/* Subtle gradient for better text readability at bottom */}
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 via-transparent to-transparent"></div>
         </div>
@@ -244,7 +245,7 @@ export const Home = ({ content }: { content: any }) => {
                 {content.segments.map((seg: any, idx: number) => (
                     <FadeSection key={seg.id} delay={idx * 50}>
                         <article className="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col items-center text-center h-full hover:shadow-lg hover:border-brand-blue/30 transition-all cursor-pointer group">
-                            <div className="w-16 h-16 rounded-full overflow-hidden mb-4 ring-2 ring-gray-100 group-hover:ring-brand-blue/20 transition-all">
+                            <div className="w-24 h-24 rounded-full overflow-hidden mb-4 ring-2 ring-gray-100 group-hover:ring-brand-blue/20 transition-all">
                                 <img 
                                     src={seg.img} 
                                     alt={seg.title} 
@@ -336,7 +337,7 @@ export const Home = ({ content }: { content: any }) => {
                             <span className="text-sm font-medium text-gray-900">Nome ou Apelido</span>
                             <input 
                                 type="text" 
-                                className="mt-2 block w-full rounded-xl border border-gray-300 bg-white text-gray-900 px-4 py-3 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-shadow hover:shadow-lg" 
+                                className="mt-2 block w-full rounded-xl border border-gray-300 bg-white text-gray-900 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow hover:shadow-lg" 
                                 placeholder="Digite aqui" 
                             />
                         </label>
@@ -344,7 +345,7 @@ export const Home = ({ content }: { content: any }) => {
                             <span className="text-sm font-medium text-gray-900">Telefone (com DDD)</span>
                             <input 
                                 type="text" 
-                                className="mt-2 block w-full rounded-xl border border-gray-300 bg-white text-gray-900 px-4 py-3 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-shadow hover:shadow-lg" 
+                                className="mt-2 block w-full rounded-xl border border-gray-300 bg-white text-gray-900 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow hover:shadow-lg" 
                                 placeholder="(31) 99999-0000" 
                             />
                         </label>
@@ -352,7 +353,7 @@ export const Home = ({ content }: { content: any }) => {
                             <span className="text-sm font-medium text-gray-900">Sua dúvida?</span>
                             <textarea 
                                 rows={4} 
-                                className="mt-2 block w-full rounded-xl border border-gray-300 bg-white text-gray-900 px-4 py-3 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-shadow hover:shadow-lg" 
+                                className="mt-2 block w-full rounded-xl border border-gray-300 bg-white text-gray-900 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow hover:shadow-lg" 
                                 placeholder="Conte para nós" 
                             />
                         </label>

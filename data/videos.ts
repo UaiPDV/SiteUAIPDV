@@ -1,19 +1,19 @@
 export const videos = {
     heroTitle: "Precisando de Ajuda?",
     heroSubtitle: "Está no lugar certo.",
-    heroImage: "/img/videos/eeee-min.jpg",
+    heroImage: "img/videos/eeee-min.jpg",
     heroList: [
-      { icon: "/img/videos/711239-88923138.png", text: "Vídeos" },
-      { icon: "/img/videos/711239-88923138.png", text: "Orientação" },
-      { icon: "/img/videos/711239-88923138.png", text: "Suporte" },
-      { icon: "/img/videos/711239-88923138.png", text: "Chat" }
+      { icon: "img/videos/711239-88923138.png", text: "Vídeos" },
+      { icon: "img/videos/711239-88923138.png", text: "Orientação" },
+      { icon: "img/videos/711239-88923138.png", text: "Suporte" },
+      { icon: "img/videos/711239-88923138.png", text: "Chat" }
     ],
     modulesTitle: "Os Módulos",
     modules: [
-      { icon: "/img/videos/1107201-c8cb2706.png", title: "PDV Produção", desc: "Sistema instalado nos equipamentos para lançamento de pedidos e emissão de notas." },
-      { icon: "/img/videos/422315-80f3769d.png", title: "Retaguarda", desc: "Gestão das vendas realizadas pelo PDVs com controle financeiro, estoque e fiscal integrado." },
-      { icon: "/img/videos/5035738-8e267345.png", title: "Fiscal", desc: "Emissão de documentos fiscais no formato NFC-e/NF-e. Manifesto e Sintegra." },
-      { icon: "/img/videos/7315554-4059ab86.png", title: "Print PDV", desc: "Sistema para criar cartelas, cartões, ingressos, cupons, senhas e muito mais." }
+      { icon: "img/videos/1107201-c8cb2706.png", title: "PDV Produção", desc: "Sistema instalado nos equipamentos para lançamento de pedidos e emissão de notas." },
+      { icon: "img/videos/422315-80f3769d.png", title: "Retaguarda", desc: "Gestão das vendas realizadas pelo PDVs com controle financeiro, estoque e fiscal integrado." },
+      { icon: "img/videos/5035738-8e267345.png", title: "Fiscal", desc: "Emissão de documentos fiscais no formato NFC-e/NF-e. Manifesto e Sintegra." },
+      { icon: "img/videos/7315554-4059ab86.png", title: "Print PDV", desc: "Sistema para criar cartelas, cartões, ingressos, cupons, senhas e muito mais." }
     ],
     playTitle: "Play",
     videos: [

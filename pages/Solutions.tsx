@@ -21,7 +21,7 @@ const useFadeIn = () => {
     return { ref: domRef, isVisible };
 };
 
-const FadeSection = ({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) => {
+const FadeSection: React.FC<{ children: React.ReactNode, delay?: number }> = ({ children, delay = 0 }) => {
     const { ref, isVisible } = useFadeIn();
     return (
         <div 

@@ -7,7 +7,7 @@ interface LayoutProps {
   currentPage: string;
 }
 
-export const Layout = ({ children, onNavigate, currentPage }: LayoutProps) => {
+export const Layout: React.FC<LayoutProps> = ({ children, onNavigate, currentPage }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -38,6 +38,46 @@ export const Layout = ({ children, onNavigate, currentPage }: LayoutProps) => {
       { label: t.navDelivery, id: "delivery" },
   ];
 
+  const isSegmentActive = currentPage.startsWith('segmento-');
+
+  // Helper to generate classes based on state
+  const getNavLinkClass = (isActive: boolean) => {
+      const baseClasses = "font-medium transition-all duration-200";
+      
+      if (isTransparentNav) {
+          // Transparent Navbar (Home Top)
+          return `${baseClasses} ${
+              isActive 
+                  ? 'text-white font-bold border-b-2 border-white pb-1' 
+                  : 'text-white hover:text-gray-200 hover:opacity-80'
+          }`;
+      } else {
+          // Solid Navbar (White BG)
+          return `${baseClasses} ${
+              isActive 
+                  ? 'text-brand-blue font-bold border-b-2 border-brand-blue pb-1' 
+                  : 'text-gray-900 hover:text-brand-blue'
+          }`;
+      }
+  };
+
+  const getDropdownTriggerClass = (isActive: boolean) => {
+     const baseClasses = "font-medium transition-colors flex items-center gap-1";
+     if (isTransparentNav) {
+         return `${baseClasses} ${
+             isActive 
+                ? 'text-white font-bold border-b-2 border-white pb-1' 
+                : 'text-white hover:text-gray-200'
+         }`;
+     } else {
+         return `${baseClasses} ${
+             isActive 
+                ? 'text-brand-blue font-bold border-b-2 border-brand-blue pb-1' 
+                : 'text-gray-900 hover:text-brand-blue'
+         }`;
+     }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Navigation */}
@@ -67,11 +107,7 @@ export const Layout = ({ children, onNavigate, currentPage }: LayoutProps) => {
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className={`font-medium transition-colors ${
-                  !isTransparentNav 
-                    ? `text-gray-900 hover:text-brand-blue ${currentPage === link.id ? 'text-brand-blue font-bold' : ''}` 
-                    : 'text-white hover:text-gray-200'
-                }`}
+                className={getNavLinkClass(currentPage === link.id)}
               >
                 {link.label}
               </button>
@@ -96,6 +132,7 @@ export const Layout = ({ children, onNavigate, currentPage }: LayoutProps) => {
                         <a href="https://web.invoicy.com.br/login.aspx" target="_blank" rel="noreferrer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Acesso Fiscal</a>
                         <a href="http://webmail.uaipdv.com.br/" target="_blank" rel="noreferrer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Web Mail</a>
                         <a href="http://uai.tabletcloud.com.br/" target="_blank" rel="noreferrer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Acesso Gerencial</a>
+                        <a href="https://uaipdv.com.br/printapp/" target="_blank" rel="noreferrer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">PrintApp</a>
                     </div>
                   </div>
               </div>
@@ -104,9 +141,7 @@ export const Layout = ({ children, onNavigate, currentPage }: LayoutProps) => {
              {/* Dropdown: Segmentos */}
              <div className="relative group">
               <button
-                 className={`font-medium transition-colors flex items-center gap-1 ${
-                    !isTransparentNav ? 'text-gray-900 hover:text-brand-blue' : 'text-white hover:text-gray-200'
-                }`}
+                 className={getDropdownTriggerClass(isSegmentActive)}
               >
                 {t.navSegments}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -117,10 +152,10 @@ export const Layout = ({ children, onNavigate, currentPage }: LayoutProps) => {
                         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Setores</p>
                     </div>
                     <div className="py-2">
-                        <button onClick={() => handleNavClick('segmento-bar-restaurante')} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bar e Restaurante</button>
-                        <button onClick={() => handleNavClick('segmento-distribuidora')} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Distribuidora</button>
-                        <button onClick={() => handleNavClick('segmento-hortifruti')} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Hortifruti</button>
-                        <button onClick={() => handleNavClick('segmento-eventos-festas')} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Eventos e Festas</button>
+                        <button onClick={() => handleNavClick('segmento-bar-restaurante')} className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${currentPage === 'segmento-bar-restaurante' ? 'text-brand-blue font-medium' : 'text-gray-700'}`}>Bar e Restaurante</button>
+                        <button onClick={() => handleNavClick('segmento-distribuidora')} className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${currentPage === 'segmento-distribuidora' ? 'text-brand-blue font-medium' : 'text-gray-700'}`}>Distribuidora</button>
+                        <button onClick={() => handleNavClick('segmento-hortifruti')} className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${currentPage === 'segmento-hortifruti' ? 'text-brand-blue font-medium' : 'text-gray-700'}`}>Hortifruti</button>
+                        <button onClick={() => handleNavClick('segmento-eventos-festas')} className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${currentPage === 'segmento-eventos-festas' ? 'text-brand-blue font-medium' : 'text-gray-700'}`}>Eventos e Festas</button>
                     </div>
                   </div>
               </div>
@@ -162,7 +197,13 @@ export const Layout = ({ children, onNavigate, currentPage }: LayoutProps) => {
             <nav className="flex-1 overflow-y-auto px-6 py-6 space-y-6 text-base font-medium text-gray-900">
                 <div className="space-y-3">
                     {navLinks.map(link => (
-                         <button key={link.id} onClick={() => handleNavClick(link.id)} className="block w-full text-left">{link.label}</button>
+                         <button 
+                            key={link.id} 
+                            onClick={() => handleNavClick(link.id)} 
+                            className={`block w-full text-left ${currentPage === link.id ? 'text-brand-blue font-bold' : ''}`}
+                         >
+                             {link.label}
+                         </button>
                     ))}
                 </div>
                 <div>
@@ -170,15 +211,16 @@ export const Layout = ({ children, onNavigate, currentPage }: LayoutProps) => {
                      <div className="space-y-2">
                         <a href="https://web.invoicy.com.br/login.aspx" className="block text-sm text-gray-600">Acesso Fiscal</a>
                         <a href="http://webmail.uaipdv.com.br/" className="block text-sm text-gray-600">Web Mail</a>
+                        <a href="https://uaipdv.com.br/printapp/" className="block text-sm text-gray-600">PrintApp</a>
                      </div>
                 </div>
                 <div>
                      <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400 mb-3">Segmentos</p>
                      <div className="space-y-2">
-                        <button onClick={() => handleNavClick('segmento-bar-restaurante')} className="block w-full text-left text-sm text-gray-600">Bar e Restaurante</button>
-                        <button onClick={() => handleNavClick('segmento-distribuidora')} className="block w-full text-left text-sm text-gray-600">Distribuidora</button>
-                        <button onClick={() => handleNavClick('segmento-hortifruti')} className="block w-full text-left text-sm text-gray-600">Hortifruti</button>
-                        <button onClick={() => handleNavClick('segmento-eventos-festas')} className="block w-full text-left text-sm text-gray-600">Eventos e Festas</button>
+                        <button onClick={() => handleNavClick('segmento-bar-restaurante')} className={`block w-full text-left text-sm ${currentPage === 'segmento-bar-restaurante' ? 'text-brand-blue font-medium' : 'text-gray-600'}`}>Bar e Restaurante</button>
+                        <button onClick={() => handleNavClick('segmento-distribuidora')} className={`block w-full text-left text-sm ${currentPage === 'segmento-distribuidora' ? 'text-brand-blue font-medium' : 'text-gray-600'}`}>Distribuidora</button>
+                        <button onClick={() => handleNavClick('segmento-hortifruti')} className={`block w-full text-left text-sm ${currentPage === 'segmento-hortifruti' ? 'text-brand-blue font-medium' : 'text-gray-600'}`}>Hortifruti</button>
+                        <button onClick={() => handleNavClick('segmento-eventos-festas')} className={`block w-full text-left text-sm ${currentPage === 'segmento-eventos-festas' ? 'text-brand-blue font-medium' : 'text-gray-600'}`}>Eventos e Festas</button>
                      </div>
                 </div>
             </nav>
